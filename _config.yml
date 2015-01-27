@@ -1,14 +1,17 @@
-# Site settings
-title: Your awesome title
-email: your-email@domain.com
-description: > # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
-baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://yourdomain.com" # the base hostname & protocol for your site
-twitter_username: jekyllrb
-github_username:  jekyll
+title: 완이의 웹으로 먹고살기
 
-# Build settings
-markdown: kramdown
+email: me@wani.kr
+
+description: > # this means to ignore newlines until "baseurl:"
+  개발 6년차,  Front-End로 시작했지만 한걸음씩 Back-End쪽으로 걸음마 중.
+
+markdown: redcarpet
+permalink: /:categories/:title
+paginate_path: /page/:num
+
+paginate: 10
+
+author:
+  twitter: wan2land
+  github: wan2land
+

@@ -1,20 +1,25 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html>  
+<!--//  
+This web page has been developed by Wani.  
+ - im@wani.kr
+ - http://wani.kr
+-->
+<!--[if lt IE 7]><html class="ie6" lang="ko"><![endif]-->  
+<!--[if IE 7]><html class="ie7" lang="ko"><![endif]-->  
+<!--[if IE 8]><html class="ie8" lang="ko"><![endif]-->  
+<!--[if gt IE 8]><!--><html lang="ko"><!--<![endif]-->  
+{% include header.html %}
 
-  {% include head.html %}
+<body>
 
-  <body>
+<div class="page-content">
+<div class="wrapper">
+{{ content }}
+</div>
+</div>
 
-    {% include header.html %}
+{% include footer.html %}
 
-    <div class="page-content">
-      <div class="wrapper">
-        {{ content }}
-      </div>
-    </div>
-
-    {% include footer.html %}
-
-  </body>
+</body>
 
 </html>
