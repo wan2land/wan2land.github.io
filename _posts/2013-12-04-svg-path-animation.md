@@ -31,7 +31,7 @@ categories: Dev Frontend
 
 그리고 이 이미지를 SVG로 저장합니다. 그러면 다음과 같은 소스를 볼 수 있습니다.
 
-```xml,linenums
+```xml
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!-- Generator: Adobe Illustrator 16.0.4, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
@@ -74,7 +74,7 @@ categories: Dev Frontend
 저는 여기서 웹에서 쉽게 작업하기 위해서 주석부분을 제거하고, 통일된 형태로 바꾸었습니다. 그리고 HTML문서에 다음과 같이 삽입하였습니다.
 
 
-```html,linenums
+```html
 <!DOCTYPE HTML>
 <!--//
 This web page has been developed by Wani.
@@ -148,21 +148,24 @@ This web page has been developed by Wani.
 
 그러면 다음과 같이 Javascript를 작성할 수 있습니다. 높은 이해를 돕고자 jQuery를 사용하였습니다.
 
-```javascript,linenums
+```javascript
 (function($){
-	var pathes = $('#XignifyLogo').find('path');
-	pathes.each(function( i, path ) {
-		var total_length = path.getTotalLength(); // 1번 부분
-		
-		path.style.strokeDasharray = total_length + " " + total_length; // 2번 부분
-		path.style.strokeDashoffset = total_length; // 3번 부분
+    var pathes = $('#XignifyLogo').find('path');
+    pathes.each(function( i, path ) {
+        // 1번 부분
+        var total_length = path.getTotalLength();
 
-		// 4번 부분
-		$(path).animate({
-			"strokeDashoffset" : 0
-		}, 1500);
-	});
-	//}
+        // 2번 부분
+        path.style.strokeDasharray = total_length + " " + total_length;
+
+        // 3번 부분
+        path.style.strokeDashoffset = total_length;
+
+        // 4번 부분
+        $(path).animate({
+            "strokeDashoffset" : 0
+        }, 1500);
+    });
 })(jQuery);
 ```
 

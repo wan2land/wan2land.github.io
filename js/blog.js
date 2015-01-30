@@ -22,17 +22,16 @@
 
     $('a[href^="http://"]').not('a[href*=wani\\.kr]').attr('target','_blank');
     $('pre > code').each(function() {
-        var $this = $(this);
-        var options = $this.data('lang');
-        if (options && options !== 'text') {
-            options = options.split(',');
-            $this.addClass('prettyprint lang-' + options[0]);
-            if (options[1] && options[1] === 'linenums') {
-                $this.addClass('linenums');
+        var lines = this.innerHTML.split("\n");
+        if (lines.length > 5) {
+            var i;
+            var ol = '<ol class="linenums">';
+            for (i in lines) {
+                ol += '<li>' + lines[i] + '</li>';
             }
+            this.innerHTML = ol;
+            $(this).addClass('linenums');
         }
     });
-
-    prettyPrint();
 
 })(this, jQuery);

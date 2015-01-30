@@ -17,7 +17,7 @@ categories: Dev Jekyll
 
 그리고 해당 파일을 제 Jekyll폴더로 옮깁니다. 그리고 아까 이야기한 참고사이트에도 명시되어있는 다음 명령어를 실행합니다.
 
-```bash,linenums
+```bash
 $ ruby -rubygems -e 'require "jekyll-import";
     JekyllImport::Importers::Ghost.run({
       "dbfile"   => "/path/to/your/ghost.db"

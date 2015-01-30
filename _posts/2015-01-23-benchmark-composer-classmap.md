@@ -13,7 +13,7 @@ Convert PSR-0/4 autoloading to classmap to get a faster autoloader. This is reco
 
 뭐 요딴식으로 적혀있습니다. 간단히 얘기하면 classmap을 이용해서 autoload의 성능을 향상시킨다는 것!
 
-Composer를 설치하시면 기본적으로 PSR-0 또는 PSR-4로 지정된 클래스 구조에 따라서 알아서 클래스를 오토로드합니다. 그리고 그 임시 파일들(Composer에서 사용하는)은 `vendor/composer/` 디렉터리 안에 정의되어있습니다. 원래 `autoload_classmap.php` 파일안에는 `composer.json`에서 `class_map`이라는 설정에 대해서만 내용이 생성됩니다. ([참고링크](https://getcomposer.org/doc/04-schema.md#classmap" target="_blank)) 그러나 방금 말한 `--optimize-autoloader` 옵션을 사용하면 현재 프로젝트 내부에 있는 모든 클래스를 `classmap`의 형태로 등록하고 사용하게 됩니다.
+Composer를 설치하시면 기본적으로 PSR-0 또는 PSR-4로 지정된 클래스 구조에 따라서 알아서 클래스를 오토로드합니다. 그리고 그 임시 파일들(Composer에서 사용하는)은 `vendor/composer/` 디렉터리 안에 정의되어있습니다. 원래 `autoload_classmap.php` 파일안에는 `composer.json`에서 `class_map`이라는 설정에 대해서만 내용이 생성됩니다. ([참고링크](https://getcomposer.org/doc/04-schema.md#classmap)) 그러나 방금 말한 `--optimize-autoloader` 옵션을 사용하면 현재 프로젝트 내부에 있는 모든 클래스를 `classmap`의 형태로 등록하고 사용하게 됩니다.
 
 ## 사용법
 
@@ -53,7 +53,7 @@ $ composer dump-autoload -o
 
 기존에 사용하던 프로젝트(Slim 기반의)에 다음과 같이 소스를 작성하고 각 10번씩 테스트 해보았습니다. 뭐 물론, 시행횟수가 엄청 작아서 비교하기 애매한 수치이긴 합니다.
 
-```php,linenums
+```php
 $start = [
     "time" => explode(' ', microtime()),
     "memory" => memory_get_usage(),
