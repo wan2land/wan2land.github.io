@@ -54,6 +54,7 @@ $ composer dump-autoload -o
 기존에 사용하던 프로젝트(Slim 기반의)에 다음과 같이 소스를 작성하고 각 10번씩 테스트 해보았습니다. 뭐 물론, 시행횟수가 엄청 작아서 비교하기 애매한 수치이긴 합니다.
 
 ```php
+<?php
 $start = [
     "time" => explode(' ', microtime()),
     "memory" => memory_get_usage(),

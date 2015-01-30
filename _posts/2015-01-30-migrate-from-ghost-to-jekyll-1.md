@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "Ghost에서 Jekyll로 이사하기(1) - 글 가져오기"
-date:   2015-01-30 10:42:00
+title: "Ghost에서 Jekyll로 이사하기(1) - 글 가져오기"
+date: 2015-01-30 10:42:00
 categories: Dev Jekyll
 ---
 
