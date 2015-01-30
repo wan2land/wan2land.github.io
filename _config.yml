@@ -3,7 +3,6 @@ title: 완이의 웹으로 먹고살기
 email: me@wani.kr
 
 markdown: redcarpet
-highlighter: false
 redcarpet:
   extensions: [
     "strikethrough",
