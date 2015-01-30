@@ -5,11 +5,15 @@
     //Disqus
     var disqus_shortname = global.disqus_shortname = 'wan2land';
 
-    var s = document.createElement('script');
-    s.async = true;
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+
+    var s = document.createElement('script'); s.async = true;
     s.type = 'text/javascript';
     s.src = '//' + disqus_shortname + '.disqus.com/count.js';
-    document.getElementsByTagName('HEAD')[0].appendChild(s);
+    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+
 
     //Google Analytics
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
