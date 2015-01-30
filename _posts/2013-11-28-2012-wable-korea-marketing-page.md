@@ -2,8 +2,9 @@
 layout: post
 title: '[2012] Wable Korea Marketing Page'
 date: 2013-11-28 19:34:30 +09:00
+categories: Work Website
 ---
-![Wable Korea Marketing]({{ site.url }}/images/work/website/wable.png)
+![Wable Korea Marketing]({{ site.url }}/images/work/website/wable-marketing.png)
 
 2012년 말에 한달정도 작업한 걸로 기억납니다. 기존 메인페이지가 있는상태에 메뉴 하나만 추가해서 작업하였습니다.
 
