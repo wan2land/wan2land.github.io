@@ -2,10 +2,16 @@ title: 완이의 웹으로 먹고살기
 
 email: me@wani.kr
 
-description: > # this means to ignore newlines until "baseurl:"
-  개발 6년차,  Front-End로 시작했지만 한걸음씩 Back-End쪽으로 걸음마 중.
-
 markdown: redcarpet
+highlighter: false
+redcarpet:
+  extensions: [
+    "strikethrough",
+    "footnotes",
+    "autolink",
+    "underline"
+  ]
+
 permalink: /:categories/:title
 paginate_path: /page/:num
 
@@ -15,3 +21,6 @@ author:
   twitter: wan2land
   github: wan2land
 
+gems: [
+    'jekyll-less'
+  ]

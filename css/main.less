@@ -1,0 +1,648 @@
+@import "../_less/normalize.less";
+
+@import "../_less/initialize.less";
+@import "../_less/utility.less";
+
+#site-head {
+    position: relative;
+    display: table;
+    width: 100%;
+    height: 400px;
+    margin-bottom:10px;
+    text-align: center;
+    color: #005000;
+    background:#fff no-repeat left center;
+    background-size:auto 100%;
+}
+/* Yo-logo. Yolo-go. Upload one in ghost/settings/ */
+#blog-logo img {
+    display: block;
+    max-height: 100px;
+    width: auto;
+    margin: 0 auto;
+    line-height: 0;
+}
+#back {
+    color: rgba(0, 0, 0, 0.2);
+    position: fixed;
+    top: 8px;
+    left: 8px;
+    padding: 6px;
+    font-size: 16px;
+}
+/* The details of your blog. Defined in ghost/settings/ */
+.blog-title {
+    margin: 10px 0 10px 0;
+    font-size: 50px;
+    letter-spacing: -1px;
+}
+.blog-title > a {
+    text-decoration:none;
+    color:inherit;
+}
+.blog-description {
+    margin: 0;
+    color:#008000;
+    font-size: 18px;
+    line-height: 1.5em;
+    font-weight: 300;
+    letter-spacing: 0;
+}
+
+/* Every post, on every page, gets this style on its <article> tag */
+.post {
+    position: relative;
+    width: 80%;
+    max-width: 700px;
+    margin: 0 auto 80px auto;
+    padding-bottom: 60px;
+    border-bottom: #EBF2F6 1px solid;
+    word-break: break-word;
+    hyphens: auto;
+}
+/* Add a little circle in the middle of the border-bottom on our .post
+     just for the lolz and stylepoints. */
+.post:after {
+    display: block;
+    content: "";
+    width: 7px;
+    height: 7px;
+    border: #E7EEF2 1px solid;
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    margin-left: -5px;
+    background: #fff;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    border-radius: 100%;
+    box-shadow: #fff 0 0 0 5px;
+}
+.post-title {
+    margin: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    padding-left: 3px;
+    font-size:25px;
+    a {
+        text-decoration: none;
+    }
+}
+.post-excerpt p {
+    margin: 16px 0 0 0;
+    font-size: 0.9em;
+    line-height: 1.6em;
+    color: #888;
+}
+.post-meta {
+    display: inline-block;
+    margin: 0 0 5px 0;
+    font-size: 15px;
+    color: #9EABB3;
+}
+.post-meta a {
+    color: #9EABB3;
+    text-decoration: none;
+}
+.post-meta a:hover {
+    text-decoration: underline;
+}
+.user-meta {
+    position: relative;
+    padding: 3px 40px 0 100px;
+    min-height: 77px;
+}
+.user-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.user-name {
+    display: block;
+    font-weight: bold;
+}
+.user-bio {
+    display: block;
+    max-width: 440px;
+    font-size: 14px;
+    line-height: 1.5em;
+}
+.publish-meta {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 43px 0 40px 0;
+    text-align: right;
+}
+.publish-heading {
+    display: block;
+    font-weight: bold;
+}
+.publish-date {
+    display: block;
+    font-size: 14px;
+    line-height: 1.5em;
+}
+/* ==========================================================================
+     5. Single Post - When you click on an individual post
+     ========================================================================== */
+/* Tweak the .post wrapper style */
+.post-single {
+    margin-top: 0;
+    border-bottom: none;
+}
+/* Kill that stylish little circle that was on the border, too */
+.post-single:after {
+    display: none;
+}
+/* Insert some mad padding up in the header for better spacing */
+.post-single .post-header {
+    padding: 40px 0 10px 0;
+}
+
+.post-single .post-title {
+    font-size:35px;
+    white-space:normal;
+}
+
+/* Keep large images within the bounds of the post-width */
+.post-content {
+    margin-top: 2em;
+    min-height:200px;
+}
+.post-content img {
+    display: block;
+    max-width: 100%;
+    margin: 0 auto;
+}
+.post-content h3,
+.post-content h4,
+.post-content h5,
+.post-content h6 {
+    margin: 2em 0;
+}
+.post-content h2 {
+    font-size: 25px;
+    text-align: center;
+}
+.post-content ul + h2,
+.post-content div + h2,
+.post-content iframe + h2,
+.post-content blockquote + h2,
+.post-content pre + h2,
+.post-content p + h2 {
+    padding-top: 3em;
+    margin-top: 3em;
+    margin-bottom: 3em;
+    border-top: 1px solid #ccc;
+}
+.post-content h3 {
+    font-size: 24px;
+}
+.post-content h4 {
+    font-size: 23px;
+}
+.post-content h5 {
+    font-size: 22px;
+}
+.post-content h6 {
+    font-size: 21px;
+}
+.post-content blockquote {
+    background:#F1F6F8;
+    margin:0;
+    border:0;
+    padding:15px 15px 15px 12px;
+    border-left:3px solid #46B1D7;
+    font-size:14px;
+}
+.post-content blockquote h1,
+.post-content blockquote h2,
+.post-content blockquote h3,
+.post-content blockquote h4,
+.post-content blockquote h5,
+.post-content blockquote h6 {
+    color:#5bc0de;
+    margin:0 0 12px 0;
+    font-size:22px;
+    line-height:1.1;
+}
+.post-content blockquote p {
+    margin:0;padding:0;
+    font-size:16px;
+    line-height:1.5;
+}
+.post-content ul {
+    list-style:none;
+}
+.post-content ul > li:before {
+    font-family:'FontAwesome';
+    font-style: normal;
+    font-weight: normal;
+    speak: none;
+
+    display: inline-block;
+    text-decoration: inherit;
+    width:22px;
+    text-align: center;
+
+    font-variant: normal;
+    text-transform: none;
+
+    line-height:1;
+
+    margin-left: -22px;
+    content: '\f105';
+}
+
+.post-content p a {
+    color: #0074D9;
+}
+.post-content p a:hover {
+    color: #7FDBFF;
+}
+
+.post-content ul li a:hover,
+.post-content blockquote a:hover {
+    color: #0074D9;
+}
+
+.post-content pre code {
+    display:block;
+    margin:10px;
+}
+.post-content pre code.linenums {
+    margin:0;
+    padding:10px 0;
+-webkit-box-shadow: inset 41px 0 0 #ececec, inset 42px 0 0 #dddddd;
+-moz-box-shadow: inset 41px 0 0 #ececec, inset 42px 0 0 #dddddd;
+box-shadow: inset 41px 0 0 #ececec, inset 42px 0 0 #dddddd;
+}
+
+.post-content .video-wrap {
+    position:relative;
+    padding-bottom:56.25%;
+    padding-top:30px;
+    height:0;
+    overflow:hidden;
+}
+
+.post-content .video-wrap > object,
+.post-content .video-wrap > embed,
+.post-content .video-wrap > iframe {
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+}
+
+ol.linenums{margin:0;padding-left:48px;}
+ol.linenums > li {
+    color:#aaaaaa;
+    line-height:1.3;
+}
+
+.pln{color:#333}
+.str{color:#7B9B40}
+.kwd{color:#205CB2}
+.com{color:#928E8E} /* 주석 */
+.typ{color:#606}
+.lit{color:#EB4818}
+.pun{color:#333;}
+.opn,.clo{color:#660}
+.tag{color:#008}
+.atn{color:#606}
+.atv{color:#080}
+.dec,.var{color:#606}
+.fun{color:red}
+
+
+pre.prettyprint{padding:2px;border:1px solid #888}
+
+
+/* The author credit area after the post */
+.post-footer {
+    position: relative;
+    margin: 40px 0 0 0;
+    padding: 40px 0 0 0;
+    border-top: #EBF2F6 1px solid;
+}
+.post-footer h4 {
+    font-size: 18px;
+    margin: 0;
+}
+.post-footer p {
+    margin: 10px 0;
+    font-size: 14px;
+    line-height: 1.6em;
+}
+/* Create some space to the right for the share links */
+.post-footer .author {
+    float: left;
+    margin-right: 180px;
+}
+/* Drop the share links in the space to the right.
+     Doing it like this means it's easier for the author bio
+     to be flexible at smaller screen sizes while the share
+     links remain at a fixed width the whole time */
+.post-footer .share {
+    float: right;
+    width: 140px;
+}
+.post-footer .share a {
+    font-size: 18px;
+    display: inline-block;
+    margin: 14px 16px 16px 0;
+    color: #BBC7CC;
+}
+.post-footer .share a:hover {
+    color: #50585D;
+}
+.post-footer > #disqus_thread {
+    clear: both;
+}
+/* ==========================================================================
+     6. Third Party Elements - Embeds from other services
+     ========================================================================== */
+/* Github */
+.gist table {
+    margin: 0;
+    font-size: 14px;
+}
+.gist .line-number {
+    min-width: 25px;
+    font-size: 11px;
+}
+/* ==========================================================================
+     7. Pagination - Tools to let you flick between pages
+     ========================================================================== */
+/* The main wrapper for our pagination links */
+.pagination {
+    position: relative;
+    width: 80%;
+    max-width: 700px;
+    margin: 40px auto;
+    font-size: 13px;
+    color: #9EABB3;
+    text-align: center;
+}
+.pagination a {
+    color: #9EABB3;
+}
+/* Push the previous/next links out to the left/right */
+.older-posts,
+.newer-posts {
+    position: absolute;
+    display: inline-block;
+    padding: 0 15px;
+    border: #EBF2F6 2px solid;
+    text-decoration: none;
+    border-radius: 30px;
+    transition: border ease 0.3s;
+}
+.older-posts {
+    right: 0;
+}
+.page-number {
+    display: inline-block;
+    padding: 2px 0;
+}
+.newer-posts {
+    left: 0;
+}
+.older-posts:hover,
+.newer-posts:hover {
+    border-color: #9EABB3;
+}
+/* ==========================================================================
+     8. Footer - The bottom of every page
+     ========================================================================== */
+.site-footer {
+    position: relative;
+    margin: 80px 0 0 0;
+    padding: 40px 0;
+    border-top: #C8D3EF 1px solid;
+    font-size: 13px;
+    line-height: 1.7em;
+    color: #FFFFFF;
+    text-align: center;
+    background: #AFD205;
+}
+.site-footer a {
+    color: #005000;
+    text-decoration: underline;
+}
+.site-footer a:hover {
+    color: #50585D;
+}
+.poweredby .icon-ghost {
+    font-weight: 700;
+    text-decoration: none;
+}
+.poweredby .icon-ghost:hover {
+    text-decoration: none;
+}
+.poweredby .icon-ghost:before {
+    font-size: 10px;
+    margin-right: 0.2em;
+}
+/* The subscribe icon on the footer */
+.subscribe {
+    width: 28px;
+    height: 28px;
+    position: absolute;
+    top: -14px;
+    left: 50%;
+    margin-left: -15px;
+    border: #C8D3EF 1px solid;
+    text-align: center;
+    line-height: 24px;
+    border-radius: 50px;
+    background: #fff;
+    transition: box-shadow 0.5s;
+}
+/* The RSS icon, inserted via icon font */
+.subscribe:before {
+    color: #005000;
+    font-size: 13px;
+    position: absolute;
+    top: 7px;
+    left: 10px;
+    font-weight: bold;
+    transition: color 0.5s ease;
+}
+/* Add a box shadow to on hover */
+.subscribe:hover {
+    box-shadow: rgba(0, 0, 0, 0.05) 0 0 0 3px;
+    transition: box-shadow 0.25s;
+}
+.subscribe:hover:before {
+    color: #50585D;
+}
+/* CSS tooltip saying "Subscribe!" - initially hidden */
+.tooltip {
+    opacity: 0;
+    display: inline-block;
+    padding: 4px 8px 5px 8px;
+    position: absolute;
+    top: -23px;
+    left: -23px;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 11px;
+    font-weight: bold;
+    line-height: 1em;
+    text-align: center;
+    background: #50585D;
+    border-radius: 20px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+    transition: opacity 0.3s ease, top 0.3s ease;
+}
+/* The little chiclet arrow under the tooltip, pointing down */
+.tooltip:after {
+    content: "";
+    border-width: 5px 5px 0 5px;
+    border-style: solid;
+    border-color: #50585D transparent;
+    display: block;
+    position: absolute;
+    bottom: -4px;
+    left: 50%;
+    margin-left: -5px;
+    z-index: 220;
+    width: 0;
+}
+/* On hover, show the tooltip! */
+.subscribe:hover .tooltip {
+    opacity: 1;
+    top: -33px;
+}
+/* ==========================================================================
+     9. Media Queries - Smaller than 900px
+     ========================================================================== */
+@media only screen and (max-width: 900px) {
+    blockquote {
+    margin-left: 0;
+    }
+    #site-head {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    height: auto;
+    min-height: 240px;
+    padding: 15% 0;
+    }
+    .blog-title {
+    font-size: 40px;
+    letter-spacing: -1px;
+    }
+    .blog-description {
+    font-size: 17px;
+    line-height: 1.5em;
+    }
+    .post {
+    font-size: 0.9em;
+    line-height: 1.6em;
+    }
+    .post-single {
+    padding-bottom: 10px;
+    }
+    .post-template .post-header {
+    padding: 40px 0;
+    }
+    h1 {
+    font-size: 48px;
+    text-indent: -2px;
+    }
+    h2 {
+    font-size: 38px;
+    }
+    h3 {
+    font-size: 33px;
+    }
+    h4 {
+    font-size: 28px;
+    }
+}
+/* ==========================================================================
+     10. Media Queries - Smaller than 500px
+     ========================================================================== */
+@media only screen and (max-width: 500px) {
+    #blog-logo img {
+        max-height: 80px;
+    }
+    .inner,
+    .pagination {
+        width: auto;
+        margin-left: 16px;
+        margin-right: 16px;
+    }
+    .post {
+        width: auto;
+        margin-left: 16px;
+        margin-right: 16px;
+        font-size: 0.8em;
+        line-height: 1.6em;
+    }
+    #site-head {
+    padding: 10% 0;
+    }
+    .blog-title {
+    font-size: 30px;
+    }
+    .blog-description {
+    font-size: 15px;
+    }
+    h1,
+    h2 {
+    font-size: 30px;
+    line-height: 1.1em;
+    letter-spacing: -1px;
+    }
+    h3 {
+    font-size: 28px;
+    }
+    h4 {
+    font-size: 23px;
+    }
+    .post-single {
+    padding-bottom: 0;
+    }
+    .post-template .post-header {
+    padding: 30px 0;
+    }
+    .post-meta {
+    font-size: 13px;
+    }
+    .post-footer {
+    padding: 40px 0;
+    text-align: center;
+    }
+    .post-footer .author {
+    margin: 0 0 20px 0;
+    padding: 0 0 16px 0;
+    border-bottom: #EBF2F6 1px dashed;
+    }
+    .post-footer .share {
+    position: static;
+    width: auto;
+    }
+    .post-footer .share a {
+    margin: 14px 8px 0 8px;
+    }
+    .older-posts,
+    .newer-posts {
+    position: static;
+    margin: 10px 0;
+    }
+    .page-number {
+    display: block;
+    }
+    .site-footer {
+    margin-top: 60px;
+    font-size: 11px;
+    }
+}
+
+

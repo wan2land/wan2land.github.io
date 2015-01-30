@@ -8,18 +8,58 @@ This web page has been developed by Wani.
 <!--[if IE 7]><html class="ie7" lang="ko"><![endif]-->  
 <!--[if IE 8]><html class="ie8" lang="ko"><![endif]-->  
 <!--[if gt IE 8]><!--><html lang="ko"><!--<![endif]-->  
-{% include header.html %}
+<head>  
 
-<body>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />  
 
-<div class="page-content">
-<div class="wrapper">
+<title>{{ site.title }}</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<meta name="description" content="{{ site.description }}">
+
+<!--[if lt IE 9]>  
+<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script>  
+<![endif]-->
+
+<link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}" />
+<link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}" />
+<link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" />
+
+<link rel="stylesheet" href='https://cdn.rawgit.com/openhiun/hangul/8f1a1056cd0988ccca9fc96e6cf2aaf125eea5e5/nanumbarungothic.css' />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" />
+
+<!--[if lt IE 9]>  
+<script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>  
+<![endif]-->
+
+</head>
+<body class="post-template tag-php tag-development tag-composer">
+
+    <header id="site-head" style="background-image: url(/images/theme/spring.png)">
+        <div class="vertical">
+            <div id="site-head-content" class="inner">
+                <h1 class="blog-title"><a href="/">완이의 웹으로 먹고살기</a></h1>
+                <h2 class="blog-description">개발 6년차,  Front-End로 시작했지만 한걸음씩 Back-End쪽으로 걸음마 중.</h2>
+            </div>
+        </div>
+    </header>
+
+    <main class="content" role="main">
 {{ content }}
-</div>
-</div>
+    </main>
 
-{% include footer.html %}
+    <footer class="site-footer">
+        <a class="subscribe fa fa-rss" href="{{ "/feed.xml" | prepend: site.baseurl}}"><span class="tooltip">Subscribe!</span></a>
+        <div class="inner">
+             <section class="copyright">All content copyright <a href="/">{{ site.title }}</a> &copy; 2015 &bull; All rights reserved.</section>
+             <section class="poweredby">Proudly published with <a href="http://jekyllrb.com">Jekyll</a>. Special Thanks To <a href="http://kr.dnsever.com" target="dnsever"><img src="http://banner.dnsever.com/dnsever-banner_62x15.gif" border="0" alt="DNS Powered by DNSEver.com"></a></section>
+        </div>
+    </footer>
 
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.min.js"></script>
+<script src="/js/blog.js"></script>
 </body>
 
 </html>
