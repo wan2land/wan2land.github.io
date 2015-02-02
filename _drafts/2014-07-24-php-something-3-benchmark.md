@@ -1,16 +1,17 @@
 ---
 layout: post
-title: PHP 소소한 Benchmark 모음.
+title: PHP 꼴랑이거(3) - is_null, isset 비교.
+date: 2014-07-24 20:04:07 +09:00
+categories: Dev PHP
 ---
-## Null 비교
 
 `is_null()`과 `isset()` 그리고 직접 `== null`과 비교했을 때 어느것이 성능이 나은지 비교해보았습니다.
 
 소스는 다음 소스를 사용하였습니다.
 
-https://gist.github.com/wan2land/bb0917420204c9ce596f
+<https://gist.github.com/wan2land/bb0917420204c9ce596f>
 
-```prettyprint lang-php linenum
+```php
 <?php
 // benchmark.php
 function benchmark( $callback, $times = 100 ) {
@@ -31,7 +32,7 @@ function benchmark( $callback, $times = 100 ) {
 }
 ```
 
-```prettyprint lang-php linenum
+```php
 <?php
 // compare-null.php
 require "benchmark.php";
@@ -88,4 +89,8 @@ bool(true)
 bool(true)
 */
 ```
+
+## 결론
+
+
 

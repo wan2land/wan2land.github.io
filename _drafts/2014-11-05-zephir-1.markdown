@@ -1,0 +1,185 @@
+---
+layout: post
+title: Zephir (1) - Hello World
+date: 2014-11-05 14:04:11.000000000 +09:00
+---
+Zephir.
+
+최근 PHP개발자 모임에서 프레임워크 이야기를 하고있었습니다. 그러던 중 과연 앞으로 PHP 프레임워크는 어떻게 대해 고민하게 되었습니다. 요즘 상태가 Laravel로 대동단결되는 분위기 였으니까요. 그러던 중 Phalcon이라는 Framework를 던지게 되었습니다.
+
+Laravel는 모던한 기능을 다 제공하는 대신에 속도가 느립니다. Phalcon은 성능을 보장합니다. 대신에 순수 PHP로 작성되지 않아서 설치하기가 복잡합니다.
+
+대충 이렇게 요약이 되더군요.
+
+## Why Zephir?
+
+뭐 서문이 너무 길었는데..
+
+Phalcon을 조사하던 중 Zephir라는 재미난 언어를 보게 되었습니다. phalcon팀에서 제작된 언어인데요, 한마디로 요약하자면 C와 PHP중간 정도의 위치에 있는 언어였습니다. 
+
+사용하는 이유는 간단합니다. PHP는 생선상이 어마어마합니다. C는 빠릅니다. 또, Low-Level에 접근이 가능합니다. 이 두가지 언어의 장점을 모은 것입니다.
+
+동작원리는 다음과 같고, 자세한 설명은 공식사이트에 더 잘나와있습니다. :)
+
+![Zephir Scheme](/content/images/2014/Nov/zephir_scheme.png)
+
+## Install
+
+공식사이트에는 다음과 같이 나와있습니다.
+
+```prettyprint lang-bash
+$ git clone https://github.com/phalcon/zephir
+$ cd zephir
+$ ./install-json
+$ ./install -c
+```
+
+아쉽게도 아직 brew는 지원하지 않는 것 같습니다. 그리고 한가지 주의하셔야 하는 것은 처음 `git clone`할 때 사용한 폴더를 지우면 zephir가 실행이 되지 않더라구요. (젠장..) 아마 제가 brew에만 너무 길들여져 있어서 그런지도 모르겠습니다. 여튼 그렇기 때문에 처음에 설치할 폴더의 위치를 잘 잡으셔야 합니다.
+
+저는 그냥 brew 패키지 폴더인 `/user/local/Cellar/zephir`에 설치하였습니다.
+
+### 개발환경
+
+새로운 언어라서 개발환경이 마땅치 않는데요, Zephir팀에서도 그 부분을 고민하였나봅니다. 
+
+![sublime zephir](/content/images/2014/Nov/package_zephir.png)
+
+- [sublime.wbond.net/packages/Zephir](https://sublime.wbond.net/packages/Zephir" target="_blank)
+
+서브라임에서 syntax highlight를 제공해주니 package control을 이용해서 설치하도록 합시다. :) **by The Phalcon Team**라는 내용이 가장 인상깊었습니다.
+
+~~언어도 우리가 만들고 개발환경도 우리가 만들고..~~
+
+## Hello World
+
+![zephir init](/content/images/2014/Nov/zephir_init-1.png)
+
+`zephir init`이라는 명령어를 통해 스켈레톤 폴더를 생성해줍니다.
+
+![](/content/images/2014/Nov/example-1.png)
+
+일단은 파일구조를 잘 보셔야 합니다. 저는 프로젝트 이름을 example로 했기 때문에 내부에 example폴더가 생성이 됩니다. 제가 만든 프로젝트 이름을 네임스페이스 시작으로 프로젝트를 작성해나가시면 됩니다. 폴더명과 파일명이 네임스페이스와 내부 클래스와 같아야 합니다. 그렇지 않으면 프로젝트 빌드시에 에러가 발생합니다.
+
+![zephir build](/content/images/2014/Nov/zephir_build.png)
+
+빌드를 하고 나면 알아서 모듈파일(.so)을 만들고 자동으로 추가된다고 합니다. (메뉴얼을 따르면)
+
+그렇지만 막상 제 개발환경에서는 `php -m | grep example`을 쳤을 때는 아무런 결과가 나오지 않았습니다.
+
+### OSX + Brew 환경에서 설정하기
+
+일단은 컴파일 로그파일이 있기 때문에 열어보기로 했습니다.
+
+![compile log](/content/images/2014/Nov/where_is_module.png)
+
+아래쪽에 보면 **Installing shared extensions**라고 되어있는 부분이 있습니다. 오케이, 여기 폴더에 가면 생성된 모듈파일을 볼 수 있을 것 같습니다.
+
+![i got ya](/content/images/2014/Nov/module_i_got_ya.png)
+
+실제로 가보니 example.so파일이 있는 것을 확인했습니다. 이제 `php.ini`에 방금 생성된 모듈을 삽입해주면 됩니다. `conf.d`에 `ext-example.ini`파일을 생성해줍니다.
+
+```prittyprint lang-bash
+$ cd /usr/local/etc/php/5.5/conf.d
+$ vi ext-example.ini
+```
+
+그리고 다음과 같이 작성해서 넣도록 합시다. 여기서 경로는 아까전에 compile.log를 기반으로 찾아낸 `example.so` 파일의 경로를 넣어줍니다.
+
+```prettyprint lang-bash
+[example]
+extension=/usr/local/Cellar/php55/5.5.18/lib/php/extensions/no-debug-non-zts-
+20121212/example.so
+```
+
+![install complete](/content/images/2014/Nov/module_install_confirm.png)
+
+위와 같이 모듈이 제대로 들어갔는지 확인해봅니다. 위와 같이 나오면 성공한 것입니다. 만약 php-fpm으로 사용하는 분이라면 웹에서 `phpinfo();`를 통해서 확인하시면 됩니다.
+
+### 테스트
+
+![](/content/images/2014/Nov/run_1.png)
+
+테스트 코드는 간단하게 작성하였습니다.
+
+![](/content/images/2014/Nov/run_2.png)
+
+결과는 제대로 출력이 되었습니다.
+
+한번 이렇게 설정해놓으면 example모듈에 대해서는 새롭게 설정할 필요가 없었습니다. 매번 `zephir build`를 하면 항상 같은 폴더에 example.so파일을 덮어씌우기 때문입니다.
+
+
+## Benchmark
+
+간단히 소수를 구할 수 있는 클래스를 만들어 보기로 했습니다. 일단 PHP로는 다음과 같이 작성할 수 있습니다.
+
+```prettyprint lang-php linenums
+<?php
+namespace Example;
+
+class NaturalNumber
+{
+   public static function isPrime($number)
+    {
+    	$len = (int)sqrt($number);
+    	
+    	for( $i = 2; $i <= $len; $i++) {
+    		if ($number % $i == 0) {
+    			return false;
+    		}
+    	}
+    	return true;
+    }
+}
+```
+
+위 소스를 기반으로 Zephir로 다시 작성해보았습니다.
+
+```prettyprint lang-java linenums
+namespace Example;
+
+class NaturalNumber
+{
+
+    public static function isPrime(int number)
+    {
+    	int len;
+    	let len = (int)sqrt(number);
+
+    	int i = 2;
+    	while i <= len {
+
+    		if number % i == 0 {
+    			return false;
+    		}
+    		let i = i + 1;
+    	}
+
+    	return true;
+    }
+}
+
+```
+
+매우 유사합니다. 자료형이 명확하게 명시되어야 하는 부분과 `if`, `while`, `let`이라는 부분이 기존 PHP와 달라보입니다.
+
+결과는 당연히 PHP와 동일하게 돌아갑니다. 
+
+간단하게 Benchmark소스를 작성합시다. 다음 소스를 100번씩 테스트 해볼 것입니다.
+
+```prettyprint lang-php linenums
+for( $i = 2; $i < 100; $i++) {
+	NaturalNumber::isPrime($i);
+}
+```
+
+![benchmark](/content/images/2014/Nov/benchmark.png)
+
+성능은 당연히 Zephir가 빨랐습니다. 이런 단순한 소스에서 조차 차이가 난다면 복잡한 프로그램에서 성능차이는 더 명확하게 차이 날 것 같습니다.
+
+그리고 사실 성능은 Phalcon이 증명을 해주고 있습니다. :)
+
+
+## 참고자료
+
+- [http://zephir-lang.com](http://zephir-lang.com)
+- [http://mygony.com/archives/4396](http://mygony.com/archives/4396)
