@@ -108,6 +108,31 @@
 .post-meta a:hover {
     text-decoration: underline;
 }
+.post-categories {
+    display: inline-block;
+}
+.post-tags {
+    margin-top:10px;
+    color:#60686D;
+    font-size:14px;
+    line-height: 1;
+    &:before {
+        display:inline-block;
+        width: 20px;
+        font-family: "FontAwesome";
+        content: '\f02c';
+    }
+    > span {
+        margin: 0 3px;
+        display:inline-block;
+        padding: 6px 3px 2px;
+        white-space: pre;
+        border: 1px solid #dddddd;
+        background: #f6f6f6;
+        border-radius: 2px;
+        font-family: Inconsolata, monospace, sans-serif;
+    }
+}
 .user-meta {
     position: relative;
     padding: 3px 40px 0 100px;
@@ -383,6 +408,9 @@ code[data-lang] {
 }
 
 
+.post-content .post-tags {
+    margin-bottom:30px;
+}
 
 /* The author credit area after the post */
 .post-footer {
