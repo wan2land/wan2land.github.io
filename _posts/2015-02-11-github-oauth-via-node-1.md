@@ -177,3 +177,10 @@ GET
 ### 마무리
 
 일단 여기까지의 내용을 통해 Github API에서 제공하는 모든 페이지에 접근할 수 있게 되었습니다. 하지만 매번 id, password를 보내는 것은 보안적으로 좋은 방식이 아닙니다. 다음 포스팅에서는 Github App을 생성해서 해당 앱을 통해 토큰을 받아오고 토큰을 통한 인증을 진행하도록 하겠습니다. :-)
+
+
+### 참고자료
+
+- <https://www.base64decode.org>
+- <https://developer.github.com/v3/auth>
+- <http://nodejs.org/api/https.html>
