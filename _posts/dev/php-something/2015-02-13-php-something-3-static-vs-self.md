@@ -1,10 +1,12 @@
 ---
 layout: post
-title: static vs self
-date: 2013-12-26 17:32:11
-categories: dev php
+title: "PHP 꼴랑이거(3) - static과 self의 차이"
+date: 2015-02-13 05:32:11
+categories: Dev PHP
 tags: ['PHP', 'static', 'self']
 ---
+
+원래 본글은 2013년 12월 26일날 포스팅 된 글을 꼴랑이거 시리즈로 묶으면 좋겠다 생각되어 이쪽으로 이전된 글입니다. :)
 
 PHP 객체지향에서 static은 상속이 됩니다. 그리고 그 static메서드 안에서 자기 자신 클래스를 생성하고 싶을때가 있습니다.
 그때 사용할 수 있는 것이 static 일까요 self 일까요?
