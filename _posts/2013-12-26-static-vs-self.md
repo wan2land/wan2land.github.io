@@ -1,12 +1,15 @@
 ---
 layout: post
 title: static vs self
-date: 2013-12-26 17:32:52.000000000 +09:00
+date: 2013-12-26 17:32:11
+categories: dev php
+tags: ['PHP', 'static', 'self']
 ---
+
 PHP 객체지향에서 static은 상속이 됩니다. 그리고 그 static메서드 안에서 자기 자신 클래스를 생성하고 싶을때가 있습니다.
 그때 사용할 수 있는 것이 static 일까요 self 일까요?
 
-```prettyprint lang-php
+```php
 <?php
 
 class Foo {
@@ -30,7 +33,7 @@ var_dump( Bar::func3() );
 
 출력결과는 다음과 같습니다.
 
-```prettyprint lang-sh
+```bash
 $ php new-static.php 
 object(Foo)#1 (0) {
 }
@@ -44,7 +47,8 @@ object(Foo)#1 (0) {
 
 아래 코드는 위의 방식을 활용해서 제가 자주 사용하는 패턴입니다.
 
-```prettyprint lang-php
+```php
+<?php
 namespace Wandu;
 
 class Base {
@@ -67,8 +71,11 @@ class Base {
 	}
 
 ```
+
 모든 클래스에서 Base를 상속받아서 다음과 같이 사용하고 있습니다.
-```prettyprint lang-php
+
+```php
+<?php
 // #1
 InheretedObject::make()->foo();
 // #2
@@ -79,4 +86,5 @@ InheretedObject::make()->foo();
 
 ##참고자료
 
-- http://www.programmerinterview.com/index.php/php-questions/php-self-vs-static/
+- <http://www.programmerinterview.com/index.php/php-questions/php-self-vs-static>
+
