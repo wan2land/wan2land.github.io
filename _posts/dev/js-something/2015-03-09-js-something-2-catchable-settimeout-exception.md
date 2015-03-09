@@ -3,6 +3,7 @@ layout: post
 title: "JS 꼴랑이거(2) - setTimeout에서 발생하는 Exception 잡아내기"
 date: 2015-03-09 16:23:14
 categories: Dev Javascript
+tags: ['Javascript', 'Exception', 'try-catch', 'setTimeout', 'setInterval']
 ---
 
 자바스크립트에서도 예외처리가 가능한데 단순하게 다음과 같이 사용할 수 있습니다.
