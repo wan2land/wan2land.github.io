@@ -27,7 +27,7 @@ Release:	14.04
 Codename:	trusty
 ```
 
-> 참고 : [Cheking Your Ubuntu Version](https://help.ubuntu.com/community/CheckingYourUbuntuVersion)
+- 참고 : [Cheking Your Ubuntu Version](https://help.ubuntu.com/community/CheckingYourUbuntuVersion)
 
 ## 서버시간 보기
 
@@ -68,19 +68,22 @@ $ ntpdate ntp.ubuntu.com
 몇초가 차이가 났는지 조정이 됩니다. 96초라는 어마어마한 차이를 두고 있다니.. 조금 부끄럽네요.
 만약에 해당 서버가 응답을 안 할 수도 있습니다. 그럴때 NTP 서버는 다음 링크에서 찾아볼 수 있습니다.
 
-> [pool.ntp.org](http://www.pool.ntp.org)
+- [pool.ntp.org](http://www.pool.ntp.org)
 
 근데 이 짓을 매번 사람이 할 수 없으니 특정 시간이 되면 컴퓨터가 알아서 할 수 있도록 해야합니다.
 
 ## Crond에 싱크작업 추가하기
 
-Crond은 컴퓨터에서 일정 시간이 되면 지정한 명령어를 수행하도록 하는 데몬입니다. "매일 몇시 몇분이 되면 이런 명령어를 실행해켜줘!" 이런 일을 컴퓨터에게 시킬때 참 편리한 녀석입니다. 명령어는 다음과 같이 입력합시다.
+Crond은 컴퓨터에서 일정 시간이 되면 지정한 명령어를 수행하도록 하는 데몬입니다. "매일 몇시 몇분이
+되면 이런 명령어를 실행해켜줘!" 이런 일을 컴퓨터에게 시킬때 참 편리한 녀석입니다. 명령어는 다음과
+같이 입력합시다.
 
 ```
 $ crontab -e
 ```
 
-그러면 기본 에디터로 실행이 되는데, 보통 `nano`혹은 `vim`이 실행이 될 것입니다. 마지막 라인에 다음과 같이 추가합시다.
+그러면 기본 에디터로 실행이 되는데, 보통 `nano`혹은 `vim`이 실행이 될 것입니다. 마지막 라인에
+다음과 같이 추가합시다.
 
 ```
 0 4 * * * /usr/sbin/ntpdate ntp.ubuntu.com > /dev/null 2>&1
