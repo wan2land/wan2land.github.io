@@ -2,7 +2,8 @@
 layout: post
 title: 우분투에 PHP 5.6 alpha 설치하기.
 date: 2014-01-27 12:09:39.000000000 +09:00
-categories: Dev PHP Ubuntu
+categories: Dev Ubuntu
+tags: ['Ubuntu', 'PHP', 'PHP 5.6', 'install']
 ---
 
 PHP 5.6 Branch가 생성되고 얼마 지나지 않아 지난 2014년 1월 23일 5.6alpha1 버전이 공개되었습니다.
