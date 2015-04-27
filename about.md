@@ -4,8 +4,21 @@ title: About
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](http://jekyllrb.com/)
+![Changwan Jun](/images/about.png)
 
-You can find the source code for the Jekyll new theme at: [github.com/jglovier/jekyll-new](https://github.com/jglovier/jekyll-new)
+<p class="center">거대한 맥북을 들고, EDM크게 듣고, 조금 자주 덕질하는 개발개발인간.</p>
 
-You can find the source code for Jekyll at [github.com/jekyll/jekyll](https://github.com/jekyll/jekyll)
+## Major Skills
+
+<p class="center">PHP / Javascript / LESS</p>
+
+## Other Skills
+
+<p class="center">.Net C# / Python / Swift / Objective-C / Zephir Lang / TypeScript</p>
+
+## Contact
+
+<p class="center">
+    Twitter <a href="http://twitter.com/wan2land">@wan2land</a>
+    / E-Mail <a href="mailto:im@wani.kr">im@wani.kr</a>
+</p>
