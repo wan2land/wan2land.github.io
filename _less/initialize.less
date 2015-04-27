@@ -1,3 +1,13 @@
+
+@default-color: #3A4145;
+@block-background-color: #D6EDFF;
+
+@link-color: #4a4a4a;
+@link-hover-color: #99aaee;
+
+@footer-link-color: #99aaee;
+@footer-link-hover-color: #4a4a4a;
+
 html {
     height: 100%;
     max-height: 100%;
@@ -10,16 +20,16 @@ body {
     font-weight: 300;
     font-size: 20px;
     line-height: 1.6em;
-    color: #3A4145;
+    color: @default-color;
 }
 ::-moz-selection {
     color: #222;
-    background: #D6EDFF;
+    background: @block-background-color;
     text-shadow: none;
 }
 ::selection {
     color: #222;
-    background: #D6EDFF;
+    background: @block-background-color;
     text-shadow: none;
 }
 h1,
@@ -58,11 +68,11 @@ h6 {
     font-size: 20px;
 }
 a {
-    color: #4a4a4a;
+    color: @link-color;
     transition: color ease 0.3s;
 }
 a:hover {
-    color: #99aaee;
+    color: @link-hover-color;
 }
 h1 a,
 h2 a,

@@ -24,7 +24,7 @@
     ga('create', 'UA-35736735-1', 'wani.kr');
     ga('send', 'pageview');
 
-    $('a[href^="http://"]').not('a[href*=wani\\.kr]').attr('target','_blank');
+    $('a[href^="http://"], a[href^="https://"]').not('a[href*=wani\\.kr]').attr('target','_blank');
     $('pre > code').each(function() {
         var lines = this.innerHTML.split("\n");
         if (lines.length > 5) {
@@ -38,4 +38,14 @@
         }
     });
 
+    //Scroll
+    var $window = $(window);
+    var $siteNav = $('#site-nav');
+    $window.bind('scroll', function() {
+        if ($window.scrollTop() > 736) {
+            $siteNav.addClass('active');
+        } else {
+            $siteNav.removeClass('active');
+        }
+    }).trigger('scroll');
 })(this, jQuery);
