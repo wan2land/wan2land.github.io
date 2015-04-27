@@ -20,5 +20,6 @@ permalink: /about/
 
 <p class="center">
     Twitter <a href="http://twitter.com/wan2land">@wan2land</a>
+    / Github <a href="https://github.com/wan2land">github.com/wan2land</a>
     / E-Mail <a href="mailto:im@wani.kr">im@wani.kr</a>
 </p>
