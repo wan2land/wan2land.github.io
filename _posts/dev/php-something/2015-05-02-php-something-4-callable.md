@@ -11,6 +11,7 @@ PHP에서 오늘 살펴볼 녀석은 `callable`이라는 녀석입니다.
 그전에 잠깐 `array_walk()`라는 함수를 보자면 다음과 같이 사용합니다.
 
 ```php
+<?php
 array_walk([1,2,3,4,5], function ($item) {
     echo $item, " ";
 }); // print 1 2 3 4 5
@@ -21,7 +22,7 @@ array_walk([1,2,3,4,5], function ($item) {
 묻는다면 그건 또 아닙니다. 무려 PHP4때부터 지원을 해왔습니다. 어떤 형태로 지원을 했는지 다음과 같습니다.
 
 ```php
-
+<?php
 function arrayWalkHandler($item) {
     echo $item, " ";
 }
@@ -41,6 +42,7 @@ PHP에서는 Scalar타입(이를테면, string, int, bool...)의 타입힌트를
 `call`을 다음과 같이 정의합시다.
 
 ```php
+<?php
 class Caller
 {
     public static function call(callable $x)
@@ -58,13 +60,14 @@ class Caller
 1. 함수를 나타내는 문자열
 2. 클래스와 정적함수를 나타내는 문자열
 3. 클래스와 정적함수를 나타내는 배열
-4. 객체와 정적함수를 나타내는 배열
+4. 객체와 함수를 나타내는 배열
 5. `__invoke`를 내장한 객체
 6. 클로져
 
 그래서 각각에 대해서 테스트 하기 위해 다음과 같이 함수 및 클래스를 정의해봅시다.
 
 ```php
+<?php
 function callableAsAFunction()
 {
     echo "callableAsAFunction!\n";
@@ -104,6 +107,7 @@ $callableAsClosure = function () {
 그리고 각 상황에 대해서 테스트를 해봅시다.
 
 ```php
+<?php
 // 1. 함수를 나타내는 문자열
 Caller::call("callableAsAFunction");
 
@@ -113,8 +117,8 @@ Caller::call("CallableAsAClass::andStaticMethod");
 // 3. 클래스와 정적함수를 나타내는 배열
 Caller::call(array('CallableAsAClass', 'andStaticMethod'));
 
-// 4. 객체와 정적함수를 나타내는 배열
-Caller::call(array(new CallableAsAClass, 'andStaticMethod'));
+// 4. 객체와 함수를 나타내는 배열
+Caller::call(array(new CallableAsAClass, 'andStaticMethod')); // 정적함수도 가능
 Caller::call(array(new CallableAsAClass, 'andMethod'));
 
 // 5. `__invoke`를 내장한 객체
@@ -160,6 +164,7 @@ call with params foo, bar
 함수를 나타내는 문자열(1)은 다음과 같이도 호출이 가능합니다. (실제 프로그램상에선 가급적 사용하면 안됩니다.)
 
 ```php
+<?php
 $func = "callableAsAFunction";
 $func();
 ```
@@ -167,6 +172,7 @@ $func();
 `__invoke`를 내장한 객체(5)와 클로져(6)는 `__invoke()`를 통해서 호출이 가능합니다.
 
 ```php
+<?php
 $func1 = new CallableAsInvokerClass;
 $func1->__invoke();
 
