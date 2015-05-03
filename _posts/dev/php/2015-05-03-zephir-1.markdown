@@ -35,7 +35,7 @@ C와 PHP중간 정도의 위치에 있는 언어였습니다.
 
 공식사이트에는 다음과 같이 나와있습니다.
 
-```prettyprint lang-bash
+```bash
 $ git clone https://github.com/phalcon/zephir
 $ cd zephir
 $ ./install-json
@@ -93,7 +93,7 @@ Team**라는 내용이 가장 인상깊었습니다.
 실제로 가보니 example.so파일이 있는 것을 확인했습니다. 이제 `php.ini`에 방금 생성된 모듈을 삽입해주면 됩니다.
 `conf.d`에 `ext-example.ini`파일을 생성해줍니다.
 
-```prittyprint lang-bash
+```bash
 $ cd /usr/local/etc/php/5.5/conf.d
 $ vi ext-example.ini
 ```
@@ -101,7 +101,7 @@ $ vi ext-example.ini
 그리고 다음과 같이 작성해서 넣도록 합시다. 여기서 경로는 아까전에 compile.log를 기반으로 찾아낸 `example.so` 파일의
 경로를 넣어줍니다.
 
-```prettyprint lang-bash
+```bash
 [example]
 extension=/usr/local/Cellar/php55/5.5.18/lib/php/extensions/no-debug-non-zts-
 20121212/example.so
