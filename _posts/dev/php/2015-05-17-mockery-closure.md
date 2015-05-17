@@ -46,6 +46,10 @@ namespace Wandu\PugSample;
 
 class Customer
 {
+    /**
+     * @param  Closure $handler
+     * @return mixed
+     */
     public function doSomething(Closure $handler)
     {
         return $handler->__invoke($this);
@@ -61,7 +65,7 @@ namespace Wandu\PugSample;
 
 use PHPUnit_Framework_TestCase;
 
-class GreeterTest extends PHPUnit_Framework_TestCase
+class CustomerTest extends PHPUnit_Framework_TestCase
 {
     public function testDoSomething()
     {
@@ -86,6 +90,10 @@ namespace Wandu\PugSample;
 
 class Customer
 {
+    /**
+     * @param  Closure $handler
+     * @return mixed
+     */
     public function doSomething(Closure $handler)
     {
         return 30;
@@ -119,7 +127,7 @@ use Mockery;
 use ReflectionClass;
 use Closure;
 
-class GreeterTest extends PHPUnit_Framework_TestCase
+class CustomerTest extends PHPUnit_Framework_TestCase
 {
 
     public function tearDown()
