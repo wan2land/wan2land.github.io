@@ -119,7 +119,7 @@ class GreeterTest extends PHPUnit_Framework_TestCase
 Reflection을 자세히 보시려면 다음 두 문서를 참고하시면 됩니다.
 
 - [php.net/manual/class.reflectionclass.php](http://php.net/manual/class.reflectionclass.php)
-- [php.net/manual/en/class.reflectionmethod.php](http://php.net/manual/en/class.reflectionmethod.php)
+- [php.net/manual/class.reflectionmethod.php](http://php.net/manual/class.reflectionmethod.php)
 
 물론 위 링크의 상위문서인 Reflection전체를 봐두시면 나중에 도움이 될 것이지만 본 포스팅에서는 위 두가지만 사용합니다.
 Reflection을 간단히 얘기하면 다음과 같습니다.
