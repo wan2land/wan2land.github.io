@@ -2,7 +2,8 @@
 layout: post
 title: "Wandu Template"
 date: 2015-05-31 15:03:15
-categories: 
+categories: Dev PHP Wandu
+tags: ['PHP', 'Wandu', 'Template']
 ---
 
 PHP라는 언어 자체가 원래 시작이 템플릿 언어에서 시작해서 그런지 오래된 소스코드를 보면 템플릿을 별도로 사용한다기 보다는 그냥 HTML 중간중간에 삽입해서 사용하고 있습니다.
