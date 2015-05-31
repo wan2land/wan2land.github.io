@@ -32,5 +32,7 @@ PHP라는 언어 자체가 원래 시작이 템플릿 언어에서 시작해서 
 
 자세한 문서는 실제 패키지 페이지에서 제공하고 있습니다.
 
+![](/images/Shot2015-05-31-3.21.03.png)
+
 [github.com/wandu/template](https://github.com/wandu/template)
 
