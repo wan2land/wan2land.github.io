@@ -1,6 +1,6 @@
 title: 완이의 웹으로 먹고살기
 
-email: me@wani.kr
+email: im@wani.kr
 
 markdown: redcarpet
 redcarpet:
@@ -11,8 +11,8 @@ redcarpet:
     "underline"
   ]
 
-permalink: /:categories/:title
-paginate_path: /page/:num
+permalink: /posts/:year/:month/:day/:title/
+paginate_path: /posts/page/:num
 
 paginate: 10
 
