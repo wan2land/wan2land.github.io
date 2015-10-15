@@ -1,8 +1,7 @@
 ---
 layout: post
 title: "JS 꼴랑이거(2) - setTimeout에서 발생하는 Exception 잡아내기"
-date: 2015-03-09 16:23:14
-categories: Dev Javascript
+date: 2015-03-09 16:23:14 +09:00
 tags: ['Javascript', 'Exception', 'try-catch', 'setTimeout', 'setInterval']
 ---
 

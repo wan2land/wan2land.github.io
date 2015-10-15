@@ -2,7 +2,7 @@
 layout: post
 title: Composer Global로 사용하기.
 date: 2014-06-12 11:25:55 +09:00
-categories: Dev Composer
+tags: ['PHP', 'Composer']
 ---
 
 어느정도 PHP를 사용한 사람들이라면 Composer를 누구나 한번쯤은 사용해보았을 것입니다. 아니, 요즘에는 거의 표준화처럼 자리를 잡게 되었죠.

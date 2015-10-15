@@ -1,8 +1,8 @@
 ---
 layout: post
 title: SVG Path Animation
-date: 2013-12-04 22:46:22.000000000 +09:00
-categories: Dev Frontend
+date: 2013-12-04 22:46:22 +09:00
+tags: ['svg']
 ---
 
 ![Thumbnail](/images/dev/frontend/svg-path-animation.gif)

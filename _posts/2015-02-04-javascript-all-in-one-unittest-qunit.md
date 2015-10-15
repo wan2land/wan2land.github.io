@@ -1,8 +1,7 @@
 ---
 layout: post
 title: "QUnit으로 브라우저, 노드 통합 유닛테스트 환경 구축하기"
-date: 2015-02-04 10:16:36
-categories: Dev QUnit
+date: 2015-02-04 10:16:36 +09:00
 tags: ['Javascript', 'Unittest', 'Qunit']
 ---
 

@@ -1,8 +1,7 @@
 ---
 layout: post
 title: "Wandu Template"
-date: 2015-05-31 15:03:15
-categories: Dev PHP Wandu
+date: 2015-05-31 15:03:15 +09:00
 tags: ['PHP', 'Wandu', 'Template']
 ---
 

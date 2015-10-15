@@ -2,7 +2,7 @@
 layout: post
 title: HTML 파일 기본 구조
 date: 2014-11-20 04:01:17 +09:00
-categories: Dev HTML5
+tags: ['HTML5']
 ---
 웹사이트에서 View를 작업할 때 매번 복사 붙여넣기하는 기본 양식이 있습니다. `<html></html>` 바로 이 녀석말입니다. 스켈레톤이라고 하면 맞는 표현일까요? :)
 

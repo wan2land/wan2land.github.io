@@ -1,8 +1,8 @@
 ---
 layout: post
 title:  "Zeros in PHP"
-date:   2015-01-27 22:26:00
-categories: Dev PHP
+date:   2015-01-27 22:26:00 +09:00
+tags: ['PHP']
 ---
 
 <style type="text/css">

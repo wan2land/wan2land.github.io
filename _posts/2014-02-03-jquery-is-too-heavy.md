@@ -1,8 +1,7 @@
 ---
 layout: post
 title: jQuery는 이제 너무 무겁다.
-date: 2014-02-03 06:05:24
-categories: Dev Javascript
+date: 2014-02-03 06:05:24 +09:00
 tags: ['Javascript', 'Library', 'Micro Framework', 'jQuery']
 ---
 

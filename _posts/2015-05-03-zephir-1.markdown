@@ -1,8 +1,7 @@
 ---
 layout: post
 title: Zephir - Hello World
-date: 2015-05-03 14:04:11
-categories: Dev PHP
+date: 2015-05-03 14:04:11 +09:00
 tags: ['PHP', 'Zephir Lang', 'Phalcon']
 ---
 

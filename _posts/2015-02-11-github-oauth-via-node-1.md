@@ -1,8 +1,7 @@
 ---
 layout: post
 title: "Node.js에서 Github oAuth에 접근해보자 (1)."
-date: 2015-02-11 16:58:46
-categories: Dev Node.js
+date: 2015-02-11 16:58:46 +09:00
 tags: ['Javascript', 'Node.js', 'Github API', 'oAuth']
 ---
 

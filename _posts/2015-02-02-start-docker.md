@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "Docker 시작하기."
-date: 2015-02-02 14:56:42
-categories: Dev Docker
+date: 2015-02-02 14:56:42 +09:00
+tags: ['Docker']
 ---
 
 NHN D2 Fest에서도 들었고, 주변에서도 이야기만 많이 들은 Docker. 대략적인 개념은 알고있고 여튼 서버 관리하기가 편해진다는 말에 시작해보기로 했습니다.

@@ -2,7 +2,7 @@
 layout: post
 title: Git가지고 놀기(2) - Git Diff
 date: 2014-07-15 14:02:12 +09:00
-categories: Dev Git
+tags: ['Git']
 ---
 ## Git diff
 

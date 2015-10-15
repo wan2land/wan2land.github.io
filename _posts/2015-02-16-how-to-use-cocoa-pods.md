@@ -1,8 +1,7 @@
 ---
 layout: post
 title: "Swift 프로젝트에 Cocoa Pods 이용하기"
-date: 2015-02-16 17:26:17
-categories: Dev Swift CocoaPods
+date: 2015-02-16 17:26:17 +09:00
 tags: ['Swift', 'Cocoa Pods', 'Xcode']
 ---
 

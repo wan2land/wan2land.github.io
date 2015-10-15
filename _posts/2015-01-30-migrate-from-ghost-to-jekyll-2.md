@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "Ghost에서 Jekyll로 이사하기(2) - Code Highlighter 설치"
-date: 2015-01-30 10:42:00
-categories: Dev Jekyll
+date: 2015-01-30 10:42:00 +09:00
+tags: ['Jekyll', 'Code Highlighter']
 ---
 
 이전 Ghost 블로그에서는 그냥 Google Prettify를 사용해서 쉽게 해결했었습니다. 그런데 Jekyll에서는, 그리고 Github에서 호스팅하는 환경에서는 이부분의 제약이 좀 있었습니다.

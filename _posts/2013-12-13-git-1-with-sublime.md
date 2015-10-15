@@ -2,7 +2,7 @@
 layout: post
 title: Git가지고 놀기(1) - Sublime과 함께 사용하기.
 date: 2013-12-13 19:49:02 +09:00
-categories: Dev Git
+tags: ['git']
 ---
 예전에 학교에서 버전관리에 대한 수업을 듣고 SVN과 GIT을 그냥 살짝 맛보기로 배웠었습니다. 그리고 몇몇 프로젝트를 하면서 인터넷 검색으로 GIT을 야매로 배웠었지요. 그러던 중, 최근 [프로 Git(컴퓨터 vs 책 블로그)](http://jhrogue.blogspot.kr/2013/10/git-git.html)이라는 글을 읽고 다시한번 Git을 제대로 배워보리라 하고 다짐했습니다..
 

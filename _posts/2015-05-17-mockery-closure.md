@@ -1,8 +1,7 @@
 ---
 layout: post
 title: "Reflection을 활용한 Closure Mockery"
-date: 2015-05-17 11:26:55
-categories: Dev PHP
+date: 2015-05-17 11:26:55 +09:00
 tags: ['PHP', 'PHPUnit', 'Mockery', 'Reflection', 'Closure']
 ---
 

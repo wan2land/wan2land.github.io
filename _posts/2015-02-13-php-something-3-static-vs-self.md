@@ -1,8 +1,7 @@
 ---
 layout: post
 title: "PHP 꼴랑이거(3) - static과 self의 차이"
-date: 2015-02-13 05:32:11
-categories: Dev PHP
+date: 2015-02-13 05:32:11 +09:00
 tags: ['PHP', 'static', 'self']
 ---
 

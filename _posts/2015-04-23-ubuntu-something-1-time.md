@@ -1,8 +1,7 @@
 ---
 layout: post
 title: "Ubuntu 꼴랑이거(1) - 서버 시간이 차이가 날때.."
-date: 2015-04-23 11:20:11
-categories: Dev Ubuntu
+date: 2015-04-23 11:20:11 +09:00
 tags: ['Ubuntu', 'Time']
 ---
 

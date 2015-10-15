@@ -1,8 +1,7 @@
 ---
 layout: post
 title: "PHP 꼴랑이거(4) - Callable"
-date: 2015-05-02 12:47:16
-categories: Dev PHP
+date: 2015-05-02 12:47:16 +09:00
 tags: ['PHP', 'callable', 'Closure']
 ---
 
