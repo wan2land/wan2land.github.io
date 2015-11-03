@@ -20,6 +20,5 @@ author:
   twitter: wan2land
   github: wan2land
 
-gems: [
-    'jekyll-less'
-  ]
+sass:
+    style: compressed

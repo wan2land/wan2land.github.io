@@ -1,13 +1,13 @@
 /* ==========================================================================
    ## Normalize
    ========================================================================== */
-@import "../_less/normalize.less";
+@import "../_scss/normalize";
 
 
 /* ==========================================================================
    ## Initialize (overriding normalize)
    ========================================================================== */
-@import "../_less/initialize.less";
+@import "../_scss/initialize";
 
 
 /* ==========================================================================
@@ -628,11 +628,11 @@ main {
     background: #353535;
 
     a {
-        color: @footer-link-color;
+        color: $footer-link-color;
         text-decoration: underline;
     }
     a:hover {
-        color: @footer-link-hover-color;
+        color: $footer-link-hover-color;
     }
 }
 
@@ -931,5 +931,3 @@ main {
         font-size: 11px;
     }
 }
-
-
