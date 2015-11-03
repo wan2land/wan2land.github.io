@@ -5,15 +5,19 @@ date: 2014-06-12 11:25:55 +09:00
 tags: ['PHP', 'Composer']
 ---
 
-어느정도 PHP를 사용한 사람들이라면 Composer를 누구나 한번쯤은 사용해보았을 것입니다. 아니, 요즘에는 거의 표준화처럼 자리를 잡게 되었죠.
+어느정도 PHP를 사용한 사람들이라면 Composer를 누구나 한번쯤은 사용해보았을 것입니다. 아니, 요즘에는 거의 표준화처럼
+자리를 잡게 되었죠.
 
 ![Composer](/images/dev/composer/logo.png)
 
 근데 의외로 Composer가 Global설치를 지원하는지 모르는 분들이 제법 많습니다. ~~예, 사실 제가 그랬습니다.~~
 
-Global설치가 무엇인고 하니, `bin`을 지원하는 패키지를 위한 것입니다. 예를 들자면 PHP에서 개발용으로 제작된 여러 도구들이 있는데, 이를테면 [phpunit](http://phpunit.de), [phing](http://www.phing.info), [phpdocumentor](http://www.phpdoc.org) 등이 있습니다.
+Global설치가 무엇인고 하니, `bin`을 지원하는 패키지를 위한 것입니다. 예를 들자면 PHP에서 개발용으로 제작된 여러
+도구들이 있는데, 이를테면 [phpunit](http://phpunit.de), [phing](http://www.phing.info),
+[phpdocumentor](http://www.phpdoc.org) 등이 있습니다.
 
-공통점은 대부분 프로젝트에 사용된다는 점이 있습니다. 그리고 프로젝트 배포할때 웹에서 사용되지도 않을 저녀석들을 위해 어마어마하게 많은 용량과 시간을 할당해야하지요..
+공통점은 대부분 프로젝트에 사용된다는 점이 있습니다. 그리고 프로젝트 배포할때 웹에서 사용되지도 않을 저녀석들을 위해
+어마어마하게 많은 용량과 시간을 할당해야하지요..
 
 그럼 바로 시작해보겠습니다.
 
@@ -21,10 +25,11 @@ Global설치가 무엇인고 하니, `bin`을 지원하는 패키지를 위한 �
 
 사용환경은 `OSX 10.9`를 기준으로 설명하였는데, 조금만 응용하면 다른 OS에서도 사용하실 수 있을 것 같습니다.
 
-사용법은 너무나도 간단합니다.
+사용법은 너무나도 간단합니다. `global`키워드를 달고 아무거나 한번만 하면 됩니다. 여기서는 PHPUnit을 설치하도록
+하겠습니다.
 
 ```bash
-$ composer global require 'phpunit/phpunit=3.7.*'
+$ composer global require phpunit/phpunit
 ```
 
 ~~끝.~~
