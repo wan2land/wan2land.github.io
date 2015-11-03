@@ -21,6 +21,5 @@ author:
   github: wan2land
 
 sass:
+    sass_dir: _scss
     style: compressed
-    sass_dir: css
-    
