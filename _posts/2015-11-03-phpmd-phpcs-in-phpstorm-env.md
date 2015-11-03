@@ -2,7 +2,7 @@
 layout: post
 title: PHPStorm 환경에서 Mess Detector, Code Sniffer 설정하기
 date: 2015-11-03 19:59:53 +09:00
-tags: ['PHP', 'Laravel', 'OSX']
+tags: ['PHP', 'Mess Detector', 'Code Sniffer', "PHPStorm"]
 ---
 
 Composer(이하, 컴포저)를 일단 Global 환경에서 사용해야합니다. 해당 내용은 예전에 한번 이야기 한적이 있습니다. 다음
