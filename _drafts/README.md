@@ -83,3 +83,26 @@ http://www.romancortes.com/ficheros/css-coke.html
 
 - http://ko.learnlayout.com/flexbox.html
 - http://www.slideshare.net/donatJ1/beautiful-phpcli-scripts
+
+
+## 다이어그램 그리기
+
+```text
+       +------------+     +------------+
+       |            |     |            |
+       |  CONTEXT   |<-+  |  CONTEXT   |<-+
+       |            |  |  |            |  |
+       +------------+  |  +------------+  |
+                       |                  |
+       +------------+  |  +------------+  |
+       |    getY    |  |  |    getY    |  |
+       |            |  |  |            |  |
+       |     *------+--+  |     *------+--+
+       |            |  |  |            |  |
+       +------------+  |  +------------+  |
+```
+
+ - http://shaky.github.bushong.net
+
+ 
+ 
