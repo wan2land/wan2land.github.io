@@ -24,6 +24,8 @@ return [
 그동안 JSON을 사용하지 않았던 이유가 느릴것 같았기 때문입니다.
 
 ```php
+<?php
+
 // PHP에서 불러오기
 $configPhp = require './configs/config.php';
 
@@ -91,6 +93,8 @@ return [
 **bench.php**
 
 ```php
+<?php
+
 $bench = new Bench;
 
 $bench->run(function () {
@@ -108,13 +112,11 @@ $bench->run(function() {
 
 테스트 환경은 다음과 같습니다.
 
-```
-MacBook Pro Retina 13" Early 2015
-CPU : 3.1 GHz Intel Core i7
-RAM : 16GB 1867 MHz DDR3
-Os : OSX El Capitan 10.11.3
-PHP : 5.6.16
-```
+> MacBook Pro Retina 13" Early 2015
+> CPU : 3.1 GHz Intel Core i7
+> RAM : 16GB 1867 MHz DDR3
+> Os : OSX El Capitan 10.11.3
+> PHP : 5.6.16
 
 그리고, 시간 측정 결과입니다.
 
@@ -157,9 +159,10 @@ Startup Failed => Opcode Caching is disabled for CLI
 ; It's mostly for testing and debugging.
 ; (default "0")
 opcache.enable_cli = 1
+
 ```
 
-그리고 `phpinfo()`를 출력해보니 opcache가 잘 설정되어있음을 알 수 있었습니다.
+그리고 `phpinfo()`를 출력하여 Opcache가 활성화 되었음을 확인하였습니다.
 
 ```
 Zend OPcache
@@ -202,7 +205,7 @@ Times
 
 성능은 다음과 같았습니다.
 
-> Opcache Enabled PHP >>> JSON > ini > Opcache Disabled PHP
+> **Opcache Enabled PHP** >>> **JSON** > **ini** > **Opcache Disabled PHP**
 
 즉, 정리하자면 서버 환경이 Opcache를 사용할 수 있다면 PHP를 Config로 사용하는게
 좋습니다. 그리고 환경이 Opcache가 활성화되어있지 않고, 활성화 할 수 없는
