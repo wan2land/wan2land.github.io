@@ -1,6 +1,6 @@
 ---
 layout: post
-title: '==' 연산자를 사용하면 안되는 이유
+title: "'==' 연산자를 사용하면 안되는 이유"
 date: 2016-03-21 18:48:40 +09:00
 tags: ['php', 'syntax', 'equal', 'same']
 ---

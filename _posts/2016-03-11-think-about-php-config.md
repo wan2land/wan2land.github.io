@@ -112,10 +112,10 @@ $bench->run(function() {
 
 테스트 환경은 다음과 같습니다.
 
-> MacBook Pro Retina 13" Early 2015
-> CPU : 3.1 GHz Intel Core i7
-> RAM : 16GB 1867 MHz DDR3
-> Os : OSX El Capitan 10.11.3
+> MacBook Pro Retina 13" Early 2015  
+> CPU : 3.1 GHz Intel Core i7  
+> RAM : 16GB 1867 MHz DDR3  
+> Os : OSX El Capitan 10.11.3  
 > PHP : 5.6.16
 
 그리고, 시간 측정 결과입니다.
