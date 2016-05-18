@@ -2,7 +2,7 @@
 layout: post
 title: "HomeBrew에서 살펴본 PHP7 Extensions"
 date: 2016-05-18 17:58:21 +09:00
-tags: ['php', 'syntax', 'equal', 'same']
+tags: ['php', 'php7', 'extensions', 'homebrew']
 ---
 
 ```bash
