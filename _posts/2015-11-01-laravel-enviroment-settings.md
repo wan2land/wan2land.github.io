@@ -138,34 +138,52 @@ php -S 0.0.0.0:8080 -t public
 
 테스트를 할때 매번 `localhost:8080` 이런식으로 사용할 수는 없습니다. `laravel.dev` URL을 연결하는 작업을 해봅시다.
 
-PHP 내장 서버는 80번 포트를 사용하기 힘듭니다. 물론, `sudo` 명령어를 통해 80번 포트를 사용할 수는 있으나 이게 매번
-하자면 굉장히 귀찮은 일입니다. 그래서 포트포워딩, 즉 80번 포트로 들어오면 우리가 실행한 서버의 포트로 들어올 수 있도록
-설정을 합니다.
+**16.06.08 수정된 내용**
 
-잠깐 설명하자면 이러한 방식은 나중에 Brew를 통해 설치된 Nginx를 사용할 때에 유용합니다. `brew services start nginx`로
-서버를 실행할 때 Nginx는 root권한이 없기 때문에 80번 포트를 사용할 수 없습니다. OSX에서는 지정 포트는 root권한으로
-실행하도록 하고 있기 때문입니다.
+전에는 `brew services`라는 명령어가 `sudo`로 동작이 안될거라 생각했습니다. 그런데 어느날 확인해보니
+`sudo brew services`를 지원하고 있다는 사실을 알게되었습니다. 그래서 예전내용 보다는 다음 명령어를 통해서 실행하는 편이
+더 간단합니다. :-)
 
-다음 파일을 열고,
+```
+sudo brew services start nginx
+```
+
+그리고 `brew services list`를 입력하면 현재 실행중인 리스트가 출력됩니다. 그 중 다음 내용을 포함하면 성공입니다.
+
+```
+nginx                      started root     /Library/LaunchDaemons/homebrew.mxcl.nginx.plist
+```
+
+**16.06.08 이전에 작성된 내용 (혹시나 해서 남겨둡니다..)**
+
+~~PHP 내장 서버는 80번 포트를 사용하기 힘듭니다. 물론, `sudo` 명령어를 통해 80번 포트를 사용할 수는 있으나 이게 매번~~
+~~하자면 굉장히 귀찮은 일입니다. 그래서 포트포워딩, 즉 80번 포트로 들어오면 우리가 실행한 서버의 포트로 들어올 수 있도록~~
+~~설정을 합니다.~~
+
+~~잠깐 설명하자면 이러한 방식은 나중에 Brew를 통해 설치된 Nginx를 사용할 때에 유용합니다. `brew services start nginx`로~~
+~~서버를 실행할 때 Nginx는 root권한이 없기 때문에 80번 포트를 사용할 수 없습니다. OSX에서는 지정 포트는 root권한으로~~
+~~실행하도록 하고 있기 때문입니다.~~
+
+~~다음 파일을 열고,~~
 
 ```
 sudo vim /etc/pf.anchors/laravel
 ```
 
-다음과 같이 입력하고 저장합니다.
+~~다음과 같이 입력하고 저장합니다.~~
 
 ```
 rdr pass on lo0 inet proto tcp from any to 127.0.0.1 port 80 -> 127.0.0.1 port 8080
 ```
 
-그리고 다음 파일을 열고,
+~~그리고 다음 파일을 열고,~~
 
 ```
 sudo vim /etc/pf-laravel.conf
 ```
 
-다음과 같이 입력합니다. 중요한게 마지막에 반드시 **빈줄 한 줄을** 추가해주어야 합니다. 그렇지 않으면 Syntax Error가
-발생할 수 있습니다.
+~~다음과 같이 입력합니다. 중요한게 마지막에 반드시 **빈줄 한 줄을** 추가해주어야 합니다. 그렇지 않으면 Syntax Error가~~
+~~발생할 수 있습니다.~~
 
 ```
 rdr-anchor "forwarding"
@@ -173,14 +191,19 @@ load anchor "forwarding" from "/etc/pf.anchors/laravel"
 
 ```
 
-이제 방금 만든 파일을 다음 명령어를 통해 적용시켜줍시다.
+~~이제 방금 만든 파일을 다음 명령어를 통해 적용시켜줍시다.~~
 
 ```
 sudo pfctl -ef /etc/pf-laravel.conf
 ```
 
-이제 `localhost` 80포트로 들어온 모든 데이터를 8080포트로 전달해줄 것입니다. `localhost`를 조금 있어보이게
-`laravel.dev`로 바꾸는 작업을 해야하는데 이것은 `/etc/hosts` 파일을 수정하면 됩니다.
+~~이제 `localhost` 80포트로 들어온 모든 데이터를 8080포트로 전달해줄 것입니다.~~
+
+## Hosts 파일에 접근경로 추가하기
+
+그리고 `localhost`를 조금 있어보이게 `laravel.dev`로 바꾸는 작업을 해야하는데 이것은 `/etc/hosts` 파일을 수정하면
+됩니다. `/etc/hosts`에서 `.com`, `.net`과 같은 최상위 도메인(TLD)도 사용 가능하나 실수를 방지하기 위해서 가급적
+`.dev`와 같은 방식을 사용하는 것이 좋습니다. :-)
 
 ```
 sudo vi /etc/hosts
@@ -191,9 +214,9 @@ sudo vi /etc/hosts
 ```
 127.0.0.1       laravel.dev
 ```
+
 간단히 설명하면 브라우저에 `laravel.dev`를 입력하면 `/etc/hosts` 파일의 설정값을 통해서 `127.0.0.1`로 접속을
-시도합니다. http 기본포트인 80번으로 접속을 요청할텐데요, 그러면 `pfctl`을 통해 포트포워딩 되어서 8080포트로 접속을
-시도할 것입니다. 그러면 우리는 서버를 `8080`으로 열어주기만 하면 자연스럽게 `laravel.dev`를 통해 테스트 할 수 있습니다.
+시도합니다.
 
 이제 `laravel.dev`를 브라우저에 띄워봅시다. (잘뜹니다.)
 
@@ -214,7 +237,7 @@ brew install nginx
 명령어를 통해 Nginx서버를 켤 수 있습니다.
 
 ```
-brew services start nginx
+sudo brew services start nginx
 ```
 
 다음 두 명령어를 통해서 `nginx.conf` 설정 파일을 다운 받을 수 있습니다.
@@ -238,13 +261,14 @@ mkdir -p /usr/local/etc/nginx/sites-available
 curl -L https://gist.githubusercontent.com/wan2land/54b068a4b9cead321225/raw/2e0da15b9000be36e69bcdb3963854e9f1706d84/nginx-laravel.dev -o /usr/local/etc/nginx/sites-available/laravel.dev
 ```
 
-그리고 내부에 내용을 조금 수정해야한다.
+그리고 내부에 내용을 조금 수정해야합니다.
 
 ```
 vi /usr/local/etc/nginx/sites-available/laravel.dev
 ```
 
 `root`부분에 `/var/www`를 자신이 설치한 라라벨의 경로로 수정하자. 설치된 라라벨의 경로는 `public`까지 포함되어야 한다.
+그리고 `listen`을 `80`포트로 변경해줍니다. (8080도 사용하는데 지장은 없습니다.)
 
 보통 Nginx 설정에서는 `sites-available`폴더에 사용가능한 모든 설정을 넣어두고 `sites-enabled`에서 심볼릭 링크를
 만들어서 사용합니다.
@@ -264,7 +288,7 @@ mkdir -p /usr/local/etc/nginx/logs
 리눅스와 같은 `php5-fpm`이 아닌 `php56`을 사용합니다. 이점에 유의하시기 바랍니다.
 
 ```
-brew services start nginx
+sudo brew services start nginx
 brew services start php56
 ```
 
