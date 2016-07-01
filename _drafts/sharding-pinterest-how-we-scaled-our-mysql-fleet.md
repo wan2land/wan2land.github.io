@@ -12,21 +12,39 @@
 
 This is a technical dive into how we split our data across many MySQL servers. We finished launching this sharding approach in early 2012, and it’s still the system we use today to store our core data.
 
-우린 어떻게 데이터를 나눌지 이야기 하기 전에, ?? 우리의 데이터와 친밀해져야 했다.
+이것은 우리가 많은 MySQL의 서버에 걸쳐, 어떻게 우리의 데이터를 나누었는지에 대한 기술적 다이빙입니다. 우리는 2012년 초에 샤딩 접근 방식을 실행 완료하였고,
+그것은 여전히 우리가 우리의 핵심 데이터를 저장하기 위해 현재 사용하는 시스템입니다.
 
 Before we discuss how to split the data, let’s be intimate with our data. Mood lighting, chocolate covered strawberries, Star Trek quotes…
 
+(여기까지)
+우리는 데이터를 분할하는 방법에 대해 설명하기 전에, 우리의 데이터와 친밀한하자. 무드 조명, 초콜릿 덮여 딸기, 스타 트랙은 인용 ...
+
 Pinterest is a discovery engine for everything that interests you. From a data perspective, Pinterest is the largest human curated interest graph in the world. There are more than 50 billion Pins that have been saved by Pinners onto one billion boards. People repin and like other Pins (roughly a shallow copy), follow other Pinners, boards and interests, and view a home feed of all the Pinners, boards and interests they follow. Great! Now make it scale!
 
-Growing pains
+핀터레스트는 여러분들이 관심있어할만한 모든것을 위한 탐색 엔진(Discovery Engine)입니다. 데이터의 관점에서, 핀터레스트는 세상에서 가장 큰 인간 큐레이터이자 그래프이다. 억 기판에 Pinners으로 저장 한 개 이상의 500 억 핀이 있습니다. 사람들은 출처 및 기타 핀 (약 얕은 복사)와 같은 다른 Pinners, 보드와 관심에 따라, 그들은 다음 모든 Pinners, 보드 및 이익의 홈 피드를 볼 수 있습니다. 큰! 지금은 확장 할 수 있도록!
+
+
+## Growing pains
 
 In 2011, we hit traction. By some estimates, we were growing faster than any other previous startup. Around September 2011, every piece of our infrastructure was over capacity. We had several NoSQL technologies, all of which eventually broke catastrophically. We also had a boatload of MySQL slaves we were using for reads, which makes lots of irritating bugs, especially with caching. We re-architected our entire data storage model. To be effective, we carefully crafted our requirements.
 
-Requirements
+2011년, 우리는 견인을했다. 일부 추정함으로써, 우리는 이전의 다른 스타트업에 비해 굉장히 빠르게 성공하였습니다. 2011년 9월 즈음에, 우리의 인프라의 모든 조각 용량 이상이었다. 우리는 결국 파멸 파산 모두 여러 NoSQL에 기술을 가지고 있었다. 우리는 또한 읽기 작업에 사용되는 MySQL Slaves에 병목을 갖고 있었습니다, 우리가 특히 캐싱, 자극 버그를 많이 만드는. 우리는 전체 데이터 스토리지 모델을 재 설계하였습니다. 효과를 위해, 우리는 신중하게 우리의 요구 사항을 제작.
+
+## 요구사항(Requirements)
 
 Our overall system needed to be very stable, easy to operate and scale to the moon. We wanted to support scaling the data store from a small set of boxes initially to many boxes as the site grows.
+
+우리의 전체 시스템은 달에 매우 안정적으로 운영하기 쉽고 규모가 될 필요가 있었다. 우리는 사이트가 성장함에 따라 많은 상자에 처음 상자의 작은 세트에서 데이터 저장소를 확장 지원 싶었다.
+
 All Pinner generated content must be site accessible at all times.
+
+모든 피너(Pinner) 생성 된 콘텐츠는 항상 접근 가능한 사이트 수 있어야합니다.
+
 Support asking for N number of Pins in a board in a deterministic order (such as reverse creation time or user specified ordering). Same for Pinner to likes, Pinner to Pins, etc.
+
+(리버스 생성 시간 또는 사용자가 지정한 순서로) 결정 위해 기판에 핀 번호 N 요구 지원. 등 좋아하는 앞치마, 핀에 앞치마를위한 동일
+
 For simplicity, updates will generally be best effort. To get eventual consistency, you’ll need some additional toys on top, such as a distributed transaction log. It’s fun and (not too) easy!
 Design philosophies and notes
 
@@ -40,7 +58,7 @@ All data needed to be replicated to a slave machine for backup, with high availa
 
 Finally, we needed a nice way to generate universally unique IDs (UUID) for all of our objects.
 
-How we sharded
+## 어떻게 우리는 샤드하였는가(How we sharded)
 
 Whatever we were going build needed to meet our needs and be stable, performant and repairable. In other words, it needed to not suck, and so we chose a mature technology as our base to build on, MySQL. We intentionally ran away from auto-scaling newer technology like MongoDB, Cassandra and Membase, because their maturity was simply not far enough along (and they were crashing in spectacular ways on us!).
 
@@ -50,12 +68,15 @@ MySQL is mature, stable and it just works. Not only do we use it, but it’s als
 
 We started with eight EC2 servers running one MySQL instance each:
 
-
+우리는 8대의 EC2 서버로 부터 시작하였고, 각각의 서버에는 하나의 MySQL 인스턴스가 동작중이다:
 
 Each MySQL server is master-master replicated onto a backup host in case the primary fails. Our production servers only read/write to the master. I recommend you do the same. It simplifies everything and avoids lagged replication bugs.
 
+각각의 MySQL 서버는 master-master 이고, 이는 하나의 백업 호스트에 onto 되어잇다, 실패에 대비해. 우리의 프로덕션 서버들은 오직 마스터에만 읽기/쓰기를 작업을 수행하였습니다. 똑같이 할것을 권합니다. 이는 모든것을 단순화하고, 발생할수 있는 (lagged) 리플리케이션 버그를 피할 수 있습니다.
+
 Each MySQL instance can have multiple databases:
 
+각각의 MySQL 인스턴스는 여러개의 데이터베이스를 가지고 있습니다:
 
 
 Notice how each database is uniquely named db00000, db00001, to dbNNNNN. Each database is a shard of our data. We made a design decision that once a piece of data lands in a shard, it never moves outside that shard. However, you can get more capacity by moving shards to other machines (we’ll discuss this later).

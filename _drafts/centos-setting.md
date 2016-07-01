@@ -62,5 +62,26 @@ $ sudo service mysqld start
 
 ## 기타 프로그램 설치
 
+sudo yum install -y ntp
 sudo yum install -y git
 sudo yum install -y zsh
+
+## NTP 설정
+
+http://blog.wani.kr/posts/2015/04/23/ubuntu-something-1-time/
+
+cron.daily 에 복붙.
+
+```
+#!/bin/bash
+
+/usr/sbin/ntpdate ntp.ubuntu.com >> /var/log/ntpdate_sync.log
+```
+
+
+
+## 노드 설치
+
+http://itblog.mobi/2015/12/26/how-to-install-nodejs-5-3-on-centos-6-6/
+
+

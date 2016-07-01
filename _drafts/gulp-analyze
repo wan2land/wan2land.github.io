@@ -1,0 +1,24 @@
+var gulp = require('gulp');
+var through = require('through2');
+gulp.task("hello", function () {
+    return gulp.src(["style/**/*.scss"])
+        .pipe(function () {
+            return through.obj(function (file, encoding, cb) {
+                console.log("???!!");
+
+                console.log(file.path);
+                console.log(file.base);
+                console.log(file.stat);
+                console.log(file.cwd);
+                console.log(file.contents.toString());
+
+                console.log(file);
+                console.log(encoding);
+                console.log(cb);
+
+                cb(null, file);
+            });
+        }())
+        .pipe(gulp.dest("dest"));
+});
+
