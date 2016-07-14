@@ -39,7 +39,7 @@ alias php70=/usr/local/Cellar/php70/`ls /usr/local/Cellar/php70 | tail -1`/bin/p
 
 ## 추가 팁
 
-유닛테스트를 버전별로 나누고 싶다면.. (사실 제가 하고 싶었던게 이거였습니다.)
+유닛테스트를 버전별로 나누고 싶다면.. ~~(사실 제가 하고 싶었던 것..)~~
 
 ```sh
 alias phpunit56='php56 vendor/bin/phpunit'
