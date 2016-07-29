@@ -2,7 +2,7 @@
 layout: post
 title: "초간단 Window 10 PHP 환경 구축"
 date: 2016-07-29 14:00:45 +09:00
-tags: ['PHP', 'Window', `chocolatey`]
+tags: ['PHP', 'Window', 'chocolatey']
 ---
 
 Modern PHP에서 단언컨데 Composer는 꽃이라고 할 수 있습니다. OSX(혹은 리눅스!)환경에서는 콘솔 사용하기가 쉬워서 개발환경
