@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 초간단 Window 10 PHP 환경 구축
+title: "초간단 Window 10 PHP 환경 구축"
 date: 2016-07-29 14:00:45 +09:00
 tags: ['PHP', 'Window', `chocolatey`]
 ---
