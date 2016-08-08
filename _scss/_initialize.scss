@@ -16,8 +16,7 @@ html {
 body {
     height: 100%;
     max-height: 100%;
-    font-family: 'Nanum Barun Gothic', sans-serif;
-    font-weight: 300;
+    font-family: "나눔 고딕","Nanum Gothic","맑은 고딕","Malgun Gothic","Apple Gothic","돋움",Dotum,"Helvetica Neue",Helvetica,Arial,sans-serif !important;
     font-size: 20px;
     line-height: 1.6em;
     color: $default-color;
@@ -38,7 +37,7 @@ h3,
 h4,
 h5,
 h6 {
-    font-weight: 400;
+    font-weight: bold;
     text-rendering: optimizeLegibility;
     line-height: 1;
     margin-top: 0;
