@@ -267,7 +267,7 @@ class HelloSeleniumTest extends SeleniumTestCase
 
 ## 더 공부하고 싶다면..
 
-사실 위에 테스트한 두가지 내용은 아~주 기본중의 기본입니다. 더 자세히 보고 싶다면 `facebook/webdriver`에서 제공하는 Example 문서를 살펴보시면 됩니다.
+사실 위에 테스트한 두가지 내용은 아~주 작은 기능입니다. 더 자세히 보고 싶다면 `facebook/webdriver`에서 제공하는 Example 문서를 살펴보시면 됩니다.
 
 - [PHP Webdriver - Example Command Ref.](https://github.com/facebook/php-webdriver/wiki/Example-command-reference)
 
