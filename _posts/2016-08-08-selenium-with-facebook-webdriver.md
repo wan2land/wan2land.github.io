@@ -64,7 +64,7 @@ composer require --dev facebook/webdriver
 
 그리고 자바를 통해서 셀레늄을 실행할 수 있습니다.
 
-** OSX **
+### OSX
 
 크롬드라이버 파일명이 `chromedriver`이고 셀레늄 파일이 `selenium-server-standalone-2.53.0.jar`라면 명령어는 다음과 같이 실행할 수 있습니다.
 
@@ -93,9 +93,9 @@ java -Dwebdriver.chrome.driver=./chromedriver -jar selenium-server-standalone-2.
 
 ```
 
-** Window **
+### Window
 
-윈도우용 `test-on-win.bat` 파일입니다. 하나 생성해서 그냥 실행하시면 셀레늄이 자동으로 실행됩니다.
+윈도우용도 하나 필요해서 작성하였습니다. 파일명은 `test-on-win.bat`입니다. 하나 생성해서 그냥 실행하면 셀레늄이 구동됩니다.
 
 ```sh
 php -r "if (!file_exists('selenium-server-standalone-2.53.0.jar')) copy('https://selenium-release.storage.googleapis.com/2.53/selenium-server-standalone-2.53.0.jar', 'selenium-server-standalone-2.53.0.jar');"
@@ -272,3 +272,31 @@ class HelloSeleniumTest extends SeleniumTestCase
 - [PHP Webdriver - Example Command Ref.](https://github.com/facebook/php-webdriver/wiki/Example-command-reference)
 
 찾아보면 자바스크립트 코드를 주입해서 테스트도 가능합니다. :-) 즉, 브라우저에서 벌어질 상황은 다 구현가능합니다.
+
+## CI(Continuous Intergration) Server와의 연동
+
+저희 회사 CI 서버는 CentOS 환경에서 Jenkins가 돌고있습니다. 서버에서 Selenium을 그냥 돌리면 에러가 납니다. 간단히 이야기 해서 GUI가 구동되지 않기 때문인데요, 이럴 때는 `Xvfb`라는 라이브러리를 사용하면 됩니다.
+
+```sh
+sudo yum install Xvfb
+```
+
+그냥 yum으로 설치하시면 됩니다. 우분투의 경우 apt-get으로도 그냥 검색가능합니다.
+
+그리고 다음 커맨드를 사용하여 Selenium을 구동할 수 있습니다.
+
+```sh
+sudo Xvfb :99 -ac -screen 0 1280x1024x24 &
+export DISPLAY=:99.0 && java -jar selenium-server-standalone-2.53.0.jar > /dev/null 2>/dev/null &
+```
+
+참고로 위 명령어 두개는 백그라운드에서 명령어를 실행해야해서 죽일 때는 `Ctrl + C` 사용이 불가능합니다.
+
+```sh
+ps -ef | grep "[s]elenium" | awk 'NR==1{print $2}' | cut -d' ' -f1 | xargs kill > /dev/null 2>/dev/null
+sudo killall Xvfb -q
+```
+
+이렇게 죽이면 됩니다.
+
+저같은 경우, 위 두 내용을 `before-test.sh`와 `after-test.sh`로 각각 저장하고 CI 서버가 실행할 수 있도록 구성하였습니다.
