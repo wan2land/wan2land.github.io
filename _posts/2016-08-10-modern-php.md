@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "PHP에서 GCM 푸시 바르게 보내기 (feat. Async / Generator)"
+title: "발표, Modern PHP란 무엇일까?"
 date: 2016-08-10 11:07:39 +09:00
 tags: ['PHP', 'GCM', Async', 'Generator']
 ---
