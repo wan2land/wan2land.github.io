@@ -7,7 +7,7 @@ tags: ['Gulp', 'Nodejs', 'cssnano']
 
 지난 3월 22일, Node 커뮤니티에서 발생했던 Left Pad 사건을 기억하시나요?
 
-http://www.bloter.net/archives/253447
+[www.bloter.net/archives/253447](http://www.bloter.net/archives/253447)
 
 최근 Left Pad 만큼의 임팩트는 아니지만 비슷한 일이 발생하였습니다. 유명패키지 `cssnano`가 의존하고 있는 `reduce-css-calc`라는 패키지가 말썽을 일으켰습니다. 아는 사람만 사용하는 패키지라 많은 분들은 몰랐을 수도 
 있습니다. 그치만 제가 그 **피해자 중 하나**였기 때문에 경험한 일을 공유하고자 합니다. :-)
