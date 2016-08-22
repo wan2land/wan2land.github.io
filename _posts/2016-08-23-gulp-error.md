@@ -9,7 +9,7 @@ tags: ['Gulp', 'Nodejs', 'cssnano']
 
 [www.bloter.net/archives/253447](http://www.bloter.net/archives/253447)
 
-최근 Left Pad 만큼의 임팩트는 아니지만 비슷한 일이 발생하였습니다. 유명패키지 `cssnano`가 의존하고 있는 `reduce-css-calc`라는 패키지가 말썽을 일으켰습니다. 아는 사람만 사용하는 패키지라 많은 분들은 몰랐을 수도 
+최근, Left Pad 만큼의 임팩트는 아니지만 비슷한 일이 발생하였습니다. 유명패키지 `cssnano`가 의존하고 있는 `reduce-css-calc`라는 패키지가 말썽을 일으켰습니다. 아는 사람만 사용하는 패키지라 많은 분들은 몰랐을 수도 
 있습니다. 그치만 제가 그 **피해자 중 하나**였기 때문에 경험한 일을 공유하고자 합니다. :-)
 
 ## 발생
@@ -139,4 +139,4 @@ if(!Array.indexOf)
 - `npm list math-expression-evaluator`
 - `npm list reduce-css-calc`
 
-이 두 패키지를 의존하고 있는 패키지를 대체할 수 있다면 대체해서 사용하시거나, `math-expression-evaluator`의 경우 최신버전을 사용하면 됩니다. 아니면 `recude-css-calc`를 옛날 버전(`1.2.4` 이하)을 사용하시면 해결 될것 같습니다.
+이 두 패키지를 의존하고 있는 패키지를 대체할 수 있다면 대체해서 사용하시거나, `math-expression-evaluator`의 경우 최신버전을, 혹은 `recude-css-calc` 옛날 버전(`1.2.4` 이하)을 사용하시면 쉽게 해결됩니다.
