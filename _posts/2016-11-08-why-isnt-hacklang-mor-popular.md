@@ -17,7 +17,7 @@ PHP 프레임워크를 만들면서 다양한 프레임워크를 공부하고 �
 프레임워크를 떠나서 마땅한 프로젝트도 찾을 수 없었습니다. 그렇다면 이 좋은 언어(어디까지 제가 생각하기에)인 Hack을 왜
 사람들은 사용하지 않을까 고민을 했습니다. 그리고, Quora에서 비슷한 고민을 하는 사람을 찾았습니다.
 
-> 원글 : https://www.quora.com/Why-isnt-Facebooks-hack-language-more-popular
+> 원글 : [www.quora.com/Why-isnt-Facebooks-hack-language-more-popular](https://www.quora.com/Why-isnt-Facebooks-hack-language-more-popular)
 
 그리고 왜 잘 사용하지 않는지에 대해 조목조목 이야기 하는 답변이 달려있는 것을 볼 수 있었습니다. 완전히 만족스러운 답은
 아니지만 외국에서 Hack을 어떻게 바라보는지 대충 알 수 있게 되었습니다.
