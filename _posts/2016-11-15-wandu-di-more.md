@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "더 강력해진 DI Container, Wandu DI"
+title: "Annotation을 통해 더 강력해진 DI Container, Wandu DI"
 date: 2016-11-15 01:50:15 +09:00
 tags: ['PHP', 'Wandu', 'DI', 'annotation', 'autowiring']
 ---
