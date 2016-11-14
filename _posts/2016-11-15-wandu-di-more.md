@@ -2,7 +2,7 @@
 layout: post
 title: "더 강력해진 DI Container, Wandu DI"
 date: 2016-11-15 01:50:15 +09:00
-tags: ['PHP', 'Wandu', 'DI']
+tags: ['PHP', 'Wandu', 'DI', 'annotation', 'autowiring']
 ---
 
 과거 [Wandu DI를 이용한 레거시 리팩토링](http://blog.wani.kr/posts/2015/08/07/wandu-di/)라는 포스팅으로
