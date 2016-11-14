@@ -212,6 +212,7 @@ $a->getB()->getA(); // === $a
 Annotation은 기본 PHP에서 제공하는게 아니라서 사용하기 애매해보일 수도 있습니다. 하지만 PHP Storm 플러그인 설치가
 가능합니다.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/hACeHnUbHYo" frameborder="0" allowfullscreen></iframe>
-
+<div class="video-wrap">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/hACeHnUbHYo" frameborder="0" allowfullscreen></iframe>
+</div>
 그리고 Wandu DI의 `@AutoWired`는 PHP Storm의 PHP Annotations 플러그인을 완벽하게 지원합니다.
