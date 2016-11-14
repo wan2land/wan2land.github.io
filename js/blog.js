@@ -41,8 +41,9 @@
     //Scroll
     var $window = $(window);
     var $siteNav = $('#site-nav');
+    var $siteHead = $('#site-head');
     $window.bind('scroll', function() {
-        if ($window.scrollTop() > 736) {
+        if ($window.scrollTop() > $siteHead.height() - 40) {
             $siteNav.addClass('active');
         } else {
             $siteNav.removeClass('active');
