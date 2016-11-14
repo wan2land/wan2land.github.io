@@ -8,9 +8,11 @@ tags: ['PHP', 'Wandu', 'DI', 'annotation', 'autowiring']
 과거 [Wandu DI를 이용한 레거시 리팩토링](http://blog.wani.kr/posts/2015/08/07/wandu-di/)라는 포스팅으로
 [Wandu Framework](http://wandu.github.io)의 Wandu DI를 소개한적이 있습니다.
 
-현재 Wandu Framework 는 v3.1을 준비하는 과정인데요, 더욱 강력해진 DI Container를 소개합니다.
+현재 Wandu Framework 는 v3.1을 준비하는 있는데요, 더욱 강력해진 DI Container를 소개합니다.
 
 DI가 무엇인지, IoC 개념을 알고 있다는 전제하에 작성된 포스팅입니다.
+
+또, `wandu/di:3.1-dev`를 통해서 테스트해보실 수 있습니다. (개발 중이라서 정식 릴리즈가 아닙니다.)
 
 
 ## Doctrine Annotation을 이용한 오토와이어링(Auto Wiring)
