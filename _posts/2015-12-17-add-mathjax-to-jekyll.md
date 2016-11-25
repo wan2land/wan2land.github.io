@@ -43,3 +43,4 @@ $$\int f(x)~dx$$
 ## 추가 사이트들
 
 - [detexify.kirelabs.org/classify.html](http://detexify.kirelabs.org/classify.html) : 마우스로 그려서 특수문자 코드를 알 수 있습니다.
+- [Math Jax Documentation](http://www.onemathematicalcat.org/MathJaxDocumentation/TeXSyntax.htm) : MathJax 문법들이 정리되어있습니다.
