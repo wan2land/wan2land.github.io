@@ -13,10 +13,17 @@ This web page has been developed by Wani.
 <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-<title>{{ site.title }}</title>
+<title>{% if page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-<meta name="description" content="{{ site.description }}">
+
+{% if page.description %}
+<meta name="description" content="{{ page.description }}" />
+{% else if page.content %}
+<meta name="description" content="{{ page.content | strip_html | truncatewords:40 }}" />
+{% else %}
+<meta name="description" content="{{ site.description }}" />
+{% endif %}
 
 <!--[if lt IE 9]>
 <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
