@@ -11,8 +11,8 @@ tags: ['resolv.conf', 'dns', 'host']
 SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: Name or service not known
 ```
 
-PDO쪽에서 Exception이 발생하였는데 다음과 같이 에러가 발생하였습니다. 네트워크 쪽에 능통하신 분들이라면 아마도 쉽게
-해결하셨겠지만 네트워크를 눈대중으로 배운 저에게는 당황스러울 수 밖에 없었죠.
+PDO쪽에서 Exception이 발생했는데 처음보는 메시지였습니다. 네트워크 쪽에 능통하신 분들이라면 아마도 쉽게 해결하셨겠지만
+네트워크를 눈대중으로 배운 저에게는 당황스러울 수 밖에 없었죠.
 
 일단 에러 원인부터 이야기하자면 RDS에서 사용하는 Host 이름을 찾을 수 없기 때문에 발생하는 에러였습니다. 보통 RDS Host는
 `myrds.abcdefghijkl.ap-northeast-2.rds.amazonaws.com` 이런식으로 생겼으니까요. :-)
