@@ -14,11 +14,11 @@ permalink: /about/
 
 ## Skills
 
-<p class="center">PHP / Laravel / Javascript / React / Backbone<br />
-	Redis / MySQL(MariaDB) / Selenium</p>
+<p class="center">PHP / AWS / Laravel / Javascript / React / Backbone<br />
+    Redis / MySQL(MariaDB) / Selenium</p>
 
 <p class="center" style="color: #aaa;">.Net C# / Python / Swift / Zephir Lang / TypeScript<br />
-	Maching Learning / Tensorflow</p>
+    Maching Learning / Tensorflow</p>
 
 ## Interests
 
