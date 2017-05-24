@@ -98,4 +98,4 @@ class ServerRequestFactory
 }
 ```
 
-이제 다음에는 이 단순팩토리(Simple Factory)를 기점으로 어떻게 다양하게 사용되는지 알아보도록 하겠습니다.
+이제 다음에는 이 단순팩토리(Simple Factory)를 기반으로 어떻게 다양하게 사용되는지 알아보도록 하겠습니다.
