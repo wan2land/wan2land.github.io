@@ -1,5 +1,6 @@
 ---
-layout: post
+layout: "post-design-pattern"
+chapter: "1.2"
 title: "디자인패턴 공부하기 - 2. Static Factory"
 date: 2017-05-25 08:07:01 +09:00
 tags: ['designpattern', 'php']

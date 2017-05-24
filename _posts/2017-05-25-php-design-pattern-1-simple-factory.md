@@ -1,23 +1,10 @@
 ---
-layout: post
+layout: "post-design-pattern"
+chapter: "1.1"
 title: "디자인패턴 공부하기 - 1. Simple Factory"
 date: 2017-05-25 07:54:24 +09:00
 tags: ['designpattern', 'php']
 ---
-
-생성패턴에 대해서 **GoF의 디자인패턴**에서는 총 5가지의 생성패턴에 대해서 이야기 하고 있고, **DesignPatternsPHP**에서는 총 9개의 생성패턴에 대해서 다루고 있습니다. 이를 정리하면 다음과 같습니다.
-
-1. **[단순팩토리 (Simple Factory)](/posts/2017/05/25/php-design-pattern-1-simple-factory)**
-1. [정적팩토리 (Static Factory)](/posts/2017/05/25/php-design-pattern-2-static-factory)
-1. 추상팩토리 (Abstract Factory)
-1. 팩토리 메서드 (Factory Method)
-1. 빌더 (Builder)
-1. 단일체/싱글턴 (Singleton)
-1. 멀티턴 (Multiton)
-1. 원형/프로토타입 (Prototype)
-1. 풀 (Pool)
-
-여기서 가장 많은 비중을 차지하는게 바로 팩토리입니다. 그래서 첫번째 주제를 **단순팩토리**로 잡았습니다.
 
 ## 단순팩토리 (Simple Factory)
 
