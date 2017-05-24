@@ -7,7 +7,7 @@ tags: ['designpattern', 'php']
 
 생성패턴에 대해서 **GoF의 디자인패턴**에서는 총 5가지의 생성패턴에 대해서 이야기 하고 있고, **DesignPatternsPHP**에서는 총 9개의 생성패턴에 대해서 다루고 있습니다. 이를 정리하면 다음과 같습니다.
 
-1. [단순팩토리 (Simple Factory)](/posts/2017/05/25/php-design-pattern-1-simple-factory)
+1. **[단순팩토리 (Simple Factory)](/posts/2017/05/25/php-design-pattern-1-simple-factory)**
 1. 정적팩토리 (Static Factory)
 1. 추상팩토리 (Abstract Factory)
 1. 팩토리 메서드 (Factory Method)
@@ -17,7 +17,7 @@ tags: ['designpattern', 'php']
 1. 원형/프로토타입 (Prototype)
 1. 풀 (Pool)
 
-여기서 가장 많은 비중을 차지하는게 바로 팩토리입니다. 그래서 첫번째 주제를 **단순팩토리**로 잡았습니다. 또한, 정적팩토리(Static Factory)의 경우 단순 팩토리를 그저 정적함수를 통해서 호출하는 것 뿐이기 때문에 함께 간단히 살펴보도록 하겠습니다.
+여기서 가장 많은 비중을 차지하는게 바로 팩토리입니다. 그래서 첫번째 주제를 **단순팩토리**로 잡았습니다.
 
 ## 단순팩토리 (Simple Factory)
 
