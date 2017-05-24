@@ -1,22 +1,10 @@
 ---
 layout: "post-design-pattern"
 chapter: "1.2"
-title: "디자인패턴 공부하기 - 2. Static Factory"
+title: "디자인패턴 공부하기 - 2. 정적팩토리 (Static Factory)"
 date: 2017-05-25 08:07:01 +09:00
 tags: ['designpattern', 'php']
 ---
-
-1. [단순팩토리 (Simple Factory)](/posts/2017/05/25/php-design-pattern-1-simple-factory)
-1. **[정적팩토리 (Static Factory)](/posts/2017/05/25/php-design-pattern-2-static-factory)**
-1. 추상팩토리 (Abstract Factory)
-1. 팩토리 메서드 (Factory Method)
-1. 빌더 (Builder)
-1. 단일체/싱글턴 (Singleton)
-1. 멀티턴 (Multiton)
-1. 원형/프로토타입 (Prototype)
-1. 풀 (Pool)
-
-## 정적팩토리 (Static Factory)
 
 정적팩토리(Static Factory)의 경우 단순팩토리를 그저 정적함수(static method)를 통해서 호출하는 것 뿐이기 때문에 아주 간단합니다.
 
