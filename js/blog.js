@@ -24,7 +24,10 @@
     ga('create', 'UA-35736735-1', 'wani.kr');
     ga('send', 'pageview');
 
+    // link
     $('a[href^="http://"], a[href^="https://"]').not('a[href*=wani\\.kr]').attr('target','_blank');
+
+    // linkenums
     $('pre > code').each(function() {
         var lines = this.innerHTML.split("\n");
         if (lines.length > 5) {
@@ -37,6 +40,9 @@
             $(this).addClass('linenums');
         }
     });
+
+    // mermaid
+    mermaid.initialize({startOnLoad:true});
 
     //Scroll
     var $window = $(window);
