@@ -8,6 +8,12 @@ tags: ['designpattern', 'php']
 
 일반적인 팩토리 패턴은 무언가 객체를 생성하고자 할 때 사용하는 패턴입니다. 특히나 이 중, 단순팩토리(Simple Factory)는 그 중 가장 기본이 됩니다. 표현하면 다음과 같습니다.
 
+<div class="mermaid width-33">
+classDiagram
+UserFactory --> user : create user
+UserFactory : +factory()
+</div>
+
 ```php
 <?php
 
