@@ -124,7 +124,7 @@ text.actor {
 .sectionTitle {
   text-anchor: start;
   font-size: 11px;
-  text-height: 14px;
+  line-height: 14px;
 }
 /* Grid and axis */
 .grid .tick {
