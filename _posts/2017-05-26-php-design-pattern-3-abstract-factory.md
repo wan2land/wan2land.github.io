@@ -178,7 +178,7 @@ class UserController
 
 PSR-17로 토론중인 Http Factory를 예로 들 수 있습니다.
 
- - https://github.com/php-fig/fig-standards/blob/master/proposed/http-factory/http-factory.md
+ - [PSR-17, HTTP Factory](https://github.com/php-fig/fig-standards/blob/master/proposed/http-factory/http-factory.md)
 
 당장 Http Request 객체만 해도 환경에 따라서 다르게 생성해야하기 때문입니다.
 
