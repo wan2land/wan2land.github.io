@@ -11,6 +11,7 @@ tags: ['designpattern', 'php']
 서비스에서 Cache를 사용한다고 가정합시다.
 
 ```php
+<?php
 class ArrayCache
 {
     protected $caches;
@@ -30,6 +31,7 @@ class ArrayCache
 이를 생성하기위해서 일반적인 팩토리패턴을 사용하였습니다.
 
 ```php
+<?php
 class CacheFactory
 {
     public function factory(): ArrayCache
@@ -42,6 +44,7 @@ class CacheFactory
 그런데 이제 서비스 환경을 개선하기 위해 Redis를 사용하기로 하였습니다. 그리하여 다음과 같이 `RedisCache`를 추가하였습니다. 기존의 `ArrayCache`와 호환되기 위해서 `interface`도 하나 만듭니다.
 
 ```php
+<?php
 interface Cache
 {
     public function get(string $key, $default = null);
@@ -62,6 +65,7 @@ class RedisCache implements Cache
 이제 이 `RedisCache`를 생성하기 위해서 어떻게 해야할까요? 기존에 방식대로라면, `RedisCacheFactory`를 만들면 해결됩니다.
 
 ```php
+<?php
 class RedisCacheFactory
 {
     public function createCache(): RedisCache
@@ -76,6 +80,7 @@ class RedisCacheFactory
 자 그러면 이러한 `Factory` 들도 한번 추상화할 필요성이 생깁니다. 바로 여기서 탄생한 것이 추상팩토리(Abstract Factory)입니다. 이름에서 알 수 있듯이 추상클래스(Abstract Class)를 사용합니다만, 인터페이스(Interface)를 사용해도 괜찮습니다.
 
 ```php
+<?php
 interface CacheFactory
 {
     public function createCache(): Cache;
@@ -131,6 +136,8 @@ RedisCache : + set(string $key, $value)
 위의 `Cache` 객체를 들어 설명하겠습니다. 일단 두가지 방식의 소스를 먼저 보여드리겠습니다.
 
 ```php
+<?php
+
 // 첫번째 방식
 class UserController
 {
