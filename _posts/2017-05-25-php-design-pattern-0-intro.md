@@ -34,7 +34,7 @@ tags: ['designpattern', 'php']
 
 1. [단순팩토리 (Simple Factory)](/posts/2017/05/25/php-design-pattern-1-simple-factory)
 1. [정적팩토리 (Static Factory)](/posts/2017/05/25/php-design-pattern-2-static-factory)
-1. 추상팩토리 (Abstract Factory)
+1. [추상팩토리 (Abstract Factory)](/posts/2017/06/12/php-design-pattern-3-abstract-factory)
 1. 팩토리 메서드 (Factory Method)
 1. 빌더 (Builder)
 1. 단일체/싱글턴 (Singleton)
