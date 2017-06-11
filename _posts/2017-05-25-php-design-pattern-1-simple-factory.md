@@ -10,7 +10,7 @@ tags: ['designpattern', 'php']
 
 <div class="mermaid width-33">
 classDiagram
-UserFactory --> user : create user
+UserFactory --> User : create user
 UserFactory : +factory()
 </div>
 
