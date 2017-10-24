@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "발표, Vue SSR vs Prerender"
-date: 2016-10-23 19:00:55 +09:00
+date: 2017-10-23 19:00:55 +09:00
 tags: ['Vue', 'SSR', 'Prerender']
 ---
 
@@ -9,4 +9,4 @@ PHP서비스를 Vue로 리팩토링 하면서 발생한 SEO 문제를 해결하�
 
 2017년 10월 GDG 인천에서 발표한 내용입니다.
 
-<iframe src="//www.slideshare.net/slideshow/embed_code/key/g7UHQBAjFrQktd" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
+<iframe src="//www.slideshare.net/slideshow/embed_code/key/g7UHQBAjFrQktd" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen></iframe>
