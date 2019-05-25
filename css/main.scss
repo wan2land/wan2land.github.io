@@ -39,9 +39,13 @@ body {
   font-family: 'D2Coding', monospace;
   font-size: 16px;
   font-weight: 400;
-  line-height: 1.5;
+  line-height: 1.625;
   color: $white;
   background: $black;
+}
+
+code, kbd, samp {
+  font-family: 'D2Coding', monospace;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -209,20 +213,25 @@ a:hover {
   }
 
   pre {
-    background: rgba(#ffffff, .1);
     border: 1px solid rgba(#ffffff, .2);
     border-radius: .25rem;
+    background: rgba(255,255,255,0.1);
     overflow: auto;
   }
 
   code {
-    padding:6px 3px 2px;
-    margin:0 3px;
+    padding: .125rem .25rem .0625rem;
+    margin:0;
+    border: 1px solid rgba(#ffffff, .2);
+    border-radius: .25rem;
+    background: rgba(#ffffff, .1);
   }
 
   pre code {
-    display:block;
-    margin:10px;
+    display: block;
+    border: 0;
+    margin: 10px;
+    background: none;
   }
 
   pre code.linenums {
