@@ -2,7 +2,7 @@
 layout: post
 title: "Nginx 하위 경로를 다른 서버로 보내기"
 date: 2016-07-01 11:22:21 +09:00
-tags: ['nginx', 'proxy']
+tags: ["nginx"]
 ---
 
 서비스를 운영하다가 `wani.kr`라는 도메인은 A라는 서버에 물려있고, `wani.kr/other`은 B라는 서버에 물리게 할 일이

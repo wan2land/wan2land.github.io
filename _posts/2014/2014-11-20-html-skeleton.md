@@ -2,8 +2,9 @@
 layout: post
 title: HTML 파일 기본 구조
 date: 2014-11-20 04:01:17 +09:00
-tags: ['HTML5']
+tags: ["html"]
 ---
+
 웹사이트에서 View를 작업할 때 매번 복사 붙여넣기하는 기본 양식이 있습니다. `<html></html>` 바로 이 녀석말입니다. 스켈레톤이라고 하면 맞는 표현일까요? :)
 
 매 프로젝트마다 붙여넣기 할 때마다 매번 고민하는 문제입니다. 성능이 지장이 가지는 않는지, 옛날 브라우저에서 이상하게 동작을 하지는 않는지 말입니다. 과연 어떻게 작성하는게 최선일지 여태까지 제가 고민하고 수정한 내용을 정리해보려 합니다..
@@ -134,7 +135,7 @@ LESS를 사용하면 소스를 더 간결하게 작성할 수 있습니다. 과�
 
 간단하게 자바스크립트에서는 이런식으로 사용이 가능합니다.
 
-###Character Set
+### Character Set
 
 ```html
 <meta charset="utf-8" />
@@ -142,7 +143,7 @@ LESS를 사용하면 소스를 더 간결하게 작성할 수 있습니다. 과�
 
 캐릭터셋 메타는 HTML5방식을 사용합니다. DOCTYPE이 HTML표준 방식을 따라가기 때문이죠. 옛날에는 `<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />` 이렇게 사용했습니다. 지금은 지양해야할 코딩입니다. 그리고 문자타입은 무조건 **utf-8**을 사용합시다!
 
-###Internet Explorer Meta
+### Internet Explorer Meta
 
 ```html
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -150,7 +151,7 @@ LESS를 사용하면 소스를 더 간결하게 작성할 수 있습니다. 과�
 
 국내에서는 아직도 ActiveX를 많이 사용하고 있습니다. 이게 문제가 뭐냐하면 가끔 IE9 이상을 사용하는데 ActiveX를 까는 과정에서 브라우저 표시 방식을 낮춰서 동작하는 경우가 있었습니다. 그래서 IE9만 되어도 제대로 돌아가야할 스타일들이 깨져버리는 문제가 발생하기도 했었습니다. 위 메타 태그가 100% 동작하지는 않지만 일부 환경에서 IE 브라우저 모드를 최신으로 유지하도록 해줍니다.
 
-###Viewport
+### Viewport
 
 ```html
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
@@ -160,7 +161,7 @@ LESS를 사용하면 소스를 더 간결하게 작성할 수 있습니다. 과�
 
 - 참고 : [하루하루, View포트 이해하기](http://chaospace.tistory.com/152)
 
-###html5shiv
+### html5shiv
 
 ```html
 <!--[if lt IE 9]>
@@ -178,7 +179,7 @@ IE8이하에서는 `<header></header>`, `<footer></footer>` 등의 HTML5전용 �
 
 또한 위 소스는 반드시 최초의 css파일을 로딩하기 직전에 집어넣어야 합니다. 그래야 제대로 동작합니다. :)
 
-####Css Files
+#### Css Files
 
 ```html
 <link rel="stylesheet" href="/static/css/index.css" />
@@ -190,7 +191,7 @@ IE8이하에서는 `<header></header>`, `<footer></footer>` 등의 HTML5전용 �
 
 간단히 body영역의 태그가 로딩하기 직전에 스타일시트를 불러오는 것이 더 깔끔하게 화면을 뿌려줍니다. 또한 본문 내에 스타일 소스를 마구잡이로 넣어서 소스를 더럽게 유지하는 것을 지양합시다.
 
-###Respond.js
+### Respond.js
 
 ```html
 <!--[if lt IE 9]>
@@ -209,7 +210,7 @@ IE8이하에서 Mediaquery가 동작하지 않습니다. 그런 동작을 잡게
 ```
 
 
-###Javascript Files
+### Javascript Files
 
 ```html
 <script src="/static/js/index.js"></script>
@@ -223,7 +224,7 @@ IE8이하에서 Mediaquery가 동작하지 않습니다. 그런 동작을 잡게
 
 오늘 제가 작성한 글이 반드시 정답은 아니며 앞으로의 환경에 따라 본 글의 내용도 계속 바뀌어야 하는 점을 인식하셔야 합니다. 더 나은 방향이나 제가 잘못알고 있는 부분이 있으면 언제든지 지적해주셨으면 합니다. :)
 
-##참고자료
+## 참고자료
 
 - <https://html.spec.whatwg.org/multipage/syntax.html>
 - <http://cdnjs.com/libraries/html5shiv>

@@ -2,7 +2,7 @@
 layout: post
 title: "발표, PHP에서 GCM 푸시 빠르게 보내기 (feat. Async / Generator)"
 date: 2016-08-10 11:06:05 +09:00
-tags: ['PHP', 'GCM', Async', 'Generator']
+tags: ["php"]
 ---
 
 Modern PHP 7월 모임에서 발표한 내용.

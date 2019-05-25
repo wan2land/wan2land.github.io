@@ -2,7 +2,7 @@
 layout: post
 title: "yarn global 설정하기"
 date: 2017-05-24 11:46:28 +09:00
-tags: ['yarn', 'node']
+tags: ["nodejs", "yarn"]
 ---
 
 요즘 Node.js 쪽 패키지 관리자는 [Yarn](https://yarnpkg.com)을 사용하고 있습니다. 메모리나 속도면에서 [npm](https://docs.npmjs.com)보다 우수하기 떄문입니다.

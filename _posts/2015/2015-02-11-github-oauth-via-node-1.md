@@ -2,7 +2,7 @@
 layout: post
 title: "Node.js에서 Github oAuth에 접근해보자 (1)."
 date: 2015-02-11 16:58:46 +09:00
-tags: ['Javascript', 'Node.js', 'Github API', 'oAuth']
+tags: ["javascript", "nodejs", "oauth"]
 ---
 
 Github API를 이용하는 프로그램을 만들일이 생겼습니다. 예전에 Facebook API를 이용한 웹사이트를 만들어본적은 있었는데 Github API는 또 처음이라 간단히 몇가지 실험을 해볼 필요가 있었습니다.

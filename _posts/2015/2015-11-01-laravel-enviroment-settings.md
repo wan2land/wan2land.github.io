@@ -2,7 +2,7 @@
 layout: post
 title: 초간단 OSX El Capitan에서 Laravel 개발환경 구축
 date: 2015-11-01 20:54:05 +09:00
-tags: ['PHP', 'Laravel', 'OSX']
+tags: ["php", "laravel"]
 ---
 
 Laravel(이하 라라벨) 개발자분들은 대부분 [Homestead](http://laravel.com/docs/5.1/homestead)환경에서 개발하실 것입니다.

@@ -2,7 +2,7 @@
 layout: post
 title: "PHP 꼴랑이거(4) - Callable"
 date: 2015-05-02 12:47:16 +09:00
-tags: ['PHP', 'callable', 'Closure']
+tags: ["php"]
 ---
 
 PHP에서 오늘 살펴볼 녀석은 `callable`이라는 녀석입니다.

@@ -2,7 +2,7 @@
 layout: post
 title: Jekyll에 Mathjax 추가하기
 date: 2015-12-17 20:54:05 +09:00
-tags: ['Mathjax', 'Markdown', 'Jekyll']
+tags: ["jekyll", "mathjax"]
 ---
 
 수학공식을 어떻게 블로그에 표현할까 고민하다가 MathJax 라는 도구가 있는 것을 발견했습니다. 엄청 유명한데 저만 몰랐나

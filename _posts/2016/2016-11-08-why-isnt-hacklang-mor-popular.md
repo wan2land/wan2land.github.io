@@ -2,7 +2,7 @@
 layout: post
 title: "왜 Hacklang은 더 유명해지지 않을까?"
 date: 2016-11-08 16:45:35 +09:00
-tags: ['php', 'hack', 'hacklang', 'hhvm']
+tags: ["php", "hhvm"]
 ---
 
 PHP 프레임워크를 만들면서 다양한 프레임워크를 공부하고 있는데 그 중 하나가 스프링입니다. 그 중 메타프로그래밍과 AOP에

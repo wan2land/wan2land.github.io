@@ -2,7 +2,7 @@
 layout: post
 title: "Gulp 넌 왜 갑자기 말썽이냐... (feat. cssnano)"
 date: 2016-08-23 00:26:35 +09:00
-tags: ['Gulp', 'Nodejs', 'cssnano']
+tags: ["gulp"]
 ---
 
 지난 3월 22일, Node 커뮤니티에서 발생했던 Left Pad 사건을 기억하시나요?

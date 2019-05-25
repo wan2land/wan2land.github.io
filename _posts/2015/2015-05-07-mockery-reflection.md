@@ -2,7 +2,7 @@
 layout: post
 title: "Reflection을 활용한 Private Method Test"
 date: 2015-05-07 11:50:35 +09:00
-tags: ['PHP', 'PHPUnit', 'Mockery', 'Reflection']
+tags: ["php", "php-reflection"]
 ---
 
 ModernPUG모임에서 발표한 내용으로서 발표자료와 소스코드는 다음 링크에서 확인할 수 있습니다.

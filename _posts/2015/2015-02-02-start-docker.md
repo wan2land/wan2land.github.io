@@ -2,7 +2,7 @@
 layout: post
 title: "Docker 시작하기."
 date: 2015-02-02 14:56:42 +09:00
-tags: ['Docker']
+tags: ["docker"]
 ---
 
 NHN D2 Fest에서도 들었고, 주변에서도 이야기만 많이 들은 Docker. 대략적인 개념은 알고있고 여튼 서버 관리하기가 편해진다는 말에 시작해보기로 했습니다.
@@ -53,7 +53,7 @@ REPOSITORY          TAG                 IMAGE ID            CREATED             
 ubuntu              latest              5ba9dab47459        4 days ago          188.3 MB
 ```
 
-##Docker 실행하기.
+## Docker 실행하기.
 
 위에서 가져온  ubuntu 이미지를 통해 도커 컨테이너를 실행하는 예제입니다. 내부적으로 /bin/bash를 실행하여 접근했을 때 bash를 통해 접근할 수 있도록 해줍니다.
 

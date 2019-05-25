@@ -1,8 +1,9 @@
 ---
 layout: post
-title: SVG Path Animation
+title: "SVG Path Animation"
+summary: "SVG를 이용해서 이미지가 그려지는 애니메이션을 그려봅니다."
 date: 2013-12-04 22:46:22 +09:00
-tags: ['svg']
+tags: ["svg"]
 ---
 
 ![Thumbnail](/images/dev/frontend/svg-path-animation.gif)

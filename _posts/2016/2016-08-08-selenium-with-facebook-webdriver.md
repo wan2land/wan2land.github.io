@@ -2,7 +2,7 @@
 layout: post
 title: "Facebook Webdriver를 이용하여 Selenium 테스트하기"
 date: 2016-08-08 20:47:42 +09:00
-tags: ['PHP', 'unittest', selenium', 'facebook webdriver']
+tags: ["php", "phpunit", "selenium"]
 ---
 
 최근 서비스에 UI 테스트를 할일이 생겼습니다.

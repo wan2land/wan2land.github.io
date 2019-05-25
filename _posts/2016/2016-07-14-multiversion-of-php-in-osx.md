@@ -2,7 +2,7 @@
 layout: post
 title: "OSX에서 PHP를 여러버전 깔아놓고 쓸때 팁"
 date: 2016-07-14 13:03:16 +09:00
-tags: ['osx', 'php', 'multiversion']
+tags: ["php", "osx"]
 ---
 
 보통 OSX에서 Homebrew를 많이 사용하실 겁니다. 그리고 몇몇 분들은 다양한 PHP 버전을 깔아놓고 테스트를 해야할 때 아마

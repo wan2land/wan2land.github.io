@@ -2,7 +2,7 @@
 layout: post
 title: "Reflection을 활용한 Closure Mockery"
 date: 2015-05-17 11:26:55 +09:00
-tags: ['PHP', 'PHPUnit', 'Mockery', 'Reflection', 'Closure']
+tags: ["php", "phpunit", "mockery"]
 ---
 
 ModernPUG모임에서 발표한 내용으로서 발표자료와 소스코드는 다음 링크에서 확인할 수 있습니다.

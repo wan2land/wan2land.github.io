@@ -2,7 +2,7 @@
 layout: post
 title: PHP Config는 무엇을 사용해야할까?
 date: 2016-03-11 10:27:36 +09:00
-tags: ['php', 'json', 'config', 'opcache']
+tags: ["php", "php-opcache"]
 ---
 
 저는 주로 Config를 PHP 코드를 사용하는데요, 보통 다음과 같이 사용합니다.

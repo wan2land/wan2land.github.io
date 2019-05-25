@@ -2,7 +2,7 @@
 layout: post
 title: jQuery는 이제 너무 무겁다.
 date: 2014-02-03 06:05:24 +09:00
-tags: ['Javascript', 'Library', 'Micro Framework', 'jQuery']
+tags: ["javascript", "jquery"]
 ---
 
 지금까지 jQuery와 그 플러그인들은 웹개발을 더 쉽게 할 수 있도록 도와주었습니다. 그러나 전부터 생각했던 것은 단 몇개의 함수만을 사용하는데 있어서 jQuery는 너무 무겁지 않느냐는 것이었습니다.

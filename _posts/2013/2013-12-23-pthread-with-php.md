@@ -1,8 +1,8 @@
 ---
 layout: post
-title: PHP에서 pthread 사용하기.
+title: "PHP에서 pthread 사용하기."
 date: 2013-12-23 16:22:53 +09:00
-tags: ['PHP', 'pthread']
+tags: ["php", "pthread"]
 ---
 
 ## 설치

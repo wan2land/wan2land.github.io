@@ -2,7 +2,7 @@
 layout: post
 title: "발표, Vue SSR vs Prerender"
 date: 2017-10-23 19:00:55 +09:00
-tags: ['Vue', 'SSR', 'Prerender']
+tags: ["vue", "ssr", "prerender"]
 ---
 
 PHP서비스를 Vue로 리팩토링 하면서 발생한 SEO 문제를 해결하는 내용입니다. SSR과 Prerender를 고민하였고, 최종적으로 Prerender를 사용하였습니다.

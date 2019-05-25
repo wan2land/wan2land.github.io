@@ -2,7 +2,7 @@
 layout: post
 title: "Swift 프로젝트에 Cocoa Pods 이용하기"
 date: 2015-02-16 17:26:17 +09:00
-tags: ['Swift', 'Cocoa Pods', 'Xcode']
+tags: ["swift", "cocoapods"]
 ---
 
 맨날 웹개발 + 백엔드(수박겉핥기)만 죽어라 하다가 설도 껴있겠다 기념으로 전부터 보고싶었던 것을 가지고 놀아보자 라는 심정으로 스위프트를 시작해보기로 했습니다. 매번 [Cordova](http://cordova.apache.org)만 사용하는데 네이티브앱을 도전해보기 위해서 였습니다. 그리고 이게 되면 아이폰도 앱의 형태이긴 하지만 내 맘대로 튜닝이 될것 같아서이기도 했습니다.

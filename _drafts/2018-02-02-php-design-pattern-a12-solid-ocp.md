@@ -2,6 +2,7 @@
 layout: "post-design-pattern"
 chapter: "a.1.2"
 title: "디자인패턴 공부하기 - 부록1.2. SOLID, 계방폐쇄원칙(OCP)"
+summary: "디자인 패턴에 대해 다룬 글입니다."
 date: 2018-02-02 12:01:06 +09:00
 tags: ['designpattern', 'php']
 ---

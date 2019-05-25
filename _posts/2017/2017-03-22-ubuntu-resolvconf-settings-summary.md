@@ -2,7 +2,7 @@
 layout: post
 title: "우분투 resolv.conf 세팅 정리"
 date: 2017-03-22 13:09:44 +09:00
-tags: ['resolv.conf', 'dns', 'host']
+tags: ["ubuntu", "network"]
 ---
 
 서버는 AWS EC2(Ubuntu 16.04) + RDS 를 사용하고 있습니다. 일단, 문제의 발단은 다음 에러였습니다.

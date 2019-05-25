@@ -2,7 +2,7 @@
 layout: post
 title: Composer classmap을 이용한 성능향상
 date: 2015-01-23 15:36 +09:00
-tags: ['PHP', 'Composer']
+tags: ["php", "composer"]
 ---
 
 요즘 ModerPHP User Group (이하 PUG)에서 Composer 완전정복이라는 주제로 스터디를 진행하는게 있습니다. 각자 자기가 공부한 내용을 발표하던 중 눈에 띄는 옵션이 있었습니다.

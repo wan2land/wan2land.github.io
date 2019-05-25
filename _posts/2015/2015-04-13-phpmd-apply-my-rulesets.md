@@ -2,7 +2,7 @@
 layout: post
 title: "Mess Detector에서 나만의 커스텀 룰셋 적용하기"
 date: 2015-04-13 16:00:59 +09:00
-tags: ['PHP', 'Mess Detector', 'PHPMD', 'Rulesets']
+tags: ["php", "phpmd"]
 ---
 
 본 글은 기본적으로 Mess Detector와 PHPStorm을 사용하고 있는 분을 대상으로 삼고 있습니다. :)

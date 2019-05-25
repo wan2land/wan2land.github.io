@@ -1,16 +1,18 @@
 ---
 layout: post
-title: Git가지고 놀기(1) - Sublime과 함께 사용하기.
+title: "Git가지고 놀기(1) - Sublime과 함께 사용하기."
+summary: "Git 기본 에디터를 Sublime Text 로 변경하는 방법에 대해 설명합니다."
 date: 2013-12-13 19:49:02 +09:00
-tags: ['git']
+tags: ["git"]
 ---
+
 예전에 학교에서 버전관리에 대한 수업을 듣고 SVN과 GIT을 그냥 살짝 맛보기로 배웠었습니다. 그리고 몇몇 프로젝트를 하면서 인터넷 검색으로 GIT을 야매로 배웠었지요. 그러던 중, 최근 [프로 Git(컴퓨터 vs 책 블로그)](http://jhrogue.blogspot.kr/2013/10/git-git.html)이라는 글을 읽고 다시한번 Git을 제대로 배워보리라 하고 다짐했습니다..
 
 그리고 오늘. 드디어 기다리던 책이 도착했습니다!!
 
 초심자의 마음으로 하나하나 컴퓨터에 다시 설정하는 중입니다. 본 글에서는 아주 기본적인 `git add`라던가, `git commit`라던가 하는 내용은 다루지 않을 것입니다(나중에 시간되면 또 모릅니다.). 그냥 실무에서 기본만 사용하였는데 조금더 고급으로 도약해보려고 합니다. 또, 이 글은 저 자신을 위한 정리글이기도 합니다. :)
 
-##Git 기본에디터를 Sublimetext로 사용하기
+## Git 기본에디터를 Sublimetext로 사용하기
 
 기존 `git commit`수행시 연결되는 에디터는 **vim**이었습니다. 저는 당연히 이 기본 에디터만을 사용해야하는 줄 알았으나, 웬걸, 당연히 다른 에디터로 사용이 가능했습니다.
 
@@ -21,7 +23,7 @@ git config --global core.editor "subl -n -w"
 이거 한줄이면 해결됩니다. 그전에는 vi로 연결되었었거든요. `-n`과 `-w`옵션을 넣지 않으면
 
 ```bash
-$ git commit
+git commit
 Aborting commit due to empty commit message.
 ```
 

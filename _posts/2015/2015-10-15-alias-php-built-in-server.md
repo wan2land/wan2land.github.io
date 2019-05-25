@@ -2,7 +2,7 @@
 layout: post
 title: Alias PHP Built-in Server
 date: 2015-10-15 13:00:56 +09:00
-tags: ['PHP', 'Server', 'Test']
+tags: ["php"]
 ---
 
 웹을 자주 개발하면서 테스트용으로 **PHP built-in Server**(이하 빌트인서버)를 사용하는 일이 많습니다.

@@ -2,7 +2,7 @@
 layout: post
 title: "QUnit으로 브라우저, 노드 통합 유닛테스트 환경 구축하기"
 date: 2015-02-04 10:16:36 +09:00
-tags: ['Javascript', 'Unittest', 'Qunit']
+tags: ["javascript", "qunit"]
 ---
 
 작업하는 몇몇 소스가 브라우저에서도 사용이 되고, 노드(혹은 io.js도 가능할 듯.)에서도 사용이 됩니다. 통합된 환경에서 어떻게 하면 유닛테스트를 할 수 있을까 고민을 해보았습니다.

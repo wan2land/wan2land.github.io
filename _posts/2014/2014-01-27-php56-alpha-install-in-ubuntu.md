@@ -2,7 +2,7 @@
 layout: post
 title: 우분투에 PHP 5.6 alpha 설치하기.
 date: 2014-01-27 12:09:39 +09:00
-tags: ['Ubuntu', 'PHP', 'PHP 5.6']
+tags: ["php", "ubuntu"]
 ---
 
 PHP 5.6 Branch가 생성되고 얼마 지나지 않아 지난 2014년 1월 23일 5.6alpha1 버전이 공개되었습니다.
@@ -15,7 +15,7 @@ PHP라는 언어는 항상 버전업 될 때마다 하위호환성을 유지하�
 
 직접 하나하나 설치하면서 그 작업과정을 정리할 겸 올리게 되었습니다.
 
-##설치 환경
+## 설치 환경
 
 - 가상머신 Parallels, Single Core, 1GB Ram
 - Ubuntu 12.04 LTS Server
@@ -34,7 +34,7 @@ $ sudo apt-get install libreadline-devel
 
 그냥 자연스럽게 진행하면서 경고메시지만 읽으면 필요한 게 무엇인지 알 수 있습니다. :)
 
-##다운로드
+## 다운로드
 
 다운로드는 다음 페이지에서 진행할 수 있습니다. www.php.net 을 통해서도 접근 가능합니다.
 
@@ -42,7 +42,7 @@ $ sudo apt-get install libreadline-devel
 
 다운로드(wget 명령어 사용) 받은 후 원하는 디렉터리에 압축을 풉니다(tar명령어 사용). 저의 경우, /home/wani/ (사용자 최상위 디렉터리. `cd ~`를 통해 접근 가능)에 다운로드 받고 해당 폴더에 압축을 풀었습니다.
 
-##설치
+## 설치
 
 ```bash
 $ cd php-5.6.0alpha1
@@ -128,7 +128,7 @@ Starting php-fpm ..done
 
 쉽게 실행이 됩니다 :)
 
-##Nginx와의 연동
+## Nginx와의 연동
 
 이제 nginx에서 설정을 잡아주어야 합니다. apt-get으로 설치하였다면 `/etc/nginx/`에 자리를 잡고 있을 것입니다. 거기서 `sites-available/default`파일을 수정할 것입니다.
 
@@ -178,7 +178,7 @@ phpinfo();
 이제 다음에는 php5.6에서 추가된 내용에 대해서 다뤄보도록 하겠습니다 :)
 
 
-##참고자료
+## 참고자료
 
 - <http://systemv.pe.kr/php5.5_installation>
 - <http://blog.beany.co.kr/archives/2665>

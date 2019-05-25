@@ -2,7 +2,7 @@
 layout: post
 title: "PHP 꼴랑이거(3) - static과 self의 차이"
 date: 2015-02-13 05:32:11 +09:00
-tags: ['PHP', 'static', 'self']
+tags: ["php"]
 ---
 
 원래 본글은 2013년 12월 26일날 포스팅 된 글을 꼴랑이거 시리즈로 묶으면 좋겠다 생각되어 이쪽으로 이전된 글입니다. :)

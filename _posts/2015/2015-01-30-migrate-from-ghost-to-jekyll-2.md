@@ -2,13 +2,10 @@
 layout: post
 title: "Ghost에서 Jekyll로 이사하기(2) - Code Highlighter 설치"
 date: 2015-01-30 10:42:00 +09:00
-tags: ['Jekyll', 'Code Highlighter']
+tags: ["jekyll"]
 ---
 
 이전 Ghost 블로그에서는 그냥 Google Prettify를 사용해서 쉽게 해결했었습니다. 그런데 Jekyll에서는, 그리고 Github에서 호스팅하는 환경에서는 이부분의 제약이 좀 있었습니다.
-
-
-
 
 Jekyll에서 사용하는 마크다운 툴은 크게 두가지입니다. `redcarpet`과 `kramdown`이었습니다. 사실 코드를 블로그에 작성하지 않으면 크게 문제는 없습니다만.. 코드를 작성해야해서 Code Syntax Highlighter는 필수였습니다. Kramdown은 루비로 만들어진 마크다운인 것을 생색내는지 기존의 마크다운 이외에 특수한 문법들을 추가로 더 사용하고 있었습니다. 그러나 저는 기존 Markdown에서 소스코드를 다음과 같이 작성하고 있었습니다.
 
