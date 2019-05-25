@@ -118,6 +118,6 @@ while (count($pool)) {
 echo "End;\n";
 ```
 
-##참고자료
+## 참고자료
 
 - <http://www.php.net/manual/en/book.pthreads.php>

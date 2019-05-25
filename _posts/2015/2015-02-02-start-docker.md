@@ -41,7 +41,7 @@ $ ln -sf /usr/bin/docker.io /usr/local/bin/docker
 ```
 설치가 완료되고 `docker.io`라는 파일의 링크를 생성하면 설치가 끝납니다.
 
-##기본 Ubuntu 이미지 가져오기
+## 기본 Ubuntu 이미지 가져오기
 
 기본적으로 사용할 ubuntu 이미지를 가져와야합니다. 다음 명령어를 통해 가져올 수 있습니다.
 

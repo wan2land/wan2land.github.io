@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "발표, Vue SSR vs Prerender"
+summary: "2017년 10월 GDG 인천에서 Vue SSR + Prerender로 진행한 발표내용입니다."
 date: 2017-10-23 19:00:55 +09:00
 tags: ["vue", "ssr", "prerender"]
 ---

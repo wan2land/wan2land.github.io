@@ -85,7 +85,7 @@ InheretedObject::make()->foo();
 
 굳이 사용할 필요는 없지만 #2보다 #1 직관적이라서 자주 사용하고 있습니다.
 
-##참고자료
+## 참고자료
 
 - <http://www.programmerinterview.com/index.php/php-questions/php-self-vs-static>
 
