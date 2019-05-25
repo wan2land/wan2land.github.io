@@ -9,4 +9,4 @@ PHP를 안좋게 바라보는 개발자 분들 중에 상당 수가 옛날 방�
 
 8월 GDG 인천에서 발표한 내용입니다.
 
-<iframe src="//www.slideshare.net/slideshow/embed_code/key/D4AteUeyFbVyFd" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
+<iframe src="//www.slideshare.net/slideshow/embed_code/key/D4AteUeyFbVyFd" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>

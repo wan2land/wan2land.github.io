@@ -19,6 +19,22 @@ $white: #eeeeee; //
 $gray: #393e46; // 
 $black: #222831; // 
 
+$media-md-min: 700px;
+$media-md-max: 1199px;
+$media-lg-min: 1200px;
+
+@mixin media-md() {
+  @media screen and (min-width: $media-md-min) and (max-width: $media-md-max) {
+    @content;
+  }
+}
+
+@mixin media-lg() {
+  @media screen and (min-width: $media-lg-min) {
+    @content;
+  }
+}
+
 body {
   font-family: 'D2Coding', monospace;
   font-size: 16px;
@@ -61,9 +77,18 @@ a:hover {
 }
 
 .container {
-  width: 1000px;
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  @include media-md() {
+    width: 580px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  @include media-lg() {
+    width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 .header {
@@ -100,10 +125,6 @@ a:hover {
     padding-top: 3rem;
     margin-top: 3rem;
   }
-  .post-header {
-    // display: flex;
-    // justify-content: space-between;
-  }
   .post-title {
     font-size: 1.25rem;
   }
@@ -116,7 +137,9 @@ a:hover {
   }
   .post-tags {
     margin-top: .5rem;
-    color: rgba($point, .5);
+    a {
+      color: rgba($point, .5);
+    }
   }
 
   .pagination {
@@ -143,7 +166,9 @@ a:hover {
   }
   .post-tags {
     margin-top: .5rem;
-    color: rgba($point, .5);
+    a {
+      color: rgba($point, .5);
+    }
   }
 }
 

@@ -17,7 +17,7 @@ layout: default
       {% if page.tags.size > 0 %}
         <div class="post-tags">
           {% for tag in page.tags %}
-            <span>#{{ tag | downcase }}</span>
+            <a href="/tags/#{{ tag | downcase }}">#{{ tag | downcase }}</a>
           {% endfor %}
         </div>
       {% endif %}

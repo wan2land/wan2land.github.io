@@ -24,7 +24,7 @@ description: "포스팅 목록"
           {% if post.tags.size > 0 %}
             <div class="post-tags">
               {% for tag in post.tags %}
-                <span>#{{ tag | downcase }}</span>
+                <a href="/tags/#{{ tag | downcase }}">#{{ tag | downcase }}</a>
               {% endfor %}
             </div>
           {% endif %}
