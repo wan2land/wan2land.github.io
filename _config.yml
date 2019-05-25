@@ -1,4 +1,4 @@
-title: 웹으로 먹고살기
+title: 완두블로그
 
 email: im@wani.kr
 
@@ -14,5 +14,5 @@ author:
   github: wan2land
 
 sass:
-    sass_dir: _scss
-    style: compressed
+  sass_dir: _scss
+  style: compressed
