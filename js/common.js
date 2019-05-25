@@ -24,16 +24,14 @@
 
   // linkenums
   $("pre > code").each(function() {
-    var lines = this.innerHTML.split("\n")
-    if (lines.length > 5) {
-      var i
-      var ol = "<ol class=\"linenums\">"
-      for (i in lines) {
-        ol += "<li>" + lines[i] + "</li>"
-      }
-      this.innerHTML = ol
-      $(this).addClass("linenums")
+    var lines = this.innerHTML.replace(/^\s+|\s+$/g, "").split("\n")
+    var i
+    var ol = "<ol class=\"linenums\">"
+    for (i in lines) {
+      ol += "<li>" + lines[i] + "</li>"
     }
+    this.innerHTML = ol
+    $(this).addClass("linenums")
   })
 
   // mermaid
