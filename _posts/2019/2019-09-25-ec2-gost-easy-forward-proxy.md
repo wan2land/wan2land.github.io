@@ -102,7 +102,7 @@ WantedBy=multi-user.target
       "instance_type": "t2.micro",
       "source_ami": "ami-0fd02cb7da42ee5e0",
       "ssh_username": "ubuntu",
-      "ami_name": "gost-ubuntu-18.04-ko-{{isotime \"060102-150405\"}}",
+      "ami_name": "gost-ubuntu-18.04-ko-{% raw %}{{isotime \"060102-150405\"}}{% endraw %}",
       "tags": {
         "Name": "gost-ubuntu-18.04-ko",
         "Packer": "true"

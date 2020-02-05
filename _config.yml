@@ -1,6 +1,6 @@
 title: 완두블로그
 
-email: im@wani.kr
+email: hi@wani.kr
 
 markdown: kramdown
 
@@ -8,6 +8,9 @@ permalink: /posts/:year/:month/:day/:title/
 paginate_path: /posts/page/:num
 
 paginate: 10
+
+plugins:
+  - jekyll-paginate
 
 author:
   twitter: wan2land
