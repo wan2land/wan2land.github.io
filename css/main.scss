@@ -13,10 +13,12 @@ $orange: #f58b54; // https://colorhunt.co/palette/145229
 $red: #cd3131; // dark+
 $magenta: #bc3fbc; // dark+
 
-$point: #00adb5; //
 $white: #eeeeee; //
 $dark: #2a2a2e;
 $black: #232326; //
+
+$theme: #9DE3AC;
+$theme-sub: rgba($white, .3);
 
 $media-md-min: 700px;
 $media-md-max: 1199px;
@@ -70,7 +72,7 @@ h5, h6 {
 
 
 a {
-  color: $point;
+  color: $theme;
   text-decoration: none;
   cursor: pointer;
 }
@@ -113,12 +115,21 @@ a:hover {
   }
 }
 
+.page {
+  min-height: calc(100vh - 223px);
+}
+
 .footer {
-  margin-top: 2rem;
-  padding: 1rem 0;
-  // color: rgba($white, .5);
+  border-top: 1px solid #38383d;
+  background: #2a2a2e;
+  padding: 33px 0 30px;
+  height: 20px;
+  font-size: 14px;
+  .container {
+    text-align: center;
+  }
   a {
-    color: rgba($point, .5);
+    color: $theme-sub;
   }
 }
 
@@ -141,7 +152,7 @@ a:hover {
   .post-tags {
     margin-top: .5rem;
     a {
-      color: rgba($point, .5);
+      color: $theme-sub;
     }
   }
 
@@ -151,7 +162,7 @@ a:hover {
       color: rgba($white, .5);
     }
     a:hover {
-      color: rgba($point, .5);
+      color: $theme-sub;
     }
     a.current {
       color: $white;
@@ -160,6 +171,7 @@ a:hover {
 }
 
 .page-post {
+  padding-bottom: 4rem;
   .post-title {
     font-size: 1.375rem;
   }
@@ -170,7 +182,7 @@ a:hover {
   .post-tags {
     margin-top: .5rem;
     a {
-      color: rgba($point, .5);
+      color: $theme-sub;
     }
   }
 }
@@ -192,6 +204,12 @@ a:hover {
     margin-bottom: 16px
   }
   
+  img,
+  figure {
+    margin-top: 48px;
+    margin-bottom: 48px;
+  }
+
   hr {
     height: .25em;
     padding: 0;
@@ -350,10 +368,26 @@ a:hover {
   }
   
   img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
     max-width: 100%;
     -webkit-box-sizing: content-box;
     box-sizing: content-box;
     background-color: #232326
+  }
+
+  figure {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  figure img {
+    margin-bottom: 0;
+  }
+
+  figcaption {
+    text-align: center;
   }
   
   
