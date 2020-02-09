@@ -220,6 +220,8 @@ a:hover {
   }
   
   blockquote {
+    margin-left: 0;
+    margin-right: 0;
     padding: 0 1em;
     color: #6a737d;
     border-left: .25em solid #44444a
@@ -435,14 +437,91 @@ a:hover {
   
   .highlight pre,
   pre {
+    position: relative;
     padding: 16px;
     overflow: auto;
     font-size: 85%;
     line-height: 1.45;
     background-color: #2a2a2e;
-    border-radius: 3px
   }
-  
+  [class^="language-"] pre {
+    padding-top: 24px;
+  }
+
+  [class^="language-"] pre:before {
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    font-size: 0.625rem;
+    line-height: 1.5;
+    padding: 0 0.5em .0625rem;
+    text-transform: uppercase;
+  }
+  .language-html pre:before {
+    background: #e54c21;
+    color: $white;
+    content: "HTML";
+  }
+  .language-xml pre:before {
+    background: #5b9797;
+    color: $white;
+    content: "XML";
+  }
+  .language-css pre:before {
+    background: #0170ba;
+    color: $white;
+    content: "CSS";
+  }
+  .language-scss pre:before {
+    background: #cd669a;
+    color: $white;
+    content: "Sass";
+  }
+  .language-js pre:before,
+  .language-javascript pre:before {
+    background: #f0dc4d;
+    color: $black;
+    content: "JavaScript";
+  }
+  .language-json pre:before {
+    background: #f0dc4d;
+    color: $black;
+    content: "json";
+  }
+  .language-sh pre:before,
+  .language-bash pre:before {
+    background: #14171a;
+    color: $white;
+    content: "bash";
+  }
+  .language-c pre:before {
+    background: #7f8b99;
+    color: $white;
+    content: "C";
+  }
+  .language-ts pre:before,
+  .language-typescript pre:before {
+    background: #0077c7;
+    color: $white;
+    content: "typescript";
+  }
+  .language-php pre:before {
+    background: #7478ae;
+    color: $white;
+    content: "PHP";
+  }
+  .language-java pre:before {
+    background: #507e9c;
+    color: $white;
+    content: "Java";
+  }
+  .language-ini pre:before {
+    background: $white;
+    color: $black;
+    content: "ini";
+  }
+
   pre code,
   pre tt {
     display: inline;

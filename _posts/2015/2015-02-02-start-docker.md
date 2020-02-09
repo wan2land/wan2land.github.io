@@ -20,8 +20,8 @@ NHN D2 Fest에서도 들었고, 주변에서도 이야기만 많이 들은 Docke
 ## 설치하기
 
 ```bash
-$ apt-get update 
-$ apt-get install docker.io
+apt-get update 
+apt-get install docker.io
 ```
 
 위 명령어를 통해 쉽게 설치가 가능합니다. 근데 저의 경우는 `linux-headers-server`에서 의존성이 없다고 경고가 나왔습니다.
@@ -31,13 +31,13 @@ $ apt-get install docker.io
 지정한 버전의 `linux-headers-server` 패키지가 없다는 건데, 시키는대로 하면 잘 됩니다. 
 
 ```bash
-$ apt-get install -f
+apt-get install -f
 ```
 
 위 명령어를 통해 없는 제대로 되어있지 않은 의존성을 해결할 수 있다고 합니다. (`man apt-get`) 그리고 나머지 설치 과정을 진행해봅시다.
 
 ```bash
-$ ln -sf /usr/bin/docker.io /usr/local/bin/docker
+ln -sf /usr/bin/docker.io /usr/local/bin/docker
 ```
 설치가 완료되고 `docker.io`라는 파일의 링크를 생성하면 설치가 끝납니다.
 
@@ -46,9 +46,12 @@ $ ln -sf /usr/bin/docker.io /usr/local/bin/docker
 기본적으로 사용할 ubuntu 이미지를 가져와야합니다. 다음 명령어를 통해 가져올 수 있습니다.
 
 ```bash
-$ docker search ubuntu
-$ docker pull ubuntu:latest
-$ docker images
+docker search ubuntu
+docker pull ubuntu:latest
+docker images
+```
+
+```
 REPOSITORY          TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
 ubuntu              latest              5ba9dab47459        4 days ago          188.3 MB
 ```
@@ -58,8 +61,11 @@ ubuntu              latest              5ba9dab47459        4 days ago          
 위에서 가져온  ubuntu 이미지를 통해 도커 컨테이너를 실행하는 예제입니다. 내부적으로 /bin/bash를 실행하여 접근했을 때 bash를 통해 접근할 수 있도록 해줍니다.
 
 ```bash
-$ sudo docker run -i -t --name sample ubuntu /bin/bash
-$ docker ps -a
+sudo docker run -i -t --name sample ubuntu /bin/bash
+docker ps -a
+```
+
+```
 CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS                       PORTS               NAMES
 93610851fd42        ubuntu:latest       /bin/bash           2 minutes ago       Exited (130) 9 seconds ago                       sample
 ```

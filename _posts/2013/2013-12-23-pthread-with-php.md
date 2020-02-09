@@ -15,8 +15,8 @@ tags: ["php", "pthread"]
 
 
 ```bash
-$ brew install php55 --with-thread-safety
-$ brew install php55-pthreads
+brew install php55 --with-thread-safety
+brew install php55-pthreads
 ```
 
 이것도 모르고 `zts enabled... no`라는 에러때문에 어찌나 고생했던지..

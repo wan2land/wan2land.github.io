@@ -24,6 +24,9 @@ git config --global core.editor "subl -n -w"
 
 ```bash
 git commit
+```
+
+```
 Aborting commit due to empty commit message.
 ```
 

@@ -81,8 +81,11 @@ request.end();
 
 ### 서버쪽에서 출력되는 내용
 
+```bash
+node server
 ```
-$ node server
+
+```
 { 'user-agent': 'Node Tester/0.0.1',
   'content-type': 'application/json',
   host: 'localhost:8080',
@@ -95,8 +98,11 @@ POST
 
 ### 클라이언트 쪽에서 출력되는 내용
 
+```bash
+node client-sample
 ```
-$ node client-sample
+
+```
 200
 Hello Server
 ```
@@ -156,7 +162,7 @@ request.end();
 
 어떤 방식으로 인증하는지 궁금해서 제가 켜놓은 서버(`server.js`)로 실행해봤습니다. 그럼 다음과 같은 메시지를 확인할 수 있습니다.
 
-```bash
+```
 { 'user-agent': 'Node Tester/0.0.1',
   'content-type': 'application/json',
   host: 'localhost:8080',

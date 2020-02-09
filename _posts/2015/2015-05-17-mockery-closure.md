@@ -29,7 +29,7 @@ PHP Mockery는 클래스, 인터페이스 등을 가리지 않고 자유자재�
 이야기 했냐하면, 내장 클래스인 Closure가 바로 Final로 선언이 되어있어서 상속을 할수 없습니다. 즉 Mocking이
 불가능합니다.
 
-```bash
+```
 PHP Fatal error:  Class SubClosure may not inherit from final class (Closure) in /Users/wani/Workspace/php/samples/language/closure/inherit.php on line 6
 ```
 

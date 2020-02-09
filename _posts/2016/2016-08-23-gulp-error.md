@@ -39,7 +39,7 @@ tags: ["gulp"]
 
 `glob2base/index.js`를 열어보았습니다.
 
-```js
+```javascript
 var setToBase = function(set) {
   // normal something/*.js
   if (set.length <= 1) {
@@ -64,7 +64,7 @@ var setToBase = function(set) {
 
 문제가 되는 부분은 바로 이 지점이었습니다.
 
-```js
+```javascript
 set = set.filter(function (s) {
     return s.indexOf(false) === -1
 })
@@ -84,7 +84,7 @@ set = set.filter(function (s) {
 
 참고로, 3시간전에 (이 포스팅을 작성하는 시간 기준으로) 이슈가 보고가 되었고 바로 수정이 되었습니다.
 
-```js
+```javascript
 if(!Array.indexOf)
 	Array.prototype.indexOf = function (vItem) {
 		for (var i=0; i < this.length; i++) {

@@ -9,13 +9,11 @@ tags: ["jekyll"]
 
 Jekyll에서 사용하는 마크다운 툴은 크게 두가지입니다. `redcarpet`과 `kramdown`이었습니다. 사실 코드를 블로그에 작성하지 않으면 크게 문제는 없습니다만.. 코드를 작성해야해서 Code Syntax Highlighter는 필수였습니다. Kramdown은 루비로 만들어진 마크다운인 것을 생색내는지 기존의 마크다운 이외에 특수한 문법들을 추가로 더 사용하고 있었습니다. 그러나 저는 기존 Markdown에서 소스코드를 다음과 같이 작성하고 있었습니다.
 
-```
-```javascript
+<pre><code>```javascript
 (function($) {
     /* ...blabla... */
 })(jQuery);
-'''
-```
+```</code></pre>
 
 그러나 `kramdown`의 경우는 조금 다른 방식을 사용하고 있었습니다. 그러던 중 `redcarpet`을 보았는데 이 마크다운 해석기가 제가 주로 사용하는 익숙한 방식을 채용하고 있었습니다. 또한 내부에는 `pygrments`라는 Syntax Highlighter를 내장하고 있었습니다. 그냥 사용하면 됩니다.
 

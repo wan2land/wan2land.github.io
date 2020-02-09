@@ -58,8 +58,8 @@ QUnit의 장점이 무엇이냐. 하면.. ~~제가 사용할 수 있다는 것?~
 일단 두가지 프로그램을 설치합시다.
 
 ```bash
-$ npm install requirejs --save-dev
-$ npm install qunitjs --save-dev
+npm install requirejs --save-dev
+npm install qunitjs --save-dev
 ```
 
 그리고 저는 다음과 같이 파일을 구성하였습니다.
@@ -70,7 +70,6 @@ $ npm install qunitjs --save-dev
 - `/src/sample.js` : 우리가 만든 모듈.
 - `/qunit.html` : 웹 테스트 시작 파일입니다.
 - `/qunit.js` : 노드 테스트 시작 파일입니다.
-```
 
 `qunit.html` 파일은 웹에서 실행하면 유닛테스트가 실행됩니다. `qunit.js`파일은 노드에서 유닛테스트가 실행됩니다. 그리고 각각 파일은 공통적으로 `/tests/bootstrap.js`파일을 불러오면 테스트가 실행됩니다. `tests`및에 있는 테스트 모듈의 경우 `*-test.js`의 파일명을 붙였고 여기서 `*`에 해당하는 파일은 `/src/*`에 1:1로 매칭됩니다.
 
@@ -162,7 +161,7 @@ requirejs(['bootstrap']);
 위의 브라우저 설정과 비슷합니다. 다만 여기서는 브라우저에서 실행하는 것이 아니라 `requirejs`에서 `shim`설정이 불가능합니다. 그래서 `requirejs.define`을 통해 직접 선언해주어야 합니다. 마찬가지로 `autoload`, `autostart`를 꺼주셔야 합니다. 그리고 `QUnit`은 브라우저 용으로 제작된 유닛테스트 도구라서 어떤 형태로 로그를 찍어줘야할지 함수를 설정해주어야 합니다. 그것이 `QUnit.log`라는 부분입니다. 저는 콘솔을 예쁘게 (나름) 색깔을 갖추기 위해 [styled-console](https://www.npmjs.com/package/styled-console)을 사용했습니다. 필요하신 분들은 다음 명령어를 통해 설치 가능합니다.
 
 ```bash
-$ npm install styled-console --save-dev
+npm install styled-console --save-dev
 ```
 
 ## `/tests/bootstrap.js` 구성

@@ -35,10 +35,10 @@ C와 PHP중간 정도의 위치에 있는 언어였습니다.
 공식사이트에는 다음과 같이 나와있습니다.
 
 ```bash
-$ git clone https://github.com/phalcon/zephir
-$ cd zephir
-$ ./install-json
-$ ./install -c
+git clone https://github.com/phalcon/zephir
+cd zephir
+./install-json
+./install -c
 ```
 
 아쉽게도 아직 brew는 지원하지 않는 것 같습니다. 그리고 한가지 주의하셔야 하는 것은 처음 `git clone`할 때 사용한 폴더를
@@ -93,14 +93,14 @@ Team**라는 내용이 가장 인상깊었습니다.
 `conf.d`에 `ext-example.ini`파일을 생성해줍니다.
 
 ```bash
-$ cd /usr/local/etc/php/5.5/conf.d
-$ vi ext-example.ini
+cd /usr/local/etc/php/5.5/conf.d
+vi ext-example.ini
 ```
 
 그리고 다음과 같이 작성해서 넣도록 합시다. 여기서 경로는 아까전에 compile.log를 기반으로 찾아낸 `example.so` 파일의
 경로를 넣어줍니다.
 
-```bash
+```
 [example]
 extension=/usr/local/Cellar/php55/5.5.18/lib/php/extensions/no-debug-non-zts-
 20121212/example.so

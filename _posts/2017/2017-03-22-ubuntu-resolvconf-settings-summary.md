@@ -63,14 +63,14 @@ search ap-northeast-2.compute.internal
 그런데 해당 네임서버가 제대로 동작하는지는 어떻게 알 수 있을까요? `nslookup` 명령어를 사용하면 됩니다. 위의
 `172.31.0.2` 서버를 통해 우리의 RDS 도메인을 찾을 수 있는지 조회해봅시다.
 
-```sh
+```bash
 nslookup myrds.abcdefghijkl.ap-northeast-2.rds.amazonaws.com 172.31.0.2
 ```
 
 위 명령어에서 찾는데 실패하면(혹은 너무 오래 걸리면) DNS가 정상동작하지 않는다고 이야기 할 수 있습니다. 위 도메인을
 구글신님의 DNS에 조회해봅시다. (아이피가 너무 단순합니다. `8.8.8.8`!!!!)
 
-```sh
+```bash
 nslookup myrds.abcdefghijkl.ap-northeast-2.rds.amazonaws.com 8.8.8.8
 ```
 
@@ -107,14 +107,13 @@ nameserver 2001:4860:4860::8844
 
 다음 파일을 열고,
 
-```sh
+```bash
 vi /etc/resolvconf/resolv.conf.d/tail
 ```
 
 다음 내용을 추가합시다.
 
 ```
-
 # Google IPv4 nameservers
 nameserver 8.8.8.8
 nameserver 8.8.4.4
@@ -126,7 +125,7 @@ nameserver 2001:4860:4860::8844
 
 이제 네트워크 서비스를 재시작 해봅시다. 그냥 저는 다음 명령어를 사용하였습니다.
 
-```sh
+```bash
 sudo service resolvconf restart
 ```
 

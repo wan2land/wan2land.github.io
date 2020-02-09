@@ -18,7 +18,7 @@ Composer(이하, 컴포저)를 일단 Global 환경에서 사용해야합니다.
 
 설치해봅시다.
 
-```
+```bash
 composer global require squizlabs/php_codesniffer phpmd/phpmd
 ```
 

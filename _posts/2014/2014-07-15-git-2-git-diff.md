@@ -20,8 +20,8 @@ Git을 신나게 사용하다가 보면 어느순간 소스간에 비교가 필�
 OSX에서는 기본 Merge도구로서 Filemerge라는 도구를 제공하고 있습니다. 물론 git에 연결이 필요합니다.
 
 ```bash
-$ vi ~/git-diff-cmd.sh
-$ chmod +x ~/git-diff-cmd.sh
+vi ~/git-diff-cmd.sh
+chmod +x ~/git-diff-cmd.sh
 ```
 
 위 명령어를 이용하여 파일을 열고, 다음과 같이 저장합니다.
@@ -35,13 +35,13 @@ $ chmod +x ~/git-diff-cmd.sh
 그리고 다음 명령어를 통해 Git에 연결합니다.
 
 ```bash
-$ git config --global diff.external ~/git-diff-cmd.sh
+git config --global diff.external ~/git-diff-cmd.sh
 ```
 
 간단히 실험해봅시다.
 
 ```bash
-$ git diff 1.2.2 1.3.2 src/Wandu/Controller.php
+git diff 1.2.2 1.3.2 src/Wandu/Controller.php
 ```
 
 물론 위 실험용 명령어는 프로젝트마다 조금씩 다를 수 있습니다. :)
@@ -54,13 +54,13 @@ $ git diff 1.2.2 1.3.2 src/Wandu/Controller.php
 
 ```bash
 # 모든 파일을 stage상태로 만들기
-$ git add . 
+git add . 
 
 # 전체 비교
-$ git diff --cached
+git diff --cached
 
 # 특정 파일 비교
-$ git diff --cached filename 
+git diff --cached filename 
 ```
 
 ### 태그간의 비교
@@ -69,22 +69,22 @@ $ git diff --cached filename
 
 ```bash
 # 현재와 이전 버전과 비교 ex. git diff 1.3.2
-$ git diff version
+git diff version
 
 # 현재와 이전 버전과 비교, 특정파일 ex. git diff 1.3.2 REAEME.md
-$ git diff version filename
+git diff version filename
 
 # 현재와 이전 버전과 비교, 특정폴더 ex. git diff 1.3.2 src/Controller
-$ git diff version dirname
+git diff version dirname
 
 # 버전과 버전간의 비교 ex. git diff 1.2.0 1.3.1
-$ git diff version otherversion
+git diff version otherversion
 
 # 버전과 버전간의 비교, 특정파일 ex. git diff 1.2.0 1.3.1 README.md
-$ git diff version otherversion filename
+git diff version otherversion filename
 
 # 버전과 버전간의 비교, 특정폴더 ex. git diff 1.2.0 1.3.1 src/Controller
-$ git diff version otherversion dirname
+git diff version otherversion dirname
 ```
 
 ### Commit과의 비교
@@ -93,7 +93,7 @@ $ git diff version otherversion dirname
 
 ```bash
 # 커밋간의 비교 ex. git diff 5643175 30ee131
-$ git diff commithash otherhash
+git diff commithash otherhash
 ```
 
 

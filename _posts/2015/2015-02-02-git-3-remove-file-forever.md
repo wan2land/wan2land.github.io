@@ -12,7 +12,10 @@ tags: ["git"]
 우리 패키지에서  vendor디렉토리만 전부 삭제하고 싶을 때 다음 명령어를 입력하면 됩니다.
 
 ```bash
-$ git filter-branch --tree-filter 'rm -rf ./vendor' HEAD
+git filter-branch --tree-filter 'rm -rf ./vendor' HEAD
+```
+
+```
 Rewrite a66eb68ff04ddc2e33d0ac7604d31837cbad2cbb (76/76)
 Ref 'refs/heads/develop' was rewritten
 ```
@@ -22,7 +25,10 @@ Ref 'refs/heads/develop' was rewritten
 그리고 `git status`명령어를 입력하면 다음과 같은 상태를 확인할 수 있습니다.
 
 ```bash
-$ git status
+git status
+```
+
+```
 On branch develop
 Your branch and 'origin/develop' have diverged,
 and have 74 and 74 different commits each, respectively.
@@ -40,13 +46,16 @@ nothing to commit, working directory clean
 위의 filter-branch명령어를 `--prune-empty`와 함께 작성하시면 됩니다.
 
 ```bash
-$ git filter-branch --prune-empty HEAD
+git filter-branch --prune-empty HEAD
 ```
 
 그리고 `git status`를 통해 다음과 같이 commit의 갯수가 줄어든 것을 볼 수 있습니다.
 
 ```bash
-$ git status
+git status
+```
+
+```
 On branch develop
 Your branch and 'origin/develop' have diverged,
 and have 66 and 72 different commits each, respectively.
@@ -58,7 +67,7 @@ nothing to commit, working directory clean
 이제 커밋을 하면 됩니다. :)
 
 ```bash
-$ git push origin master --force
+git push origin master --force
 ```
 
 ## 참고자료

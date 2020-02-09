@@ -17,8 +17,11 @@ tags: ["ubuntu"]
 
 저는 스x호스팅에서 가상서버를 호스팅 받아서 사용하고 있고, 서버 버전은 다음과 같습니다.
 
+```bash
+lsb_release -a
 ```
-$ lsb_release -a
+
+```
 No LSB modules are available.
 Distributor ID:	Ubuntu
 Description:	Ubuntu 14.04.1 LTS
@@ -33,13 +36,16 @@ Codename:	trusty
 서버를 보는 명령어는 간단합니다. `timedatectl`(간단하게 보려면 `date`)입니다. 명령어를 입력하니
 다음과 같은 결과를 볼 수 있었습니다.
 
+```bash
+date
+# 2015. 04. 23. (목) 11:36:50 KST
 ```
-$ date
-2015. 04. 23. (목) 11:36:50 KST
+
+```bash
+timedatectl
 ```
 
 ```
-$ timedatectl
       Local time: 목 2015-04-23 11:37:58 KST
   Universal time: 목 2015-04-23 02:37:58 UTC
         RTC time: 목 2015-04-23 02:46:28
@@ -59,9 +65,9 @@ NTP synchronized: no
 하기 때문에 NTP서버를 입력해야합니다. 명령어는 단순합니다. `ntpdate`이고, 첫번째 인자로 기준
 서버를 입력해야합니다. 저는 `ntp.ubuntu.com`을 사용했습니다.
 
-```
-$ ntpdate ntp.ubuntu.com
-23 Apr 11:39:41 ntpdate[5182]: step time server 91.189.94.4 offset -96.781137 sec
+```bash
+ntpdate ntp.ubuntu.com
+# 23 Apr 11:39:41 ntpdate[5182]: step time server 91.189.94.4 offset -96.781137 sec
 ```
 
 몇초가 차이가 났는지 조정이 됩니다. 96초라는 어마어마한 차이를 두고 있다니.. 조금 부끄럽네요.
@@ -77,8 +83,8 @@ Crond은 컴퓨터에서 일정 시간이 되면 지정한 명령어를 수행�
 되면 이런 명령어를 실행해켜줘!" 이런 일을 컴퓨터에게 시킬때 참 편리한 녀석입니다. 명령어는 다음과
 같이 입력합시다.
 
-```
-$ crontab -e
+```bash
+crontab -e
 ```
 
 그러면 기본 에디터로 실행이 되는데, 보통 `nano`혹은 `vim`이 실행이 될 것입니다. 마지막 라인에

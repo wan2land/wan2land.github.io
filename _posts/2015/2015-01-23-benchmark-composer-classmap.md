@@ -20,19 +20,19 @@ Composer를 설치하시면 기본적으로 PSR-0 또는 PSR-4로 지정된 클�
 사용법은 간단합니다.
 
 ```bash
-$ composer install -o
+composer install -o
 ```
 
 또는
 
 ```bash
-$ composer update -o
+composer update -o
 ```
 
 이런식으로 `-o` 옵션만 추가하시면 됩니다. 이미 설치를 하셨다면
 
 ```bash
-$ composer dump-autoload -o
+composer dump-autoload -o
 ```
 
 이런식으로 명령어를 입력하시면 됩니다. 그리고 `vendor/composer/autoload_classmap.php`파일을 열어보시면

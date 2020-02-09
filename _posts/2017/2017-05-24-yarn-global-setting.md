@@ -15,25 +15,25 @@ tags: ["nodejs", "yarn"]
 
 일단 다음 명령어를 입력해보면 보통은 `undefined`가 출력됩니다.
 
-```sh
+```bash
 yarn config get prefix
 ```
 
 `prefix` config 를 다음과 같이 설정해줍니다.
 
-```sh
+```bash
 yarn config set prefix ~/.yarn-global
 ```
 
 그리고 다음 명령어를 실행해봅시다.
 
-```sh
+```bash
 yarn config get prefix
 ```
 
 그러면 방금 설정한 경로가 제대로 출력되는 것을 확인할 수 있습니다. 또한 다음 명령어를 통해서 해당 설정값이 제대로 들어가있는지 확인할 수 있습니다.
 
-```sh
+```bash
 cat ~/.yarnrc
 ```
 
@@ -41,13 +41,13 @@ cat ~/.yarnrc
 
 그리고 다음 한줄을 추가합니다.
 
-```
+```bash
 export PATH="$PATH:`yarn global bin`"
 ```
 
 테스트로 패키지 하나를 설치해봅시다. :-)
 
-```sh
+```bash
 yarn global add pm2
 pm2 --version
 ```

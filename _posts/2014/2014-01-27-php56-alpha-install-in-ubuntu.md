@@ -26,10 +26,10 @@ Nginx위에서 돌릴 것이라 php-fpm을 까는 과정으로 진행하도록 �
 저의 경우 Ubuntu 서버 설치 직후 바로 php를 깔았던지라 몇 가지 필요한 사전 프로그램들이 있었습니다. Ubuntu 서버버전을 처음 깔아보는 초보인지라 기본으로 `gcc`랑 `make`가 들어있지 않은지 몰랐습니다.. PHP를 설치하면서 부가적으로 설치했던 내용입니다.
 
 ```bash
-$ sudo apt-get install gcc
-$ sudo apt-get install make
-$ sudo apt-get install libxml2-dev
-$ sudo apt-get install libreadline-devel
+sudo apt-get install gcc
+sudo apt-get install make
+sudo apt-get install libxml2-dev
+sudo apt-get install libreadline-devel
 ```
 
 그냥 자연스럽게 진행하면서 경고메시지만 읽으면 필요한 게 무엇인지 알 수 있습니다. :)
@@ -45,15 +45,14 @@ $ sudo apt-get install libreadline-devel
 ## 설치
 
 ```bash
-$ cd php-5.6.0alpha1
-$ pwd
-/home/wani/php-5.6.0alpha1
+cd php-5.6.0alpha1
+pwd # => print /home/wani/php-5.6.0alpha1
 ```
 
 해당 폴더에 보면 `configure`파일이 있습니다. 이 파일을 통해 php설치 설정을 할 수 있습니다. 많은 옵션이 있지만 저는 필요한 최소한의 것만 설치하였습니다.
 
 ```bash
-$ ./configure --prefix=/usr/local/php56 \
+./configure --prefix=/usr/local/php56 \
 --enable-fpm \
 --with-readline
 ```
@@ -63,8 +62,8 @@ $ ./configure --prefix=/usr/local/php56 \
 그리고 자연스럽게 make를 진행하시면 됩니다.
 
 ```bash
-$ make
-$ make install
+make
+make install
 ```
 
 그러면 적당히 뭐가 막 지나가고 설치가 완료됩니다. 경고메시지를 잘 읽어보시면 뭐가 필요한지 알 수 있습니다. 설치 환경이 저랑 완전 같으면 **설치환경**에서 이야기한 프로그램만으로도 별 문제없이 진행하실 수 있습니다.
@@ -72,8 +71,11 @@ $ make install
 PHP bin폴더를 $PATH에 등록해주고, `php -v`를 통해 버전을 확인하시면 다음과 같은 메시지를 확인할 수 있습니다.
 
 ```bash
-$ export PATH="/usr/local/php56/bin:$PATH"
-$ php -v
+export PATH="/usr/local/php56/bin:$PATH"
+php -v
+```
+
+```
 PHP 5.6.0alpha1 (cli) (built: Jan 27 2014 00:35:12) 
 Copyright (c) 1997-2014 The PHP Group
 Zend Engine v2.6.0-dev, Copyright (c) 1998-2014 Zend Technologies
@@ -82,26 +84,26 @@ Zend Engine v2.6.0-dev, Copyright (c) 1998-2014 Zend Technologies
 이제 `php.ini`파일과 `php-fpm.conf`파일을 복사해와야합니다. `php.ini`의 경우 `/home/wani/php5.6.0alpha1/php.ini-production`(압축을 푼 경로)을 복사하면 됩니다. `php-fpm.conf`는 `/home/wani/php5.6.0alpha1/sapi/fpm/php-fpm.conf`에 있는 파일을 복사하면 됩니다.
 
 ```bash
-$ cd ~/php5.6.0.alpha1
-$ cp ./php.ini-production /usr/local/php56/lib/php.ini
-$ cp ./sapi/fpm/php-fpm.conf /usr/local/php56/etc/php-fpm.conf
+cd ~/php5.6.0.alpha1
+cp ./php.ini-production /usr/local/php56/lib/php.ini
+cp ./sapi/fpm/php-fpm.conf /usr/local/php56/etc/php-fpm.conf
 ```
 
 다음 `php-fpm`을 `init.d`에 등록해서 서버를 실행할 차례입니다. 설치경로 아래에 `sapi/fpm`안에 들어있습니다. 그리고 실행 권한을 줘야합니다.
 
 ```bash
-$ cd ~/php5.6.0.alpha1/sapi/fpm
-$ sudo cp ./init.d.php-fpm /etc/init.d/php-fpm
-$ sudo chmod 755 /etc/init.d/php-fpm
+cd ~/php5.6.0.alpha1/sapi/fpm
+sudo cp ./init.d.php-fpm /etc/init.d/php-fpm
+sudo chmod 755 /etc/init.d/php-fpm
 ```
 
 `php-fpm.conf`의 내용을 편집해주어야 합니다.
 
 ```bash
-$ vi /usr/local/php56/etc/php-fpm.conf
+vi /usr/local/php56/etc/php-fpm.conf
 ```
 
-```bash
+```
 ...(생략)
 
 user = nobody
@@ -121,9 +123,8 @@ user, group은 php를 수행할 사용자와 그룹을 지정하는데 저는 �
 이제 php-fpm을 실행해봅시다! 아까 user, group을 nobody로 지정을 했는데 기본적으로 nobody라는 그룹이 리눅스안에는 없기 때문에 간단하게 추가하고나서 실행해봅시다.
 
 ```bash
-$ groupadd nobody
-$ sudo service php-fpm start
-Starting php-fpm ..done
+groupadd nobody
+sudo service php-fpm start
 ```
 
 쉽게 실행이 됩니다 :)
@@ -133,13 +134,13 @@ Starting php-fpm ..done
 이제 nginx에서 설정을 잡아주어야 합니다. apt-get으로 설치하였다면 `/etc/nginx/`에 자리를 잡고 있을 것입니다. 거기서 `sites-available/default`파일을 수정할 것입니다.
 
 ```bash
-$ cd /etc/nginx/sites-available
-$ vi default
+cd /etc/nginx/sites-available
+vi default
 ```
 
 중간에 보면 주석처리된 부분이 있는데 다음 처럼 주석을 풀어주면 됩니다.
 
-```bash
+```
 location ~ \.php$ {
     fastcgi_split_path_info ^(.+\.php)(/.+)$;
     #       # NOTE: You should have "cgi.fix_pathinfo = 0;" in php.ini
@@ -158,8 +159,8 @@ location ~ \.php$ {
 그리고 nginx와 php-fpm을 재부팅합니다.
 
 ```bash
-$ sudo service nginx restart
-$ sudo service php-fpm restart
+sudo service nginx restart
+sudo service php-fpm restart
 ```
 
 그리고 Nginx기본 설정을 사용한다면 `/usr/share/nginx/www`가 기본 홈폴더입니다.

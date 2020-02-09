@@ -21,7 +21,7 @@ PHP쪽 UI Test 툴에는 코드셉션(Codeception) 이라는 끝판왕이 있지
 
 이 두개의 도구는 컴포저(composer)를 통해 쉽게 설치 할 수 있고, 커맨드는 다음과 같습니다.
 
-```
+```bash
 composer require --dev phpunit/phpunit
 composer require --dev facebook/webdriver
 ```
@@ -68,13 +68,13 @@ composer require --dev facebook/webdriver
 
 크롬드라이버 파일명이 `chromedriver`이고 셀레늄 파일이 `selenium-server-standalone-2.53.0.jar`라면 명령어는 다음과 같이 실행할 수 있습니다.
 
-```sh
+```bash
 java -Dwebdriver.chrome.driver=./chromedriver -jar selenium-server-standalone-2.53.0.jar
 ```
 
 그리고 위 과정을 매번 반복하기 때문에 다음과 같이 `test-on-osx.sh`파일로 저장하였습니다.
 
-```sh
+```bash
 # https://selenium-release.storage.googleapis.com/index.html
 if [ ! -f "selenium-server-standalone-2.53.0.jar" ]; then
     echo "Download Selenium..."
@@ -277,7 +277,7 @@ class HelloSeleniumTest extends SeleniumTestCase
 
 저희 회사 CI 서버는 CentOS 환경에서 Jenkins가 돌고있습니다. 서버에서 Selenium을 그냥 돌리면 에러가 납니다. 간단히 이야기 해서 GUI가 구동되지 않기 때문인데요, 이럴 때는 `Xvfb`라는 라이브러리를 사용하면 됩니다.
 
-```sh
+```bash
 sudo yum install Xvfb
 ```
 
@@ -285,14 +285,14 @@ sudo yum install Xvfb
 
 그리고 다음 커맨드를 사용하여 Selenium을 구동할 수 있습니다.
 
-```sh
+```bash
 sudo Xvfb :99 -ac -screen 0 1280x1024x24 &
 export DISPLAY=:99.0 && java -jar selenium-server-standalone-2.53.0.jar > /dev/null 2>/dev/null &
 ```
 
 참고로 위 명령어 두개는 백그라운드에서 명령어를 실행해야해서 죽일 때는 `Ctrl + C` 사용이 불가능합니다.
 
-```sh
+```bash
 ps -ef | grep "[s]elenium" | awk 'NR==1{print $2}' | cut -d' ' -f1 | xargs kill > /dev/null 2>/dev/null
 sudo killall Xvfb -q
 ```

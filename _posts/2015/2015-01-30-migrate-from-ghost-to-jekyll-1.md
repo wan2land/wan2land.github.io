@@ -18,7 +18,7 @@ tags: ["jekyll"]
 그리고 해당 파일을 제 Jekyll폴더로 옮깁니다. 그리고 아까 이야기한 참고사이트에도 명시되어있는 다음 명령어를 실행합니다.
 
 ```bash
-$ ruby -rubygems -e 'require "jekyll-import";
+ruby -rubygems -e 'require "jekyll-import";
     JekyllImport::Importers::Ghost.run({
       "dbfile"   => "/path/to/your/ghost.db"
     })'
@@ -35,7 +35,7 @@ $ ruby -rubygems -e 'require "jekyll-import";
 음. 루비를 못하지만 분명 다른 언어에서 경험을 바탕으로 에러메시지를 읽어보면 `jekyll-import`라는 녀석이 없는 것이라고 라고 판단을 했습니다. 자 역시 또 구글링을 통해 다음과 같은 패키지 사이트를 찾았습니다. ([github, jekyll-import](https://github.com/jekyll/jekyll-import)) 안에 설치법이 잘 나와있습니다.
 
 ```bash
-$ gem install jekyll-import
+gem install jekyll-import
 ```
 
 시키는 대로 해봅시다. gem이 뭔지는 모르겠지만 node에서 npm, php에서 composer, 프론트앤드에서 bower을 익힌 저에게는 문제될것이 없습니다. 분명히 저건 루비에서 사용하는 패키지 관리도구일 것입니다. 근데 제가 여지껏 사용했던 패키지 관리자들은 `-g`옵션을 주지 않으면 현재 패키지 밑에 설치가 되었습니다. 일단은 걱정을 하며 설치를 했는데 현재 디렉터리 밑에 아무것도 생성되는게 없는 것으로 보아 gem은 기본 설치가 global로 잡히는 모양입니다. (이는 추측입니다!!!)

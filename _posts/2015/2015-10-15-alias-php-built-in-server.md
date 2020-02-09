@@ -12,8 +12,8 @@ tags: ["php"]
 그래서 매번 터미널에 하나 띄워놓고 프로젝트를 실행합니다.
 
 ```bash
-$ php -S 127.0.0.1:8001
-$ php -S 0.0.0.0:8001 # 외부 접근을 허용하려면..
+php -S 127.0.0.1:8001
+php -S 0.0.0.0:8001 # 외부 접근을 허용하려면..
 ```
 
 저 명령어 자체의 자세한 설명은 [PHP Built-in Web Server](http://php.net/manual/features.commandline.webserver.php)항목에 가서 읽도록 합시다.
@@ -52,19 +52,19 @@ alias phps=openPhpTestServer
 다음과 같이 사용할 수 있습니다.
 
 ```bash
-$ phps
+phps
 ```
 
 위의 형태의 경우는 기본 값으로 지정된 8000번 포트를 사용합니다. 그러나 포트를 지정하고 싶다면 다음과 같이 명령어를 주시면 됩니다.
 
 ```bash
-$ phps 8001
+phps 8001
 ```
 
 또한, Laravel 같은 경우는 `public` 폴더를 기준으로 서버를 실행해야하는데 이 또한 다음 명령어를 통해 가능합니다. 다음 명령어는 `php -S 0.0.0.0:8001 -t public`와 동일하게 동작합니다.
 
 ```bash
-$ phps 8001 public
+phps 8001 public
 ```
 
 ## 참고자료

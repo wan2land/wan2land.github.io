@@ -29,7 +29,7 @@ Global설치가 무엇인고 하니, `bin`을 지원하는 패키지를 위한 �
 하겠습니다.
 
 ```bash
-$ composer global require phpunit/phpunit
+composer global require phpunit/phpunit
 ```
 
 ~~끝.~~
@@ -47,7 +47,7 @@ $ composer global require phpunit/phpunit
 <script src="https://gist.github.com/wan2land/cb96fb5ace014a3fbc3e.js"></script>
 
 ```bash
-$ composer update
+composer update
 ```
 
 실행하시면 똑같이 실행됩니다. :)

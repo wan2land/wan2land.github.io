@@ -35,7 +35,10 @@ var_dump( Bar::func3() );
 출력결과는 다음과 같습니다.
 
 ```bash
-$ php new-static.php 
+php new-static.php 
+```
+
+```
 object(Foo)#1 (0) {
 }
 object(Bar)#1 (0) {

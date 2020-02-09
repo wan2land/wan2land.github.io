@@ -23,20 +23,20 @@ Laravel(이하 라라벨) 개발자분들은 대부분 [Homestead](http://larave
 
 다음은 라라벨을 사용을 위해 PHP를 설치해야합니다. 일단 PHP 패키지를 설치하기 위해 Brew에 탭을 하나 추가해야합니다.
 
-```
+```bash
 brew tap homebrew/php
 ```
 
 그리고 다음과 같이 PHP를 설치할 수 있습니다. 저는 PHP 5.6을 사용하겠습니다. 유사한 방식으로 다른 버전도 사용가능합니다.
 최근에 추가된 PHP 7.0도 사용가능합니다.
 
-```
+```bash
 brew install php56
 ```
 
 라라벨을 사용하기 위해 필요한 모듈도 설치합니다.
 
-```
+```bash
 brew install php56-xdebug
 brew install php56-mcrypt
 ```
@@ -45,13 +45,13 @@ brew install php56-mcrypt
 
 데이터 베이스는 MySQL을 사용합시다.
 
-```
+```bash
 brew install mysql
 ```
 
 서버를 실행하기 위해서는 다음 두 과정을 거쳐야 합니다.
 
-```
+```bash
 ln -sfv /usr/local/opt/mysql/*.plist ~/Library/LaunchAgents
 launchctl load ~/Library/LaunchAgents/homebrew.mxcl.mysql.plist
 ```
@@ -60,25 +60,25 @@ launchctl load ~/Library/LaunchAgents/homebrew.mxcl.mysql.plist
 Linux를 사용해보신 분들이라면 `service mysql start`라는 방식을 선호하실 겁니다. Brew에서 이런 유사한 방식으로 서버를
 실행할 수 있는 명령어를 지원해줍니다. 일단, 다음 명령어를 입력합니다.
 
-```
+```bash
 brew tap homebrew/services
 ```
 
 이제 다음과 같이 MySQL을 실행할 수 있습니다.
 
-```
+```bash
 brew services start mysql
 ```
 
 정지하는 방법도 똑같습니다.
 
-```
+```bash
 brew services stop mysql
 ```
 
 마찬가지로 다음 명령어를 통해 실행가능합니다.
 
-```
+```bash
 brew services start mysql
 ```
 
@@ -94,7 +94,7 @@ Composer(이하, 컴포저)는 PHP의 의존관계를 관리해주는 패키지 
 
 설치 방법은 위에 제시된 페이지에 있는 방법을 사용해도 되지만 위에서 설치한 Brew를 통해서도 쉽게 설치가 가능합니다.
 
-```
+```bash
 brew install composer
 ```
 
@@ -106,7 +106,7 @@ brew install composer
 
 위 문서에 잘 나와있는데, 저는 `create-project`를 통해 생성하겠습니다. 설치할 경로에 가서 다음 명령어를 입력합니다.
 
-```
+```bash
 composer create-project laravel/laravel --prefer-dist
 ```
 
@@ -122,7 +122,7 @@ DB_PASSWORD=secret
 그리고 아까 MySQL에 설정해놓은 아이디와 비밀번호를 넣습니다. 드디어, 모든 준비를 마쳤습니다. PHP
 Built-in(이하, 내장 서버)를 통해 쉽게 서버를 켜고 끌 수 있습니다.
 
-```
+```bash
 php -S 0.0.0.0:8080 -t public
 ```
 
@@ -144,7 +144,7 @@ php -S 0.0.0.0:8080 -t public
 `sudo brew services`를 지원하고 있다는 사실을 알게되었습니다. 그래서 예전내용 보다는 다음 명령어를 통해서 실행하는 편이
 더 간단합니다. :-)
 
-```
+```bash
 sudo brew services start nginx
 ```
 
@@ -166,7 +166,7 @@ nginx                      started root     /Library/LaunchDaemons/homebrew.mxcl
 
 ~~다음 파일을 열고,~~
 
-```
+```bash
 sudo vim /etc/pf.anchors/laravel
 ```
 
@@ -178,7 +178,7 @@ rdr pass on lo0 inet proto tcp from any to 127.0.0.1 port 80 -> 127.0.0.1 port 8
 
 ~~그리고 다음 파일을 열고,~~
 
-```
+```bash
 sudo vim /etc/pf-laravel.conf
 ```
 
@@ -188,12 +188,11 @@ sudo vim /etc/pf-laravel.conf
 ```
 rdr-anchor "forwarding"
 load anchor "forwarding" from "/etc/pf.anchors/laravel"
-
 ```
 
 ~~이제 방금 만든 파일을 다음 명령어를 통해 적용시켜줍시다.~~
 
-```
+```bash
 sudo pfctl -ef /etc/pf-laravel.conf
 ```
 
@@ -205,7 +204,7 @@ sudo pfctl -ef /etc/pf-laravel.conf
 됩니다. `/etc/hosts`에서 `.com`, `.net`과 같은 최상위 도메인(TLD)도 사용 가능하나 실수를 방지하기 위해서 가급적
 `.dev`와 같은 방식을 사용하는 것이 좋습니다. :-)
 
-```
+```bash
 sudo vi /etc/hosts
 ```
 
@@ -229,41 +228,41 @@ sudo vi /etc/hosts
 생각해보면, 모든 포트는 8080으로 매핑이 되어있을 텐데, 실제로는 서버이름(laravel.dev, laraother.dev 등)으로 분리할
 방법이 없습니다. 그래서 Nginx를 설치해봅시다.
 
-```
+```bash
 brew install nginx
 ```
 
 그러면 설치 과정이 나오고 설치가 완료 됩니다. 서버를 실행하기 위해서는 다음 명령어를 사용해야 합니다. 이제 다음
 명령어를 통해 Nginx서버를 켤 수 있습니다.
 
-```
+```bash
 sudo brew services start nginx
 ```
 
 다음 두 명령어를 통해서 `nginx.conf` 설정 파일을 다운 받을 수 있습니다.
 
-```
+```bash
 rm /usr/local/etc/nginx/nginx.conf
 curl -L https://gist.github.com/frdmn/7853158/raw/nginx.conf -o /usr/local/etc/nginx/nginx.conf
 ```
 
 Nginx는 PHP-FPM과 함께 사용되어야 하는데 Nginx에서 이를 연결하기 위한 파일을 다운받아야 합니다.
 
-```
+```bash
 mkdir -p /usr/local/etc/nginx/conf.d
 curl -L https://gist.github.com/frdmn/7853158/raw/php-fpm -o /usr/local/etc/nginx/conf.d/php-fpm
 ```
 
 그리고 이제 사용할 서버에 관한 설정 파일을 다운 받습니다.
 
-```
+```bash
 mkdir -p /usr/local/etc/nginx/sites-available
 curl -L https://gist.githubusercontent.com/wan2land/54b068a4b9cead321225/raw/2e0da15b9000be36e69bcdb3963854e9f1706d84/nginx-laravel.dev -o /usr/local/etc/nginx/sites-available/laravel.dev
 ```
 
 그리고 내부에 내용을 조금 수정해야합니다.
 
-```
+```bash
 vi /usr/local/etc/nginx/sites-available/laravel.dev
 ```
 
@@ -273,21 +272,21 @@ vi /usr/local/etc/nginx/sites-available/laravel.dev
 보통 Nginx 설정에서는 `sites-available`폴더에 사용가능한 모든 설정을 넣어두고 `sites-enabled`에서 심볼릭 링크를
 만들어서 사용합니다.
 
-```
+```bash
 mkdir -p /usr/local/etc/nginx/sites-enabled
 ln -s /usr/local/etc/nginx/sites-available/laravel.dev /usr/local/etc/nginx/sites-enabled/laravel.dev
 ```
 
 그리고 로그 내용을 보기 위해서 다음 디렉토리도 만들어주자.
 
-```
+```bash
 mkdir -p /usr/local/etc/nginx/logs
 ```
 
 그리고 이제 Nginx와 PHP-FPM을 실행하면 된다. PHP-FPM은 Brew에서 설치한 패키지 이름을 따라가게 되어있습니다. 따라서
 리눅스와 같은 `php5-fpm`이 아닌 `php56`을 사용합니다. 이점에 유의하시기 바랍니다.
 
-```
+```bash
 sudo brew services start nginx
 brew services start php56
 ```

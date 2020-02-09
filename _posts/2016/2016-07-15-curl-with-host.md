@@ -13,7 +13,7 @@ Bash를 통해서 헤더만 살짝 만져주면 된다.
 
 예를들어 `blog.wani.kr` 도메인을 확인하려고 하면..
 
-```
+```bash
 curl -H "Host: blog.wani.kr" "http://127.0.0.1/posts/hello-world"
 ```
 
