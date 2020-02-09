@@ -4,7 +4,7 @@ title: 태그
 permalink: /tags/
 description: "An archive of posts sorted by tag."
 ---
-<div class="page-tags">
+<div class="page page-tags">
   <div class="container">
     {% capture site_tags %}{% for tag in site.tags %}{{ tag | first }}{% unless forloop.last %},{% endunless %}{% endfor %}{% endcapture %}
     <!-- site_tags: {{ site_tags }} -->
