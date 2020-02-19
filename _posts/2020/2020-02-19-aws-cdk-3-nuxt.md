@@ -260,6 +260,6 @@ AWS Console에 들어가서 API Gateway -> "사용자 지정 도메인 이름" �
 
 도메인에 연결되기까지 꽤 오랜 시간이 걸립니다. API Gateway 관리자에서 ACM 인증서 적용여부를 확인할 수 있습니다. 조금 기다렸다가, 내가 만든 도메인에 접속해봅시다. 위에 처음에 Nuxt 실행했을 때와 같은 화면이 반겨줄겁니다. :-)
 
-전체 소스코드는 [Github](https://github.com/wan2land/aws-cdk-samples/tree/master/sample-nuxt-app)에 올려두었습니다.
+전체 소스코드는 [Github](https://github.com/wan2land/aws-cdk-samples/tree/master/sample-nuxt-app)에 올려두었습니다. 해당 코드로 동작중인 코드는 [nuxtsample.dist.be](https://nuxtsample.dist.be/)에서 확인할 수 있습니다. (언제 내려갈지 모릅니다..)
 
 간단한 웹앱을 돌리는데는 무리가 없습니다만, 최적화 해야할 부분이 많이 남아있습니다. 최적화에 대한 내용은 추후에 (언젠가) 다뤄보겠습니다.
