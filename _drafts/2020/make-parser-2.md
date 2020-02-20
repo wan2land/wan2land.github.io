@@ -112,15 +112,11 @@ values: value
 값(`value`)은 위의 열거한 토큰들과 배열, 객체(`object`)입니다. 그리고 그 표현식은 다음과 같습니다. 정규표현식을 그대로 넣어도 됩니다.
 
 ```
-value: T_STRING
-  | T_NUMBER
-  | T_TRUE
-  | T_FALSE
-  | T_NULL
-  | T_INFINITY
-  | T_NINFINITY
-  | T_NAN
-  | T_REGEXP
+value: string
+  | number
+  | boolean
+  | null
+  | regexp
   | array
   | object
 ```
@@ -134,8 +130,7 @@ object: '{' '}'
 objectpairs: objectpair
   | objectpairs ',' objectpair
 
-objectpair: objectkey ':' value
-objectkey: T_STRING
+objectpair: string ':' value
 ```
 
 이제 이 내용을 그대로 코딩하면 됩니다. 보통 구문분석을 기반으로 파서를 만들어주는 라이브러리들이 있습니다. 보통  `lexer`, `yacc`으로 검색하면 관련 라이브러리가 나옵니다. 언어마다 구현체가 다양하게 존재합니다. 자바스크립트계열에는 다음 3개가 가장 유명합니다.
@@ -234,7 +229,67 @@ function parse(ctx) {
 
 `value` 함수는 다음과 같이 작성할 수 있습니다. 위에 파서문법과 매칭해서 보면 코드가 더 쉽게 이해됩니다.
 
+최종 완성 코드
+
 ```javascript
+const T_WHITESPACE = new Set(['\r', '\n', '\t', ' '])
+const T_NUMBER = new Set(['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'])
+
+var STRING_ESC = {
+  '"': '"',
+  '\\': '\\',
+  b: '\b',
+  f: '\f',
+  n: '\n',
+  r: '\r',
+  t: '\t'
+}
+
+// buf는 처리하고 남은 구문 문자열입니다. 파서는 buf가 빈문자열("")이 될 때까지 반복합니다.
+let buf = null
+let pos = 0
+
+// 구문분석 중, 공백 문자를 처리합니다.
+function white() {
+  while (T_WHITESPACE.has(buf[0])) {
+    next()
+  }
+}
+
+// next함수는 buf를 읽어들이고 소비하는 함수입니다. slice를 이용합니다.
+function next() {
+  buf = buf.slice(1)
+  pos++
+}
+
+function consume(char) {
+  if (buf[0] === char) {
+    next()
+    return
+  }
+  throw error()
+}
+
+// 그냥 에러 메시지 통일을 위한 에러를 생성하는 함수입니다. throw error() 처럼 사용합니다.
+function error() {
+  return new SyntaxError(`Unexpected ${buf[0] ? `token ${buf[0]}` : 'end'} in JSON at position ${pos}`)
+}
+
+// ctx는 해석해야하는 구문, 즉 stirng 입니다.
+function parse(ctx) {
+  buf = ctx // 함수가 실행되면 buf에 해석해야하는 구문 전체를 집어넣습니다.
+  pos = 1
+
+  const result = value() // 뭔가 처리한 결과물을 result 변수에 넣습니다.
+  white()
+  if (buf.length) { // 모든 파싱이 종료된 후에 buf가 빈문자열이 아니라면 에러를 보여줍니다.
+    throw error("EOF")
+  }
+  return result // 이상이 없으면 결과를 반환합니다.
+}
+
+module.exports = { parse }
+
 /*
 value: T_STRING
   | T_NUMBER
@@ -250,148 +305,303 @@ value: T_STRING
  */
 function value() {
   white()
-  match = buf.match(T_STRING)
-  if (match) {
-    const t = match[0] // t는 토큰의 약자입니다. :-)
-    next(t.length) // 토큰을 소비합니다.
-    return t.replace(/^"|"$/g, "").replace(/\\\"/g, "\"") // 토큰에서 실제 문자열로 정재합니다.
+  switch (buf[0]) {
+    case '{':
+      return object()
+    case '[':
+      return array()
+    case '/':
+      return regexp()
+    case '"':
+      return string()
+    case '-': case 'I': case 'N':
+    case '0': case '1': case '2': case '3': case '4': case '5': case '6': case '7': case '8': case '9': {
+      return number()
+    }
+    case 't': {
+      next()
+      consume('r')
+      consume('u')
+      consume('e')
+      return true
+    }
+    case 'f': {
+      next()
+      consume('a')
+      consume('l')
+      consume('s')
+      consume('e')
+      return false
+    }
+    case 'n': {
+      next()
+      consume('u')
+      consume('l')
+      consume('l')
+      return null
+    }
   }
-  match = buf.match(T_NUMBER)
-  if (match) {
-    const t = match[0]
-    next(t.length)
-    return +t
-  }
-  match = buf.match(T_TRUE)
-  if (match) {
-    const t = match[0]
-    next(t.length)
-    return true
-  }
-  match = buf.match(T_FALSE)
-  if (match) {
-    const t = match[0]
-    next(t.length)
-    return false
-  }
-  match = buf.match(T_NULL)
-  if (match) {
-    const t = match[0]
-    next(t.length)
-    return null
-  }
-  match = buf.match(T_INFINITY)
-  if (match) {
-    const t = match[0]
-    next(t.length)
-    return Infinity
-  }
-  match = buf.match(T_NINFINITY)
-  if (match) {
-    const t = match[0]
-    next(t.length)
-    return -Infinity
-  }
-  match = buf.match(T_NAN)
-  if (match) {
-    const t = match[0]
-    next(t.length)
-    return NaN
-  }
-  match = buf.match(T_REGEXP)
-  if (match) {
-    const t = match[0]
-    const r = match[1]
-    const m = match[2]
-    next(t.length)
-    return new RegExp(r.replace(/\\\//g, "/"), m || undefined)
-  }
-  switch (buf[0]) { // 첫번째 문자열에 따라서 다음에 실행할 상태가 달라집니다.
-    case "[":
-     return array()
-    case "{":
-     return object()
-  }
-  error("value")
+  throw error()
 }
-```
 
-array는 다음과 같이 정의할 수 있습니다. `values` 구문은 `while`을 사용해서 생략되었습니다.
-
-```javascript
-/*
-array: '[' ']'
-  | '[' values ']'
-values: value
-  | value ',' values
-*/
 function array() {
-  next() // resolve [
-  if (buf[0] === "]") { // 빈 배열 처리
+  next()
+  white()
+  if (buf[0] === ']') { // 빈 배열 처리
     next()
     return []
   }
   const result = [value()]
   white()
-  while (buf[0] === ",") {
+  while (buf[0] === ',') {
     next()
     result.push(value()) // value() 를 다시 재귀로 호출
     white()
   }
-  if (buf[0] === "]") {
+  if (buf[0] === ']') {
     next()
     return result
   }
-  throw error("]") // 배열을 닫아야 하는데 닫는 문자열이 없는 경우 에러
+  throw error() // 배열을 닫아야 하는데 닫는 문자열이 없는 경우 에러
 }
-```
 
-마지막으로 object 입니다. 마찬가지로 objectpairs 부분은 while로 처리되었습니다.
-
-```javascript
-/*
-object: '{' '}'
-  | '{' objectpairs '}'
-
-objectpairs: objectpair
-  | objectpairs ',' objectpair
-
-objectpair: objectkey ':' value
-objectkey: T_STRING
-*/
 function object() {
   next()
+  white()
   if (buf[0] === "}") { // 빈 객체
     next()
     return {}
   }
-  const result = objectpair()
-  white()
-  while (buf[0] === ",") {
-    next()
-    Object.assign(result, objectpair())
+  const result = {}
+  while (1) {
+    const key = string()
     white()
-  }
-  if (buf[0] === "}") {
+    if (buf[0] !== ':') {
+      throw error()
+    }
     next()
-    return result
+    result[key] = value()
+    white()
+    if (buf[0] === ',') {
+      next()
+      white()
+      continue
+    }
+    if (buf[0] === '}') {
+      next()
+      return result
+    }
+    throw error()
   }
-  throw error("}")
 }
 
-function objectpair() {
-  match = buf.match(T_STRING) // key 처리
-  if (match) {
-    const t = match[0]
-    next(t.length)
-    const key = t.replace(/^"|"$/g, "").replace(/\\\"/g, "\"")
-    if (buf[0] === ":") {
-      next()
-      return {[key]: value()}
-    }
-    throw error(":")
+function number() {
+  if (buf[0] === 'N') {
+    next()
+    consume('a')
+    consume('N')
+    return NaN
   }
-  throw error("object key")
+
+  let result = ''
+  let isNeg = false
+  if (buf[0] === "-") {
+    isNeg = true
+    next()
+  }
+  if (buf[0] === 'I') {
+    next()
+    consume('n')
+    consume('f')
+    consume('i')
+    consume('n')
+    consume('i')
+    consume('t')
+    consume('y')
+    return isNeg ? -Infinity : Infinity
+  }
+  if (T_NUMBER.has(buf[0])) {
+    result += buf[0]
+    next()
+  } else {
+    throw error()
+  }
+  while (T_NUMBER.has(buf[0])) {
+    result += buf[0]
+    next()
+  }
+  if (buf[0] === ".") {
+    result += ".";
+    next()
+    if (T_NUMBER.has(buf[0])) {
+      result += buf[0]
+      next()
+    } else {
+      throw error()
+    }
+    while (T_NUMBER.has(buf[0])) {
+      result += buf[0]
+      next()
+    }
+  }
+  if (buf[0] === "e" || buf[0] === "E") {
+    result += buf[0]
+    next()
+    if (buf[0] === "-" || buf[0] === "+") {
+      result += buf[0]
+      next()
+    }
+    if (T_NUMBER.has(buf[0])) {
+      result += buf[0]
+      next()
+    } else {
+      throw error()
+    }
+    while (T_NUMBER.has(buf[0])) {
+      result += buf[0]
+      next()
+    }
+  }
+  return isNeg ? -1 * +result : +result
+}
+
+function string() {
+  let result = ''
+  next()
+  while (1) {
+    if (buf[0] === '"') {
+      next()
+      return result
+    }
+    if (buf[0] === '\\') {
+      next()
+      if (buf[0] === 'u') {
+        next()
+        let uffff = 0
+        for (let i = 0; i < 4; i++) {
+          let hex = parseInt(buf[0], 16)
+          if (!isFinite(hex)) {
+            throw error()
+          }
+          next()
+          uffff = uffff * 16 + hex;
+        }
+        result += String.fromCharCode(uffff);
+      } else if (STRING_ESC[buf[0]]) {
+        result += STRING_ESC[buf[0]]
+        next()
+      } else {
+        throw error()
+      }
+    } else {
+      result += buf[0]
+      next()
+    }
+  }
+}
+
+function regexp() {
+  let result = ''
+  next()
+  if (buf[0] === '/') {
+    throw error()
+  }
+  while (1) {
+    if (buf[0] === '/') {
+      next()
+      switch (buf[0]) {
+        case 'i': {
+          next()
+          switch (buf[0]) {
+            case 'm': {
+              next()
+              if (buf[0] === 'g') {
+                next()
+                return new RegExp(result, 'img')
+              } else {
+                return new RegExp(result, 'im')
+              }
+            }
+            case 'g': {
+              next()
+              if (buf[0] === 'm') {
+                next()
+                return new RegExp(result, 'igm')
+              } else {
+                return new RegExp(result, 'ig')
+              }
+            }
+            default: {
+              return new RegExp(result, 'i')
+            }
+          }
+        }
+        case 'm': {
+          next()
+          switch (buf[0]) {
+            case 'i': {
+              next()
+              if (buf[0] === 'g') {
+                next()
+                return new RegExp(result, 'mig')
+              } else {
+                return new RegExp(result, 'mi')
+              }
+            }
+            case 'g': {
+              next()
+              if (buf[0] === 'i') {
+                next()
+                return new RegExp(result, 'mgi')
+              } else {
+                return new RegExp(result, 'mg')
+              }
+            }
+            default: {
+              return new RegExp(result, 'm')
+            }
+          }
+        }
+        case 'g': {
+          next()
+          switch (buf[0]) {
+            case 'm': {
+              next()
+              if (buf[0] === 'i') {
+                next()
+                return new RegExp(result, 'gmi')
+              } else {
+                return new RegExp(result, 'gm')
+              }
+            }
+            case 'i': {
+              next()
+              if (buf[0] === 'm') {
+                next()
+                return new RegExp(result, 'gim')
+              } else {
+                return new RegExp(result, 'gi')
+              }
+            }
+            default: {
+              return new RegExp(result, 'g')
+            }
+          }
+        }
+      }
+      return new RegExp(result)
+    }
+    if (buf[0] === '\\') {
+      next()
+      result += buf[0]
+      next()
+    } else if (buf[0] === '/') {
+
+    } else {
+      result += buf[0]
+      next()
+    }
+  }
 }
 ```
 
