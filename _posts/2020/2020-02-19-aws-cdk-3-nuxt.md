@@ -1,5 +1,6 @@
 ---
-layout: post
+layout: "post-aws-cdk"
+chapter: "3"
 title: "AWS CDK로 서버없이 서비스 운영해보기 (3) - Nuxt"
 summary: "AWS CDK를 이용하여 Lambda위에 Vue.js 프레임워크인 Nuxt를 올려봅시다."
 date: 2020-02-19 23:12:55 +09:00

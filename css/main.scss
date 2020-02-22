@@ -604,6 +604,14 @@ a:hover {
     span.gi { color: #a6e22e; } /* Generic.Inserted & Diff Inserted */
   }
 
+  .index-head {
+    margin-bottom: 80px;
+  }
+  .index-tail {
+    margin-top: 80px;
+    margin-bottom: 40px;
+  }
+
   .post-tags {
     margin-top: 20px;
     margin-bottom: 30px;
