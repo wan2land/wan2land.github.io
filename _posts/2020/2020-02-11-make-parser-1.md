@@ -206,38 +206,7 @@ stringify({
 // {"string":"foo","number":30,"number2":3.14156,"true":true,"false":false,"null":null,"infinity":Infinity,"ninfinity":-Infinity,"nan":NaN,"re":/hello/gi,"array":[1,2,3],"object":{"foo":"hello"}}
 ```
 
-**전체 소스**
-
-```javascript
-function stringify(value) {
-  if (value === null) {
-    return "null"
-  }
-  if (typeof value === "number") {
-    if (Number.isNaN(value)) {
-      return "NaN"
-    }
-    if (!Number.isFinite(value)) {
-      return value > 0 ? "Infinity" : "-Infinity"
-    }
-    return `${value}`
-  }
-  if (typeof value === "boolean") {
-    return value ? "true" : "false"
-  }
-  if (typeof value === "string") {
-    return `"${value.replace('"', '\\"')}"` // " 문자는 escape 해야합니다.
-  }
-
-  if (Array.isArray(value)) {
-    return `[${value.map(stringify).join(",")}]`
-  }
-  if (value instanceof RegExp) {
-    return value.toString()
-  }
-  return `{${Object.entries(value).map(([k, v]) => `"${k.replace('"', '\\"')}":${stringify(v)}`).join(",")}}`
-}
-```
+**전체 소스**는 [Github](https://github.com/wan2land/json-by-js/blob/master/stringify.js)에서 확인할 수 있습니다.
 
 이 시리얼라이즈를 통해서 만들어진 문자열은 해석할 수 있는 파서가 없어 아직은 자바스크립트 객체로 바꿀 수 없습니다. 시리얼라이저에 비해 파서를 만드는 작업은 더 복잡합니다. 하지만, 이 작업은 프로그래밍의 **꽃**인 컴파일러를 만드는 과정 중의 일부일 뿐입니다. 파서를 만드는 일은 곧 컴파일러의 동작을 이해하게 되고, 이로서 프로그래밍 그 자체를 더 잘 알게되는 계기가 될 것입니다.
 

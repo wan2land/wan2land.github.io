@@ -15,6 +15,7 @@ $magenta: #bc3fbc; // dark+
 
 $white: #eeeeee; //
 $dark: #2a2a2e;
+$gray: #363639;
 $black: #232326; //
 
 $theme: #9DE3AC;
@@ -122,7 +123,7 @@ a:hover {
 
 .footer {
   border-top: 1px solid #38383d;
-  background: #2a2a2e;
+  background: $dark;
   padding: 33px 0 30px;
   height: 20px;
   font-size: 14px;
@@ -215,7 +216,7 @@ a:hover {
     height: .25em;
     padding: 0;
     margin: 24px 0;
-    background-color: #2a2a2e;
+    background-color: $gray;
     border: 0
   }
   
@@ -363,7 +364,7 @@ a:hover {
   }
   
   table tr:nth-child(2n) {
-    background-color: #2a2a2e
+    background-color: $dark
   }
   
   table img {
@@ -399,7 +400,7 @@ a:hover {
     padding: .2em .4em;
     margin: 0;
     font-size: 85%;
-    background-color: #2a2a2e;
+    background-color: $gray;
     border-radius: 3px
   }
   
@@ -442,7 +443,7 @@ a:hover {
     overflow: auto;
     font-size: 85%;
     line-height: 1.45;
-    background-color: #2a2a2e;
+    background-color: $gray;
   }
   [class^="language-"] pre {
     padding-top: 24px;
