@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Typescript SOLID - 단일책임원칙(SRP)"
+title: "Typescript SOLID (1) - 단일책임원칙(SRP)"
 summary: "객체지향에서 가장 모호한게 클래스의 크기를 규정하는 일입니다. 단일 책임 원칙(SRP, Single Responsibility Principle)은 이 문제를 해결 할 수 있도록 가이드라인을 제시합니다."
 date: 2020-03-10 22:38:12 +09:00
 tags: ["cleancode", "solid", "designpattern", "typescript"]
