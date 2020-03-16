@@ -6,7 +6,7 @@ date: 2020-03-16 22:35:06 +09:00
 tags: ["googleanalytics", "measurementprotocol", "serverless", "awslambda", "javascript"]
 ---
 
-취미로 `https://corgi.photos`라는 사이트를 운영중입니다.
+취미로 [corgi.photos](https://corgi.photos)라는 사이트를 운영중입니다.
 
 ![corgi.photos](/images/2020/200316-corgiphotos.png)
 
