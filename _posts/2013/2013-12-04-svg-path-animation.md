@@ -170,13 +170,9 @@ This web page has been developed by Wani.
 })(jQuery);
 ```
 
+완성되었습니다.
 
-그래서 여기서 완성된 페이지를 확인 가능합니다.
-
-![preview](/images/dev/frontend/svg-path-animation-complete.gif)
-
-- 샘플링크 : <http://jsfiddle.net/wan2land/12mboLwn>
-
+<script async src="//jsfiddle.net/wan2land/12mboLwn/embed/js,html,result/dark"></script>
 
 ## 참고자료
 
