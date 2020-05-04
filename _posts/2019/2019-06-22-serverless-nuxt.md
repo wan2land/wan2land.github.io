@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "발표, GraphQL 적용기"
+title: "발표, Serverless 프레임워크로 Nuxt 앱 배포하기"
 summary: "2019년 6월 JAVASCRIPT IS EVERYWHERE에서 Serverless 프레임워크와 Nuxt를 주제로 진행한 발표내용입니다."
 date: 2019-06-22 19:00:00 +09:00
 tags: ["serverless", "awslambda", "nuxt", "vue"]
