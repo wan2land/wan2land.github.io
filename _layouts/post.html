@@ -1,33 +1,27 @@
 ---
 layout: default
 ---
-<div class="page page-post">
-  <div class="container">
-    <header class="post-header">
-      <h1 class="post-title">{{ page.title }}</h1>
-      <div class="post-date">
-        <time>{{ page.date | date: "%B %-d, %Y" }}</time>
-      </div>
-    </header>
 
-    <article class="post-content">
-      {{ content }}
+<div class="post">
+  <h1 class="post-title">{{ page.title }}</h1>
+  <span class="post-date">{{ page.date | date_to_string }}</span>
 
-      {% if page.tags.size > 0 %}
-        <div class="post-tags">
-          {% for tag in page.tags %}
-            <a href="/tags/#{{ tag | downcase }}">#{{ tag | downcase }}</a>
-          {% endfor %}
-        </div>
-      {% endif %}
-
-      <script src="https://utteranc.es/client.js"
-        repo="wan2land/wan2land.github.io"
-        issue-term="pathname"
-        theme="photon-dark"
-        crossorigin="anonymous"
-        async
-      ></script>
-    </article>
+  <div class="post-content">
+  {{ content }}
   </div>
+
+  {% if page.tags.size > 0 %}
+    <div class="post-tags">
+      {% for tag in page.tags %}
+        <a href="/tags/#{{ tag | downcase }}">#{{ tag | downcase }}</a>
+      {% endfor %}
+    </div>
+  {% endif %}
+
+  <script src="https://utteranc.es/client.js"
+    repo="wan2land/wan2land.github.io"
+    issue-term="pathname"
+    crossorigin="anonymous"
+    async
+  ></script>
 </div>

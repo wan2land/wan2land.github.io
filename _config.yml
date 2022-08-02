@@ -1,4 +1,5 @@
-title: 완두블로그
+title: wan2.land
+subtitle: "🤔"
 
 email: hi@wani.kr
 
@@ -15,7 +16,3 @@ plugins:
 author:
   twitter: wan2land
   github: wan2land
-
-sass:
-  sass_dir: _scss
-  style: compressed

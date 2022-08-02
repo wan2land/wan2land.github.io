@@ -1,5 +1,15 @@
-# 완두 블로그
+# wan2.land
 
-> [wani.kr](https://wani.kr)
+[wani.kr](https://wani.kr)
 
-개발자 완두의 블로그입니다.
+
+## Installation
+
+```bash
+gem install jekyll bundler
+bundle exec jekyll serve
+```
+
+## Theme
+
+[github.com/poole/lanyon](https://github.com/poole/lanyon)
