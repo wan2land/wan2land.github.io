@@ -79,8 +79,8 @@ tags: ["svg"]
 <!DOCTYPE HTML>
 <!--//
 This web page has been developed by Wani.
- - me@wani.kr
- - http://wani.kr
+ - hey@wan2.land
+ - http://wan2.land
 -->
 <html lang="ko">
 <head>

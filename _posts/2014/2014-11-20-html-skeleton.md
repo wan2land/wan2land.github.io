@@ -17,8 +17,8 @@ tags: ["html"]
 <!DOCTYPE html>
 <!--//
 This web page has been developed by Wani.
- - im@wani.kr
- - http://wani.kr
+ - hey@wan2.land
+ - https://wan2.land
 -->
 <!--[if lt IE 7]><html class="ie6" lang="ko"><![endif]-->
 <!--[if IE 7]><html class="ie7" lang="ko"><![endif]-->
@@ -79,8 +79,8 @@ Your Body :)
 ```html
 <!--//
 This web page has been developed by Wani.
- - im@wani.kr
- - http://wani.kr
+ - hey@wan2.land
+ - https://wan2.land
 -->
 ```
 

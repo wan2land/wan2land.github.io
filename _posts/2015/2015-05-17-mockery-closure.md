@@ -111,7 +111,7 @@ class Customer
 Closure객체는 Final이라서 Mocking하는 것이 불가능합니다. 그러나, 지난 포스팅에서 Private Method를 Closure로 가지고 올
 수 있다는 것을 알 수 있었습니다.
 
-- [Reflection을 활용한 Private Method Test](http://blog.wani.kr/dev/php/mockery-reflection)
+- [Reflection을 활용한 Private Method Test](https://wan2.land/posts/2015/05/07/mockery-reflection/)
 
 그렇습니다. 클래스 내부에 있는 모든 매서드는 클로져로 가지고 올 수 있습니다. 이걸 활용해보기로 했습니다. 일단 목업을
 하나 만듭시다. 파일을 만들어도 되고 여기서는 편의를 위해서 그냥 테스트 소스 밑에 하나 만들기로 합니다. 그러면 테스트

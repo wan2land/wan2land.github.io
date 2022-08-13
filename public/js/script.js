@@ -4,14 +4,14 @@
 m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 })(window,document,"script","//www.google-analytics.com/analytics.js","ga")
 
-ga("create", "UA-35736735-1", "wani.kr")
+ga("create", "UA-35736735-1", "wan2.land")
 ga("send", "pageview")
 
 // anchor.js
 anchors.add(".post-content h2, .post-content h3")
 
 // link
-document.querySelectorAll("a[href^=\"http://\"]:not([href*=wani\\.kr]), a[href^=\"https://\"]:not([href*=wani\\.kr])").forEach(node => node.setAttribute("target", "_blank"))
+document.querySelectorAll("a[href^=\"http://\"]:not([href*=wan2\\.land]), a[href^=\"https://\"]:not([href*=wan2\\.land])").forEach(node => node.setAttribute("target", "_blank"))
 
 // mermaid
 mermaid.initialize({ startOnLoad:true })

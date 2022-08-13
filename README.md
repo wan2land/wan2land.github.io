@@ -1,6 +1,6 @@
 # wan2.land
 
-[wani.kr](https://wani.kr)
+[wan2.land](https://wan2.land)
 
 
 ## Installation
