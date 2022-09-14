@@ -1,0 +1,10 @@
+{
+  "pasteImage.defaultName": "Y/MM/DD/HHmmss",
+  "pasteImage.path": "${projectRoot}/images",
+  "pasteImage.basePath": "${projectRoot}",
+  "pasteImage.prefix": "/",
+  "cSpell.words": [
+    "denostack",
+    "superserial"
+  ]
+}
