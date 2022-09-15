@@ -4,6 +4,7 @@ title: "superserial 라이브러리 개발기"
 summary: "이 글은 superserial이라는 라이브러리를 어떻게, 왜 만들게 되었는지를 소개하는 글입니다."
 date: 2022-09-14 17:07:08 +09:00
 tags: ["superserial", "serialize", "typescript"]
+thumbnail: "/images/2022/2022-09-14-superserial/thumbnail.png"
 ---
 
 [github.com/denostack/superserial](https://github.com/denostack/superserial)
