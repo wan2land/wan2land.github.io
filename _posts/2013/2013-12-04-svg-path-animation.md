@@ -6,7 +6,7 @@ date: 2013-12-04 22:46:22 +09:00
 tags: ["svg"]
 ---
 
-![Thumbnail](/images/dev/frontend/svg-path-animation.gif)
+![Thumbnail](/images/2013/2013-12-04-svg-path-animation/svg-path-animation.gif)
 
 예전 웹에서는 대부분의 이미지를 jpg, png를 사용했었습니다. 그리고 그 이미지 포맷들은 다 [비트맵](http://ko.wikipedia.org/wiki/%EB%B9%84%ED%8A%B8%EB%A7%B5)이었습니다. 당시에는 모니터 해상도도 차이가 많이 없어서 웹에서 비트맵 이미지가 불편하지 않았습니다.
 
@@ -28,7 +28,7 @@ tags: ["svg"]
 
 그리고 우리 회사 로고를 다음과 같이 작업하였습니다.
 
-![일러스트레이터](/images/dev/frontend/svg-path-animation-logo.png)
+![일러스트레이터](/images/2013/2013-12-04-svg-path-animation/svg-path-animation-logo.png)
 
 그리고 이 이미지를 SVG로 저장합니다. 그러면 다음과 같은 소스를 볼 수 있습니다.
 

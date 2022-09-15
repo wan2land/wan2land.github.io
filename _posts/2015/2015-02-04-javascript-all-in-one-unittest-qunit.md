@@ -3,13 +3,12 @@ layout: post
 title: "QUnit으로 브라우저, 노드 통합 유닛테스트 환경 구축하기"
 date: 2015-02-04 10:16:36 +09:00
 tags: ["javascript", "qunit"]
+thumbnail: "/images/2015/2015-02-04-javascript-all-in-one-unittest-qunit/logo.png"
 ---
 
 작업하는 몇몇 소스가 브라우저에서도 사용이 되고, 노드(혹은 io.js도 가능할 듯.)에서도 사용이 됩니다. 통합된 환경에서 어떻게 하면 유닛테스트를 할 수 있을까 고민을 해보았습니다.
 
 그러던 중 QUnit이라는 도구가 눈에 띄었습니다.
-
-![QUnit](/images/dev/qunit/logo.png)
 
 [qunitjs.com](http://qunitjs.com)
 
@@ -197,11 +196,11 @@ requirejs(
 
 ### 브라우저 테스트
 
-![QUnit Browser test](/images/dev/qunit/browser-test.png)
+![QUnit Browser test](/images/2015/2015-02-04-javascript-all-in-one-unittest-qunit/browser-test.png)
 
 ### Node 테스트
 
-![QUnit Node test](/images/dev/qunit/node-test.png)
+![QUnit Node test](/images/2015/2015-02-04-javascript-all-in-one-unittest-qunit/node-test.png)
 
 노드의 경우는 `QUnit.log`를 작성할 때, 성공한 것은 아예 출력을 막았기 때문에 실패한 결과만을 출력해줍니다.
 

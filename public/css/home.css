@@ -29,7 +29,7 @@
   }
 
   .posts .post-thumbnail {
-    width: 300px;
+    flex: 0 0 33.33333%;
   }
 }
 

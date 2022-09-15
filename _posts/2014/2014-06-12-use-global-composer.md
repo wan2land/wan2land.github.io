@@ -3,12 +3,11 @@ layout: post
 title: Composer Global로 사용하기.
 date: 2014-06-12 11:25:55 +09:00
 tags: ["php", "composer"]
+thumbnail: "/images/2014/2014-06-12-use-global-composer/thumbnail.png"
 ---
 
 어느정도 PHP를 사용한 사람들이라면 Composer를 누구나 한번쯤은 사용해보았을 것입니다. 아니, 요즘에는 거의 표준화처럼
 자리를 잡게 되었죠.
-
-![Composer](/images/dev/composer/logo.png)
 
 근데 의외로 Composer가 Global설치를 지원하는지 모르는 분들이 제법 많습니다. ~~예, 사실 제가 그랬습니다.~~
 
@@ -36,11 +35,11 @@ composer global require phpunit/phpunit
 
 이렇게 만들고 나면 `home`디렉토리 아래에 `.composer`라는 폴더가 생성되고 그 아래에 패키지가 생성이 됩니다.
 
-![](/images/dev/composer/global-composer-1.png)
+![](/images/2014/2014-06-12-use-global-composer/global-composer-1.png)
 
 그리고 그 안에 내부 파일 구조는 일반 프로젝트 패키지와 동일합니다.
 
-![](/images/dev/composer/global-composer-2.png)
+![](/images/2014/2014-06-12-use-global-composer/global-composer-2.png)
 
 만약 디테일하게 조절하고 싶으시면 `composer.json`파일을 고쳐서 사용하시면 될것입니다. 그리고 저의 경우는 다음과 같이 구성해서 사용하고 있습니다.
 
@@ -54,7 +53,7 @@ composer update
 
 그리고 `~/.composer/vendor/bin`폴더를 열어보시면 다음과 같이 `bin`파일들이 추가되어있는 것을 볼 수 있습니다.
 
-![](/images/dev/composer/global-composer-3.png)
+![](/images/2014/2014-06-12-use-global-composer/global-composer-3.png)
 
 그리고 이제 저 프로그램들을 어디에서도 실행 할 수 있도록 `$PATH`에 추가하는 작업이 필요합니다. 방법도 간단합니다. 다음 두줄의 소스를 `.bash_profile`에 추가해주시면 됩니다.
 
@@ -67,7 +66,7 @@ export PATH="~/.composer/bin:$PATH"
 
 이 이후에는 쉘을 다시 실행하시면 됩니다. 이제 테스트해봅시다.
 
-![](/images/dev/composer/global-composer-4.gif)
+![](/images/2014/2014-06-12-use-global-composer/global-composer-4.gif)
 
 탭을 눌렀을때 자동완성은 기본입니다. :)
 

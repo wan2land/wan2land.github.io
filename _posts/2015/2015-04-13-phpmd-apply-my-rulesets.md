@@ -3,6 +3,7 @@ layout: post
 title: "Mess Detector에서 나만의 커스텀 룰셋 적용하기"
 date: 2015-04-13 16:00:59 +09:00
 tags: ["php", "phpmd"]
+thumbnail: "/images/2015/2015-04-13-phpmd-apply-my-rulesets/thumbnail.png"
 ---
 
 본 글은 기본적으로 Mess Detector와 PHPStorm을 사용하고 있는 분을 대상으로 삼고 있습니다. :)
@@ -11,13 +12,11 @@ tags: ["php", "phpmd"]
 
 이제는 PHP 코딩에서 필수 도구가 되어버린 PHP Mess Detector(이하 PHPMD), PHP 좀 하신 분들이라면 누구나 한번쯤 사용해 봤을 것입니다.
 
-![Mess Detector](/images/dev/php/phpmd.png)
-
 [phpmd.com](http://phpmd.org)
 
 PHPMD를 켜놓고 신나게 코딩을 하다 보면 다음과 같은 메시지를 심심치 않게 만나게 됩니다.
 
-![Naming Warning](/images/dev/php/phpmd-warning-with-naming.png)
+![Naming Warning](/images/2015/2015-04-13-phpmd-apply-my-rulesets/phpmd-warning-with-naming.png)
 
 `Avoid variables with short names like $id. Configured minimum length is 3.`
 
@@ -61,15 +60,15 @@ class Something {
 
 이제 PHPStorm에서 설정(Preference)을 켭니다. 그리고 `Inspections`를 들어가면 `PHP Mess Detector`라는 항목을 볼 수 있습니다.
 
-![PHPStorm Inspections](/images/dev/php/phpstorm-inspections.png)
+![PHPStorm Inspections](/images/2015/2015-04-13-phpmd-apply-my-rulesets/phpstorm-inspections.png)
 
 자, 이제 우측에 `Naming Rules` 체크를 해제하고 아래 `+`버튼을 통해 우리가 아까 저장했던 `custom-naming.xml`파일을 불러옵니다.
 
-![PHPStorm PHPMD Custom](/images/dev/php/phpstorm-phpmd-custom.png)
+![PHPStorm PHPMD Custom](/images/2015/2015-04-13-phpmd-apply-my-rulesets/phpstorm-phpmd-custom.png)
 
 이제 적용을 하고 나옵시다.
 
-![PHPStorm PHPMD No Warning](/images/dev/php/phpmd-custom-apply-complete.png)
+![PHPStorm PHPMD No Warning](/images/2015/2015-04-13-phpmd-apply-my-rulesets/phpmd-custom-apply-complete.png)
 
 이제 경고 밑줄 없는 화면을 볼 수 있습니다. :-)
 

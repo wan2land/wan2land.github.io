@@ -42,7 +42,7 @@ gem install jekyll-import
 
 다시 아까 에러를 뱉었던 명령어를 입력하면 `_drafts`, `_posts`밑에 뭔가 후룩후룩 하면서 파일들이 짠 하고 생성됩니다.
 
-![Migrate Complete]({{ site.url }}/images/dev/jekyll/migrate1-1.png)
+![Migrate Complete](/images/2015/2015-01-30-migrate-from-ghost-to-jekyll-1/migrate1-1.png)
 
 ## 마무리
 

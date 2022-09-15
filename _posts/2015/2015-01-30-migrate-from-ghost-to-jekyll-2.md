@@ -19,7 +19,7 @@ Jekyll에서 사용하는 마크다운 툴은 크게 두가지입니다. `redcar
 
 그러나.. 저는 기존 Prettify에서 linenums기능을 너무 좋아해서 기본값으로 사용하기는 뭔가 아쉬웠습니다. 그래서 떠올린 방법은 기본 pygments를 꺼버리고 자바스크립트 기반인 Prettify를 사용하자 였습니다. 로컬서버에서는 이방식이 잘 돌아갔으나..
 
-![Warning](/images/dev/jekyll/migrate2-warning.png)
+![Warning](/images/2015/2015-01-30-migrate-from-ghost-to-jekyll-2/migrate2-warning.png)
 
 ~~아..안돼..!!~~
 

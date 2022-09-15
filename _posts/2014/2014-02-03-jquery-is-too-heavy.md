@@ -13,11 +13,11 @@ tags: ["javascript", "jquery"]
 
 - 링크 : [http://youmightnotneedjquery.com](http://youmightnotneedjquery.com)
 
-![Main Image of youmightnotneedjquery](/images/dev/javascript/you-might-not-need-jquery.png)
+![Main Image of youmightnotneedjquery](/images/2014/2014-02-03-jquery-is-too-heavy/you-might-not-need-jquery.png)
 
 정말 별건 아니지만 원하는 브라우저를 기준으로 잡으면 그에 맞는 jQuery를 대체 할 수 있는 쉬운 소스들을 제공합니다. 하단에 *What's the oldesg...*를 통해 조절 가능합니다. 근데 그 기준이 **IE**라는 사실이 실로 놀랍습니다. (IE를 죽입시다.. IE는 나의 원수.)
 
-![Example](/images/dev/javascript/you-might-not-need-jquery-example.png)
+![Example](/images/2014/2014-02-03-jquery-is-too-heavy/you-might-not-need-jquery-example.png)
 
 위와 같은 소스들을 만날 수 있습니다. :)
 
@@ -34,11 +34,11 @@ You Might Not Need jQuery와 거의 유사합니다. 아주 간단한 jQuery를 
 
 - 링크 : [http://microjs.com](http://microjs.com)
 
-![Main Image of microjs](/images/dev/javascript/microjs.png)
+![Main Image of microjs](/images/2014/2014-02-03-jquery-is-too-heavy/microjs.png)
 
 이 사이트는 아주 가벼운 자바스크립트 라이브러리를 소개하는 사이트입니다. jQuery에서 필요한 부분을 검색하면(예를들어, *Dom*이라고 검색해보자) 해당하는 라이브러리들의 목록을 출력해주고, 간단한 설명과 그리고 무시무시한 용량을 보여줍니다. (jQuery는 1.11.0 compressed 기준, 96kb입니다.)
 
-![Example](/images/dev/javascript/microjs-example.png)
+![Example](/images/2014/2014-02-03-jquery-is-too-heavy/microjs-example.png)
 
 
 

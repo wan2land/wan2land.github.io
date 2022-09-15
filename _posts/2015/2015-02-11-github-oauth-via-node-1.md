@@ -154,11 +154,11 @@ request.end();
 
 그리고 실행하면 다음과 같은 화면을 볼 수 있습니다.
 
-![github oauth success](/images/dev/nodejs/github-oauth-success.png)
+![github oauth success](/images/2015/2015-02-11-github-oauth-via-node-1/github-oauth-success.png)
 
 물론, 로그인 정보가 잘못되었다면 다음과 같이 출력됩니다.
 
-![github oauth fail](/images/dev/nodejs/github-oauth-fail.png)
+![github oauth fail](/images/2015/2015-02-11-github-oauth-via-node-1/github-oauth-fail.png)
 
 어떤 방식으로 인증하는지 궁금해서 제가 켜놓은 서버(`server.js`)로 실행해봤습니다. 그럼 다음과 같은 메시지를 확인할 수 있습니다.
 
@@ -175,7 +175,7 @@ GET
 
 헤더에 `authorization`이라는 항목에 내용이 추가되는 것을 볼 수 있습니다. 그리고 뒤에 알수없는 글자는 제 아이디와 비밀번호 정보를 `base64`로 인코딩 한것임을 알 수 있습니다. 무슨내용인지 궁금해서 디코딩 해보았습니다. (<https://www.base64decode.org>를 사용했습니다.)
 
-![Auth Base64 Decode](/images/dev/nodejs/auth-base64-decode.png)
+![Auth Base64 Decode](/images/2015/2015-02-11-github-oauth-via-node-1/auth-base64-decode.png)
 
 단순히 `id:password`를 `base64`로 인코딩한 텍스트였습니다. 지금 사용중인 노드에서처럼 `auth`라는 옵션을 지원하지 않더라도 이후에 다른 프로그래밍언어에서 직접 코딩해서 사용할 수 있을 것 같았습니다. :)
 

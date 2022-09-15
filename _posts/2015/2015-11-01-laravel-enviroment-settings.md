@@ -128,7 +128,7 @@ php -S 0.0.0.0:8080 -t public
 
 그리고 웹브라우저에서 `localhost:8080`을 입력하면 다음과 같은 화면을 만나 볼 수 있습니다.
 
-![Hello Laravel](/images/laravel/hello.png)
+![Hello Laravel](/images/2015/2015-11-01-laravel-enviroment-settings/hello.png)
 
 서버를 실행할 때 위와 같은(`php -S ...`) 명령어를 매번 입력하기 귀찮으면 예전에 다루었던 포스팅을 참고하시기 바랍니다.
 

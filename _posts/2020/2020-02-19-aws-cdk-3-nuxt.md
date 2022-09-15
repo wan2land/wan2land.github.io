@@ -7,8 +7,6 @@ date: 2020-02-19 23:12:55 +09:00
 tags: ["awscdk", "serverless", "vue", "nuxt", "typescript", "infrastructure"]
 ---
 
-![Nuxt.js](/images/logos/nuxtjs.svg)
-
 AWS Lambda위에 AWS CDK를 이용하여 Vue.js 프레임워크인 Nuxt를 올려보도록 하겠습니다. 저는 Vue.js를 주로 사용하기 때문에 Nuxt를 이용하여 Lambda에 올려보았지만,  원리만 이해한다면 Next나, Sapper 프로젝트도 적용가능하지 않을까 생각해봅니다. :-)
 
 Nuxt는 Vue.js를 기반으로 만들어진 SSR 프레임워크입니다. 서버쪽 렌더링을 필요로 하기 때문에 Lambda위에 올려야 합니다. SSR이 필요없다면 굳이 Lambda위에 올리지 않아도 정적 파일 호스팅을 이용하면 더 쉽게 서버환경 구축이 가능합니다.

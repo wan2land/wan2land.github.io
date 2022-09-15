@@ -7,7 +7,7 @@ tags: ["php", "ubuntu"]
 
 PHP 5.6 Branch가 생성되고 얼마 지나지 않아 지난 2014년 1월 23일 5.6alpha1 버전이 공개되었습니다.
 
-![php5.6 released!](/images/dev/php/ubuntu/php56-release.png)
+![php5.6 released!](/images/2014/2014-01-27-php56-alpha-install-in-ubuntu/php56-release.png)
 
 PHP라는 언어는 항상 버전업 될 때마다 하위호환성을 유지하는데 굉장히 힘쓰면서도, 새로운(기존에 다른 언어에서 사용되는) 문법 도입이 자주 일어나고 있습니다. 이번 5.6에서도 재밌는 문법이 도입되어서 써보고 싶어서 깔아보았습니다. :)
 
@@ -174,7 +174,7 @@ phpinfo();
 
 웹에서 http://localhost/phpinfo.php 를 입력하면 다음과 같은 화면이 출력될 것입니다!
 
-![Install Complete!](/images/dev/php/ubuntu/php56-phpinfo.png)
+![Install Complete!](/images/2014/2014-01-27-php56-alpha-install-in-ubuntu/php56-phpinfo.png)
 
 이제 다음에는 php5.6에서 추가된 내용에 대해서 다뤄보도록 하겠습니다 :)
 

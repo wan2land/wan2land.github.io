@@ -24,7 +24,7 @@ do-release-upgrade
 
 뭔가 진행이 되는가 싶더니 경고창이 하나 나왔습니다.
 
-![Alert](/images/dev/ubuntu/ubuntu-upgrade-12-to-14-1.png)
+![Alert](/images/2015/2015-01-30-ubuntu-upgrade-12-to-14/ubuntu-upgrade-12-to-14-1.png)
 
 간단히 얘기해서 보통 윈도우 포맷시에는 컴퓨터를 앞에두고 진행을 해서 문제가 생기면 하드웨어를 끄던 리셋을 누르던 할수 있지만 SSH를 통해서 할때는 문제가 발생했을 때(단순히 인터넷이 끊어지더라도) 위험하니 경고메시지를 띄워주는 것입니다. ~~친절한 우분투..~~ 포트번호도 확인했고, 뭐 잘 안되면 서버 리셋시켜버리면 그만이니 그냥 진행하기로. 
 
@@ -81,7 +81,7 @@ do-release-upgrade
 
 그리고 마지막으로 재부팅 한번만 진행하시면!!
 
-![Upgrade Complete](/images/dev/ubuntu/ubuntu-upgrade-12-to-14-2.png)
+![Upgrade Complete](/images/2015/2015-01-30-ubuntu-upgrade-12-to-14/ubuntu-upgrade-12-to-14-2.png)
 
 짠. 하고 14.04 버전이 반겨줄겁니다.
 

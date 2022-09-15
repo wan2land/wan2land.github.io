@@ -37,11 +37,11 @@ composer dump-autoload -o
 
 이런식으로 명령어를 입력하시면 됩니다. 그리고 `vendor/composer/autoload_classmap.php`파일을 열어보시면
 
-![Classmap Before](/images/dev/composer/classmap-before.png)
+![Classmap Before](/images/2015/2015-01-23-benchmark-composer-classmap/classmap-before.png)
 
 (평상시)
 
-![Classmap After](/images/dev/composer/classmap-after.png)
+![Classmap After](/images/2015/2015-01-23-benchmark-composer-classmap/classmap-after.png)
 
 (-o 옵션을 주고 설치한다음에..)
 
@@ -164,7 +164,7 @@ Time : 0 0.019407
 
 ## 결과
 
-![슴무룩](/images/jjal/summerlook.png)
+![슴무룩](/images/2015/2015-01-23-benchmark-composer-classmap/summerlook.png)
 
 ~~..성능 향상이 엄청 미미하네요.. 포스팅 망한듯..~~
 

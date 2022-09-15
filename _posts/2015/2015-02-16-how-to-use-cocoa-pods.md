@@ -86,7 +86,7 @@ Integrating client project
 
 여기서 주목해야하는 것은 마지막 줄입니다. 이제부터 `MyMessage.xcworkspace`를 사용할 수 있다고 합니다. 그전 까지는 `MyMessage.xcodeproj`를 통해 프로젝트를 관리해야 했다면 이제는 Pod를 포함한 Workspace를 통해 개발을 해야합니다. 그래야 빌드 하는 과정에 Pod를 통해 다운받은 패키지를 포함할 수 있습니다.
 
-![import swiftyJSON](/images/dev/swift/pod/import-swiftyjson.png)
+![import swiftyJSON](/images/2015/2015-02-16-how-to-use-cocoa-pods/import-swiftyjson.png)
 
 그리고 상단 import하는 부분에 `import SwiftyJSON`이라고 적어넣기만 하면 해당파일에서 해당 패키지의 내용을 가져다 쓸 수 있습니다. 빌드는 알아서 잘 해줍니다. (캬~ 역시 패키지관리자가 최고야)
 

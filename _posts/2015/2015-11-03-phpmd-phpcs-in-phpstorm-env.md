@@ -29,27 +29,27 @@ PHPStorm을 열고 환경설정(Preferences...)을 갑니다. 그리고 그냥 �
 
 ## Mess Detector 연결
 
-![Where is PHPMD - (1)](/images/phpstorm/where-is-phpmd1.png)
+![Where is PHPMD - (1)](/images/2015/2015-11-03-phpmd-phpcs-in-phpstorm-env/where-is-phpmd1.png)
 
-![Where is PHPMD - (2)](/images/phpstorm/where-is-phpmd2.png)
+![Where is PHPMD - (2)](/images/2015/2015-11-03-phpmd-phpcs-in-phpstorm-env/where-is-phpmd2.png)
 
 그리고 설정에서 Inspection 메뉴를 찾아서 다음과 같이 설정해줍시다.
 
-![Set PHPMD inspection](/images/phpstorm/phpmd-inspection.png)
+![Set PHPMD inspection](/images/2015/2015-11-03-phpmd-phpcs-in-phpstorm-env/phpmd-inspection.png)
 
 ## Code Sniffer 연결
 
-![Where is PHPCS - (1)](/images/phpstorm/where-is-phpcs1.png)
+![Where is PHPCS - (1)](/images/2015/2015-11-03-phpmd-phpcs-in-phpstorm-env/where-is-phpcs1.png)
 
-![Where is PHPCS - (2)](/images/phpstorm/where-is-phpcs2.png)
+![Where is PHPCS - (2)](/images/2015/2015-11-03-phpmd-phpcs-in-phpstorm-env/where-is-phpcs2.png)
 
 그리고 설정에서 Inspection 메뉴를 찾아서 다음과 같이 설정해줍시다. Coding Standard는 여러분이 사용하고 싶은 것을 하면
 되는데, 대부분 PSR2를 선택하시면 됩니다. 그 외에는 프로젝트에 따라서 맞춰 주시면 됩니다.
 
-![Set PHPCS inspection](/images/phpstorm/phpcs-inspection.png)
+![Set PHPCS inspection](/images/2015/2015-11-03-phpmd-phpcs-in-phpstorm-env/phpcs-inspection.png)
 
 여기까지 하면 설치와 사용할 준비가 완료되었습니다.
 
 그리고 이제 잘못된 코딩 스타일을 사용하면 다음과 같이 Warning이 출력됩니다. :-)
 
-![PHPCS warning](/images/phpstorm/phpcs-warning.png)
+![PHPCS warning](/images/2015/2015-11-03-phpmd-phpcs-in-phpstorm-env/phpcs-warning.png)

@@ -15,7 +15,7 @@ Git을 신나게 사용하다가 보면 어느순간 소스간에 비교가 필�
 
 적용한 후의 모습.
 
-![With OSX Merge Tool](/images/dev/git/filemerge.png)
+![With OSX Merge Tool](/images/2014/2014-07-15-git-2-git-diff/filemerge.png)
 
 OSX에서는 기본 Merge도구로서 Filemerge라는 도구를 제공하고 있습니다. 물론 git에 연결이 필요합니다.
 

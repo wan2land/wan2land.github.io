@@ -9,7 +9,7 @@ NHN D2 Fest에서도 들었고, 주변에서도 이야기만 많이 들은 Docke
 
 굳이 이 블로그 글에서 이것저것 이야기 하는 것보다 더 자세히 잘나와있는 사이트를 하나 소개합니다. "가장 빨리 만나는 Docker"라는 책이 시중에 나와있습니다.
 
-![Docker Book](/images/dev/docker/docker-book.png)
+![Docker Book](/images/2015/2015-02-02-start-docker/docker-book.png)
 
 <http://www.pyrasis.com/private/2014/11/30/publish-docker-for-the-really-impatient-book>
 
@@ -26,7 +26,7 @@ apt-get install docker.io
 
 위 명령어를 통해 쉽게 설치가 가능합니다. 근데 저의 경우는 `linux-headers-server`에서 의존성이 없다고 경고가 나왔습니다.
 
-![Install Warning](/images/dev/docker/install-dependency-warning.png)
+![Install Warning](/images/2015/2015-02-02-start-docker/install-dependency-warning.png)
 
 지정한 버전의 `linux-headers-server` 패키지가 없다는 건데, 시키는대로 하면 잘 됩니다. 
 
