@@ -23,6 +23,8 @@
 }
 
 .posts .post-thumbnail img {
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
   display: block;
   margin: 0;
 }
@@ -33,7 +35,7 @@
   }
 
   .posts .post-thumbnail {
-    flex: 0 0 33.33333%;
+    flex: 0 0 25%;
   }
 }
 
