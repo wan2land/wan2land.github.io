@@ -12,11 +12,6 @@ description: "포스팅 목록"
           {{ post.title }}
         </a>
       </h2>
-      {% if post.summary %}
-        <div class="post-summary">{{ post.summary }}</div>
-      {% else %}
-        <div class="post-summary">{{ post.content | strip_html | truncatewords:40 }}</div>
-      {% endif %}
       <div class="post-footer">
         {% if post.tags.size > 0 %}
           <div class="post-tags">

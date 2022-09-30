@@ -1,3 +1,11 @@
+h1 {
+  font-size: 1.625rem;
+}
+
+h2 {
+  font-size: 1.375rem;
+}
+
 .masthead-title {
   font-family: "PT Sans", Helvetica, Arial, sans-serif;
 }
@@ -32,6 +40,7 @@
 @media (min-width: 48em) {
   .posts .post {
     flex-flow: row;
+    justify-content: space-between;
   }
 
   .posts .post-thumbnail {
