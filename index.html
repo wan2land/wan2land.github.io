@@ -40,17 +40,14 @@ description: "포스팅 목록"
 
   {% for page in (1..paginator.total_pages) %}
     {% if page == 1 %}
-      {% if page == paginator.page %}
-        <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}" class="current">{{ page }}</a>
-      {% else %}
-        <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">{{ page }}</a>
-      {% endif %}
+      {% assign page_url = site.baseurl | append: '/' | replace: '//', '/' %}
     {% else %}
-      {% if page == paginator.page %}
-        <a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}" class="current">{{ page }}</a>
-      {% else %}
-        <a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a>
-      {% endif %}
+      {% assign page_url = site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page %}
+    {% endif %}
+    {% if page == paginator.page %}
+      <a href="{{ page_url }}" class="current">{{ page }}</a>
+    {% else %}
+      <a href="{{ page_url }}">{{ page }}</a>
     {% endif %}
   {% endfor %}
 

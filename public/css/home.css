@@ -48,3 +48,6 @@ h2 {
   }
 }
 
+.pagination a.current {
+  text-decoration: underline;
+}
